@@ -1,6 +1,17 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { NextRequest } from "next/server";
+import catalogue from "@/data/catalog.json";
 import { POST } from "@/app/api/(routes)/concierge/route";
+import { catalogueSchema } from "@/utils/catalogSchema";
+
+const { getCatalogProducts } = vi.hoisted(() => ({ getCatalogProducts: vi.fn() }));
+
+vi.mock("@/app/api/services/catalog.service", () => ({
+  getCatalogProducts,
+  clearCatalogCache: vi.fn(),
+}));
+
+getCatalogProducts.mockResolvedValue(catalogueSchema.parse(catalogue));
 
 const request = (body: unknown) => new NextRequest("http://localhost/api/concierge", {
   method: "POST",

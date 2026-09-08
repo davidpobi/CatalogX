@@ -1,20 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
-import catalogue from "@/data/catalog.json" with { type: "json" };
-import type { Product } from "@/interfaces/catalog";
 import { CatalogApp } from "@/components/CatalogApp";
 import { productPath, productUrl } from "@/utils/catalogUrl";
 import { getCatalogProducts } from "@/app/api/services/catalog.service";
 
-const products = catalogue as Product[];
 export const revalidate = 60;
 
 const findProduct = async (slug: string) => (await getCatalogProducts()).find((product) => product.slug === slug);
-
-export function generateStaticParams() {
-  return products.map(({ slug }) => ({ slug }));
-}
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;

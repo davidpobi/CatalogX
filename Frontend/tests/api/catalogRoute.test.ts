@@ -1,11 +1,14 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { NextRequest } from "next/server";
 import { CatalogOperations } from "@/interfaces/catalog";
+import catalogue from "@/data/catalog.json";
 import { POST } from "@/app/api/(routes)/catalog/route";
+import { catalogueSchema } from "@/utils/catalogSchema";
 import { emptyQueryPlan } from "@/utils/queryPlan";
 
-const { consumeRateLimit, rateLimitHeaders } = vi.hoisted(() => ({
+const { consumeRateLimit, getCatalogProducts, rateLimitHeaders } = vi.hoisted(() => ({
   consumeRateLimit: vi.fn(),
+  getCatalogProducts: vi.fn(),
   rateLimitHeaders: vi.fn(),
 }));
 
@@ -15,10 +18,16 @@ vi.mock("@/app/api/services/rateLimit.service", () => ({
   rateLimitHeaders,
 }));
 
+vi.mock("@/app/api/services/catalog.service", () => ({
+  getCatalogProducts,
+  clearCatalogCache: vi.fn(),
+}));
+
 const request = (body: unknown) => new NextRequest("http://localhost/api/catalog", { method: "POST", body: JSON.stringify(body), headers: { "content-type": "application/json" } });
 
 describe("catalogue route", () => {
   beforeEach(() => {
+    getCatalogProducts.mockResolvedValue(catalogueSchema.parse(catalogue));
     consumeRateLimit.mockResolvedValue({ allowed: true, limit: 120, remaining: 119, reset: 1_800_000_000 });
     rateLimitHeaders.mockReturnValue({ "X-RateLimit-Limit": "120", "X-RateLimit-Remaining": "119", "X-RateLimit-Reset": "1800000000" });
   });
