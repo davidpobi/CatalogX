@@ -40,12 +40,49 @@ test("browses, filters, saves, and opens a product", async ({ page }) => {
   await page.getByRole("button", { name: "Lighting", exact: true }).click();
   await expect(page.locator(".product-card")).toHaveCount(10);
   const firstProduct = page.locator(".product-card").first();
+  const selectedName = await firstProduct.locator("h3").textContent();
+  const selected = (catalogue as Product[]).find((product) => product.name === selectedName)!;
   await firstProduct.getByRole("button", { name: /View/ }).click();
-  await expect(page.getByText("Product details")).toBeVisible();
-  await page.keyboard.press("Escape");
-  await expect(page.getByText("Product details")).toBeHidden();
+  await expect(page).toHaveURL(new RegExp(`/store/${selected.slug}$`));
+  await expect(page.getByText("Product decision")).toBeVisible();
+  await expect(page.locator(".product-context-panel")).toHaveCount(1);
+  expect(await page.locator(".product-grid > *").evaluateAll((nodes) => nodes.findIndex((node) => node.classList.contains("product-context-panel")) < nodes.findIndex((node) => node.classList.contains("selected")))).toBe(true);
+  await expect(page.locator(".drawer-overlay, .drawer-content")).toHaveCount(0);
+  await page.goBack();
+  await expect(page).toHaveURL(/\/store$/);
+  await expect(firstProduct.getByRole("button", { name: /View/ })).toBeFocused();
   await firstProduct.getByRole("button", { name: /^Save / }).click();
   await expect(firstProduct.getByRole("button", { name: /^Remove .* from saved products$/ })).toBeVisible();
+});
+
+test("persists modal product details and shares the canonical URL", async ({ page }) => {
+  const product = (catalogue as Product[])[2];
+  await page.addInitScript(() => {
+    Object.defineProperty(navigator, "share", { configurable: true, value: (data: ShareData) => { (window as typeof window & { sharedProduct?: ShareData }).sharedProduct = data; return Promise.resolve(); } });
+  });
+  await page.goto(`/store/${product.slug}`);
+  await page.getByRole("button", { name: "Open product details in modal" }).click();
+  await expect(page.locator(".product-context-modal")).toBeVisible();
+  await expect.poll(() => page.evaluate(() => localStorage.getItem("catalogx-product-detail-mode"))).toBe("modal");
+  await page.getByRole("button", { name: `Share ${product.name}` }).click();
+  await expect.poll(() => page.evaluate(() => (window as typeof window & { sharedProduct?: ShareData }).sharedProduct?.url)).toBe(`https://catalogx.test/store/${product.slug}`);
+  await page.reload();
+  await expect(page.locator(".product-context-modal")).toBeVisible();
+  await page.keyboard.press("Tab");
+  expect(await page.evaluate(() => Boolean(document.activeElement?.closest("dialog[open]")))).toBe(true);
+  await page.getByRole("button", { name: "Use inline product details" }).click();
+  await expect(page.locator(".product-context-modal")).toHaveCount(0);
+});
+
+test("direct product links render inline metadata content and preserve browser navigation", async ({ page }) => {
+  const product = (catalogue as Product[])[2];
+  await page.goto(`/store/${product.slug}`);
+  await expect(page).toHaveTitle(`${product.name} | CatalogX`);
+  await expect(page.locator("#product-context-heading")).toHaveText(product.name);
+  await expect(page.getByText("Fictional product created for the CatalogX open-source demonstration.")).toBeVisible();
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", new RegExp(`/store/${product.slug}$`));
+  await page.getByRole("button", { name: "Close product details" }).click();
+  await expect(page).toHaveURL(/\/store$/);
 });
 
 test("persists the day theme", async ({ page }) => {

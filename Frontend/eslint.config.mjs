@@ -24,5 +24,5 @@ export default defineConfig([
       "no-restricted-imports": ["error", { patterns: [{ group: ["@/app/api/**", "openai", "firebase-admin"], message: "Client services may only use HTTP contracts." }] }],
     },
   },
-  globalIgnores([".next/**", ".next-e2e/**", "coverage/**", "playwright-report/**", "test-results/**", "artifacts/**"]),
+  globalIgnores([".next/**", ".next-e2e/**", "dev/**", "coverage/**", "playwright-report/**", "test-results/**", "artifacts/**"]),
 ]);

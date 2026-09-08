@@ -42,6 +42,11 @@ export const productMatchesPlan = (product: Product, plan: CatalogQueryPlanV1) =
   return true;
 };
 
+export const compatibleCatalogAlternatives = (products: Product[], selected: Product, plan: CatalogQueryPlanV1, limit = 3) => products
+  .filter((product) => product.id !== selected.id && product.category === selected.category && product.availability !== "out_of_stock" && productMatchesPlan(product, plan))
+  .sort((left, right) => Number(right.rooms.some((room) => selected.rooms.includes(room))) - Number(left.rooms.some((room) => selected.rooms.includes(room))) || left.id.localeCompare(right.id))
+  .slice(0, limit);
+
 const scoreProduct = (product: Product, plan: CatalogQueryPlanV1): RankedProduct => {
   let score = product.rating * 2 + Math.log10(product.reviewCount + 1);
   const reasons: string[] = [];

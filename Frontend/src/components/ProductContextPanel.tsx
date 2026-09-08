@@ -1,6 +1,6 @@
 "use client";
 
-import { Heart, ImagePlus, PackageCheck, Share2, Sparkles, Truck, X } from "lucide-react";
+import { Heart, ImagePlus, Maximize2, Minimize2, PackageCheck, Share2, Sparkles, Truck, X } from "lucide-react";
 import type { Product } from "@/interfaces/catalog";
 import { CATEGORY_LABELS } from "@/interfaces/catalog";
 import { ProductVisual } from "./ProductVisual";
@@ -9,8 +9,8 @@ import { Button, Chip, IconButton } from "./primitives";
 const price = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
 
 export function ProductContextPanel({
-  product, rationale, reasons, constraints, saved, alternatives, inBundle, sceneAuthorized,
-  headingRef, shareStatus, onClose, onSave, onShare, onBuildAround, onReplace, onVisualize, onAlternative,
+  product, rationale, reasons, constraints, saved, alternatives, inBundle, sceneAuthorized, modalMode,
+  headingRef, shareStatus, onClose, onSave, onShare, onToggleMode, onBuildAround, onReplace, onVisualize, onAlternative,
 }: {
   product: Product;
   rationale: string | null;
@@ -20,11 +20,13 @@ export function ProductContextPanel({
   alternatives: Product[];
   inBundle: boolean;
   sceneAuthorized: boolean;
+  modalMode: boolean;
   headingRef: React.RefObject<HTMLHeadingElement | null>;
   shareStatus: string;
   onClose: () => void;
   onSave: () => void;
   onShare: () => void;
+  onToggleMode: () => void;
   onBuildAround: () => void;
   onReplace: () => void;
   onVisualize: () => void;
@@ -37,6 +39,7 @@ export function ProductContextPanel({
         <div className="product-context-actions">
           <IconButton label={saved ? `Remove ${product.name} from saved products` : `Save ${product.name}`} onClick={onSave}><Heart size={18} fill={saved ? "currentColor" : "none"} /></IconButton>
           <IconButton label={`Share ${product.name}`} onClick={onShare}><Share2 size={18} /></IconButton>
+          <IconButton label={modalMode ? "Use inline product details" : "Open product details in modal"} onClick={onToggleMode}>{modalMode ? <Minimize2 size={18} /> : <Maximize2 size={18} />}</IconButton>
           <IconButton className="context-close" label="Close product details" onClick={onClose}><X size={18} /></IconButton>
         </div>
       </header>

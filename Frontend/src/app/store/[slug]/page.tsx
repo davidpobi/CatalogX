@@ -5,10 +5,12 @@ import catalogue from "@/data/catalog.json" with { type: "json" };
 import type { Product } from "@/interfaces/catalog";
 import { CatalogApp } from "@/components/CatalogApp";
 import { productPath, productUrl } from "@/utils/catalogUrl";
+import { getCatalogProducts } from "@/server/catalog.repository";
 
 const products = catalogue as Product[];
+export const revalidate = 60;
 
-const findProduct = (slug: string) => products.find((product) => product.slug === slug);
+const findProduct = async (slug: string) => (await getCatalogProducts()).find((product) => product.slug === slug);
 
 export function generateStaticParams() {
   return products.map(({ slug }) => ({ slug }));
@@ -16,7 +18,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const product = findProduct(slug);
+  const product = await findProduct(slug);
   if (!product) return {};
   const image = product.image.heroUrl || `/assets/placeholders/${product.category}.svg`;
   return {
@@ -31,7 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function ProductStorePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const product = findProduct(slug);
+  const product = await findProduct(slug);
   if (!product) notFound();
   return <Suspense fallback={<main className="catalog-app" aria-label="Loading catalogue" />}><CatalogApp initialProduct={product} /></Suspense>;
 }

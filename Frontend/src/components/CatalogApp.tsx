@@ -3,7 +3,7 @@
 import { Bookmark, Heart, ImagePlus, SlidersHorizontal, X } from "lucide-react";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
-import { Fragment, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
+import { Fragment, useEffect, useMemo, useRef, useState, useSyncExternalStore, type ReactNode } from "react";
 import { CATEGORY_IDS, CATEGORY_LABELS, type Product, type RankedProduct } from "@/interfaces/catalog";
 import { resetAIState, setAIDraft, setAIPlan } from "@/redux/slices/aiSlice";
 import {
@@ -49,14 +49,20 @@ import { SceneGenerationStatus } from "@/interfaces/scene";
 import { clearScene } from "@/redux/slices/sceneSlice";
 import { emptyQueryPlan } from "@/utils/queryPlan";
 import { agentWorkflowProgressCopy } from "@/utils/agentWorkflowProgress";
+import { compatibleCatalogAlternatives } from "@/utils/catalogQuery";
 import { AppHeader } from "./AppHeader";
 import { ProductVisual } from "./ProductVisual";
 import { SearchComposer } from "./SearchComposer";
 import { ProductContextPanel } from "./ProductContextPanel";
-import { productPath } from "@/utils/catalogUrl";
+import { productPath, productUrl } from "@/utils/catalogUrl";
 import { Button, Chip, IconButton } from "./primitives";
 
 const price = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
+let pendingReturnFocusProductId: string | null = null;
+let pendingPanelFocusSlug: string | null = null;
+let expansionAnchorProductId: string | null = null;
+const PRODUCT_DETAIL_MODE_KEY = "catalogx-product-detail-mode";
+const PRODUCT_DETAIL_MODE_EVENT = "catalogx-product-detail-mode-change";
 
 function ProductCard({
   item,
@@ -108,12 +114,38 @@ function ProductCard({
   );
 }
 
+function ProductContextModal({ children, onClose }: { children: ReactNode; onClose: () => void }) {
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (dialog && !dialog.open) dialog.showModal();
+    return () => { if (dialog?.open) dialog.close(); };
+  }, []);
+  return <dialog
+    ref={dialogRef}
+    className="product-context-modal"
+    aria-labelledby="product-context-heading"
+    onCancel={(event) => { event.preventDefault(); onClose(); }}
+    onMouseDown={(event) => {
+      const bounds = event.currentTarget.getBoundingClientRect();
+      if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) onClose();
+    }}
+  >{children}</dialog>;
+}
+
 const subscribeToViewport = (callback: () => void) => {
   window.addEventListener("resize", callback);
   return () => window.removeEventListener("resize", callback);
 };
 const viewportColumns = () => window.innerWidth <= 720 ? 2 : window.innerWidth <= 1050 ? 3 : 4;
 const serverColumns = () => 4;
+const subscribeToDetailMode = (callback: () => void) => {
+  window.addEventListener("storage", callback);
+  window.addEventListener(PRODUCT_DETAIL_MODE_EVENT, callback);
+  return () => { window.removeEventListener("storage", callback); window.removeEventListener(PRODUCT_DETAIL_MODE_EVENT, callback); };
+};
+const detailModeSnapshot = () => localStorage.getItem(PRODUCT_DETAIL_MODE_KEY) === "modal";
+const detailModeServerSnapshot = () => false;
 
 export function CatalogApp({ initialProduct = null }: { initialProduct?: Product | null }) {
   const dispatch = useAppDispatch();
@@ -143,13 +175,12 @@ export function CatalogApp({ initialProduct = null }: { initialProduct?: Product
   const sceneBusy = useAppSelector(selectSceneBusy);
   const sceneError = useAppSelector(selectSceneError);
   const [filtersOpen, setFiltersOpen] = useState(false);
-  const [shareStatus, setShareStatus] = useState("");
+  const [shareNotice, setShareNotice] = useState({ slug: "", message: "" });
+  const modalMode = useSyncExternalStore(subscribeToDetailMode, detailModeSnapshot, detailModeServerSnapshot);
   const columns = useSyncExternalStore(subscribeToViewport, viewportColumns, serverColumns);
   const handledLinkedCategory = useRef<string | null>(null);
   const productHeadingRef = useRef<HTMLHeadingElement>(null);
   const productButtonRefs = useRef(new Map<string, HTMLButtonElement>());
-  const returnFocusProductId = useRef<string | null>(null);
-  const focusPanelAfterNavigation = useRef(false);
   const selectedSlug = typeof params.slug === "string" ? params.slug : null;
   const selectedProduct = (selectedSlug ? catalogueProducts.find((item) => item.slug === selectedSlug) : null) || (initialProduct?.slug === selectedSlug ? initialProduct : null);
   const linkedCategory = CATEGORY_IDS.find((category) => category === searchParams.get("category")) || null;
@@ -158,12 +189,11 @@ export function CatalogApp({ initialProduct = null }: { initialProduct?: Product
     ? conciergePresentation?.productRationales.find((item) => item.productId === selectedProduct.id)?.rationale
     : null;
   const activeConstraints = interpretation?.chips.map((chip) => chip.label) ?? [];
-  const alternatives = useMemo(() => selectedProduct ? catalogueProducts
-    .filter((item) => item.id !== selectedProduct.id && item.category === selectedProduct.category && item.availability !== "out_of_stock")
-    .sort((left, right) => Number(right.rooms.some((room) => selectedProduct.rooms.includes(room))) - Number(left.rooms.some((room) => selectedProduct.rooms.includes(room))) || left.id.localeCompare(right.id))
-    .slice(0, 3) : [], [catalogueProducts, selectedProduct]);
+  const alternatives = useMemo(() => selectedProduct ? compatibleCatalogAlternatives(catalogueProducts, selectedProduct, plan) : [], [catalogueProducts, plan, selectedProduct]);
   const selectedResultIndex = selectedProduct ? products.findIndex((item) => item.product.id === selectedProduct.id) : -1;
-  const panelAfterIndex = selectedResultIndex < 0 ? -1 : Math.min(products.length - 1, Math.ceil((selectedResultIndex + 1) / columns) * columns - 1);
+  const anchoredResultIndex = expansionAnchorProductId ? products.findIndex((item) => item.product.id === expansionAnchorProductId) : -1;
+  const expansionResultIndex = anchoredResultIndex >= 0 ? anchoredResultIndex : selectedResultIndex;
+  const panelBeforeIndex = expansionResultIndex < 0 ? -1 : Math.floor(expansionResultIndex / columns) * columns;
   const activeProgressCopy = agentWorkflowProgressCopy(workflowProgress);
 
   useEffect(() => {
@@ -172,6 +202,12 @@ export function CatalogApp({ initialProduct = null }: { initialProduct?: Product
     void dispatch(consumePendingSearchAction());
   }, [dispatch]);
   useEffect(() => {
+    if (!selectedProduct || !modalMode) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = previousOverflow; };
+  }, [modalMode, selectedProduct]);
+  useEffect(() => {
     if (catalogueStatus !== "succeeded" || !linkedCategory || handledLinkedCategory.current === linkedCategory) return;
     handledLinkedCategory.current = linkedCategory;
     const next = { ...plan, mode: "products" as const, categories: [linkedCategory], bundle: null };
@@ -179,49 +215,66 @@ export function CatalogApp({ initialProduct = null }: { initialProduct?: Product
     router.replace("/store", { scroll: false });
   }, [catalogueStatus, dispatch, linkedCategory, plan, router]);
   useEffect(() => {
-    if (selectedProduct && focusPanelAfterNavigation.current) {
-      focusPanelAfterNavigation.current = false;
+    if (selectedProduct && pendingPanelFocusSlug === selectedProduct.slug) {
+      pendingPanelFocusSlug = null;
       requestAnimationFrame(() => productHeadingRef.current?.focus({ preventScroll: true }));
     }
-    if (!selectedProduct && returnFocusProductId.current) {
-      const productId = returnFocusProductId.current;
-      returnFocusProductId.current = null;
-      requestAnimationFrame(() => productButtonRefs.current.get(productId)?.focus({ preventScroll: true }));
+    if (!selectedProduct && pendingReturnFocusProductId && catalogueStatus === "succeeded") {
+      const productId = pendingReturnFocusProductId;
+      requestAnimationFrame(() => {
+        const button = productButtonRefs.current.get(productId);
+        if (button) { button.focus({ preventScroll: true }); pendingReturnFocusProductId = null; }
+      });
     }
-  }, [selectedProduct]);
-  const openProduct = (product: Product) => {
-    returnFocusProductId.current = product.id;
-    focusPanelAfterNavigation.current = true;
-    router.push(productPath(product.slug), { scroll: false });
+    if (!selectedProduct) expansionAnchorProductId = null;
+  }, [catalogueStatus, modalMode, selectedProduct]);
+  const openProduct = (product: Product, preserveOrigin = false) => {
+    const productSlug = product.slug;
+    if (!productSlug) return;
+    if (!preserveOrigin) {
+      pendingReturnFocusProductId = product.id;
+      expansionAnchorProductId = product.id;
+    }
+    pendingPanelFocusSlug = productSlug;
+    router.push(productPath(productSlug), { scroll: false });
   };
   const closeProduct = () => router.replace("/store", { scroll: false });
   const shareProduct = async (product: Product) => {
-    const url = new URL(productPath(product.slug), window.location.origin).toString();
+    const url = productUrl(product.slug);
     try {
       if (navigator.share) await navigator.share({ title: product.name, text: product.description, url });
-      else { await navigator.clipboard.writeText(url); setShareStatus("Link copied"); }
+      else { await navigator.clipboard.writeText(url); setShareNotice({ slug: product.slug, message: "Link copied" }); }
     } catch (error) {
-      if ((error as DOMException).name !== "AbortError") setShareStatus("Unable to share this link");
+      if ((error as DOMException).name === "AbortError") return;
+      try { await navigator.clipboard.writeText(url); setShareNotice({ slug: product.slug, message: "Link copied" }); }
+      catch { setShareNotice({ slug: product.slug, message: "Unable to share this link" }); }
     }
   };
   const contextPanel = selectedProduct ? <ProductContextPanel
     product={selectedProduct}
-    rationale={activeRationale}
+    rationale={activeRationale ?? null}
     reasons={selectedRanked?.reasons ?? []}
     constraints={activeConstraints}
     saved={saved.includes(selectedProduct.id)}
     alternatives={alternatives}
     inBundle={Boolean(bundle?.products.some((item) => item.product.id === selectedProduct.id))}
     sceneAuthorized={sceneAuthorizedProductIds.includes(selectedProduct.id)}
+    modalMode={modalMode}
     headingRef={productHeadingRef}
-    shareStatus={shareStatus}
+    shareStatus={shareNotice.slug === selectedProduct.slug ? shareNotice.message : ""}
     onClose={closeProduct}
     onSave={() => dispatch(toggleSavedProductAction(selectedProduct))}
     onShare={() => void shareProduct(selectedProduct)}
+    onToggleMode={() => {
+      const nextMode = !modalMode;
+      localStorage.setItem(PRODUCT_DETAIL_MODE_KEY, nextMode ? "modal" : "inline");
+      pendingPanelFocusSlug = selectedProduct.slug;
+      window.dispatchEvent(new Event(PRODUCT_DETAIL_MODE_EVENT));
+    }}
     onBuildAround={() => dispatch(setAIDraft(`Build a room around ${selectedProduct.name}`))}
     onReplace={() => { void dispatch(replaceBundleItemAction(selectedProduct.id)); closeProduct(); }}
     onVisualize={() => void dispatch(generateSceneAction())}
-    onAlternative={openProduct}
+    onAlternative={(product) => openProduct(product, true)}
   /> : null;
   const submit = (override?: string) => {
     void dispatch(submitSearchAction(override));
@@ -447,7 +500,7 @@ export function CatalogApp({ initialProduct = null }: { initialProduct?: Product
                 <i />
               </div>
             ))}
-          </div>{contextPanel && <div className="direct-product-context">{contextPanel}</div>}</>
+          </div>{contextPanel && !modalMode && <div className="direct-product-context">{contextPanel}</div>}</>
         ) : !products.length && !busy ? (
           <div className="empty-state">
             <Bookmark size={28} />
@@ -466,15 +519,16 @@ export function CatalogApp({ initialProduct = null }: { initialProduct?: Product
         ) : (
           <div className={`product-grid ${busy ? "loading" : ""}`} aria-busy={busy}>
             {products.map((item, index) => <Fragment key={item.product.id}>
+              {index === panelBeforeIndex && !modalMode && contextPanel}
               <ProductCard item={item} saved={saved.includes(item.product.id)} selected={selectedProduct?.id === item.product.id}
                 openButtonRef={(node) => node ? productButtonRefs.current.set(item.product.id, node) : productButtonRefs.current.delete(item.product.id)}
                 onSave={() => dispatch(toggleSavedProductAction(item.product))} onOpen={() => openProduct(item.product)} priority={index < 4} />
-              {index === panelAfterIndex && contextPanel}
             </Fragment>)}
-            {selectedProduct && !products.some((item) => item.product.id === selectedProduct.id) && contextPanel}
+            {selectedProduct && !products.some((item) => item.product.id === selectedProduct.id) && !modalMode && contextPanel}
           </div>
         )}
       </section>
+      {selectedProduct && modalMode && <ProductContextModal onClose={closeProduct}>{contextPanel}</ProductContextModal>}
       <footer>
         <span>CatalogX by BashBash Labs</span>
         <span>100 fictional pieces · deterministic results</span>

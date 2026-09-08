@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import catalogue from "@/data/catalog.json";
 import type { Product } from "@/interfaces/catalog";
 import { catalogueSchema } from "@/utils/catalogSchema";
-import { executeCatalogQuery, replaceCatalogBundleProduct } from "@/utils/catalogQuery";
+import { compatibleCatalogAlternatives, executeCatalogQuery, productMatchesPlan, replaceCatalogBundleProduct } from "@/utils/catalogQuery";
 import { applyQueryPlanPatch, emptyQueryPlan, removePlanConstraint } from "@/utils/queryPlan";
 import { buildSearchVocabulary, normalizeCompiledSearch } from "@/utils/searchVocabulary";
 import { firebaseDownloadToken, firebaseDownloadUrl } from "@/utils/firebaseStorageUrl";
@@ -14,6 +14,7 @@ describe("catalogue", () => {
   it("contains exactly ten valid products per category", () => {
     expect(catalogueSchema.parse(products)).toHaveLength(100);
     expect(new Set(products.map((product) => product.category)).size).toBe(10);
+    expect(new Set(products.map((product) => product.slug)).size).toBe(100);
   });
 
   it("applies hard filters deterministically", () => {
@@ -88,6 +89,17 @@ describe("catalogue", () => {
     plan.exclusions.materials = ["glass"];
     const result = executeCatalogQuery(products, plan);
     expect(result.products.every(({ product }) => product.productType === "wall-lamp" && !product.materials.includes("glass"))).toBe(true);
+  });
+
+  it("only presents alternatives that preserve active constraints", () => {
+    const plan = emptyQueryPlan("oak seating under $300");
+    plan.categories = ["seating"];
+    plan.filters.materials = ["oak"];
+    plan.filters.price.max = 300;
+    const selected = products.find((product) => product.id === "cx-seating-01")!;
+    const alternatives = compatibleCatalogAlternatives(products, selected, plan);
+    expect(alternatives.length).toBeGreaterThan(0);
+    expect(alternatives.every((product) => productMatchesPlan(product, plan))).toBe(true);
   });
 
   it("returns two feasible deterministic suggestions", () => {
