@@ -27,17 +27,24 @@ const consumeMemoryRateLimit = (key: string, limit: number, windowMs: number) =>
 
 export const consumeRateLimit = async (key: string, limit: number, windowMs: number): Promise<RateLimitState> => {
   if (resolveRateLimitRepository(process.env) === "memory") return consumeMemoryRateLimit(key, limit, windowMs);
-  const db = getFirestore();
-  const reference = db.collection(CATALOGX_PROJECTS_COLLECTION).doc(CATALOGX_PROJECT_DOCUMENT).collection(CATALOGX_RATE_LIMITS_SUBCOLLECTION).doc(key);
-  return db.runTransaction(async (transaction) => {
-    const now = Date.now();
-    const snapshot = await transaction.get(reference);
-    const existing = snapshot.data() as { count?: number; resetAt?: number } | undefined;
-    const resetAt = !existing?.resetAt || existing.resetAt <= now ? now + windowMs : existing.resetAt;
-    const count = resetAt !== existing?.resetAt ? 1 : (existing.count || 0) + 1;
-    transaction.set(reference, { count, resetAt, updatedAt: now });
-    return { allowed: count <= limit, limit, remaining: Math.max(0, limit - count), reset: Math.ceil(resetAt / 1000) };
-  });
+  try {
+    const db = getFirestore();
+    const reference = db.collection(CATALOGX_PROJECTS_COLLECTION).doc(CATALOGX_PROJECT_DOCUMENT).collection(CATALOGX_RATE_LIMITS_SUBCOLLECTION).doc(key);
+    return await db.runTransaction(async (transaction) => {
+      const now = Date.now();
+      const snapshot = await transaction.get(reference);
+      const existing = snapshot.data() as { count?: number; resetAt?: number } | undefined;
+      const resetAt = !existing?.resetAt || existing.resetAt <= now ? now + windowMs : existing.resetAt;
+      const count = resetAt !== existing?.resetAt ? 1 : (existing.count || 0) + 1;
+      transaction.set(reference, { count, resetAt, updatedAt: now });
+      return { allowed: count <= limit, limit, remaining: Math.max(0, limit - count), reset: Math.ceil(resetAt / 1000) };
+    });
+  } catch (error) {
+    console.error("[rate-limit] firestore_unavailable", {
+      error: error instanceof Error ? { name: error.name, message: error.message.slice(0, 200) } : { name: typeof error },
+    });
+    return consumeMemoryRateLimit(key, limit, windowMs);
+  }
 };
 
 export const rateLimitHeaders = (state: RateLimitState) => ({
