@@ -9,6 +9,7 @@ import {
   runCatalogAgentWorkflow,
   resultReviewOutputSchema,
   selectReviewCandidates,
+  softenInferredBundleProductTypes,
   buildGroundedConciergePresentation,
   validateResultReview,
 } from "@/app/api/services/catalogAgentWorkflow.service";
@@ -105,6 +106,23 @@ describe("catalogue agent workflow boundaries", () => {
     expect(preserved.filters).toEqual(original.filters);
     expect(preserved.exclusions).toEqual(original.exclusions);
     expect(preserved.preferences).toEqual(retry.preferences);
+  });
+
+  it("keeps generic bundle roles broad while preserving explicitly named product types", () => {
+    const plan = emptyQueryPlan("A compact oak desk and comfortable chair for a small home office");
+    plan.mode = "bundle";
+    plan.filters.productTypes = ["writing-desk", "desk-chair"];
+    plan.bundle = { room: "home office", budget: null, requiredCategories: ["tables-desks", "seating"], itemCount: 2 };
+
+    const generic = softenInferredBundleProductTypes(plan, plan.searchText);
+    expect(generic.filters.productTypes).toEqual([]);
+    expect(generic.preferences).toEqual(expect.arrayContaining([
+      expect.objectContaining({ field: "productType", value: "writing-desk" }),
+      expect.objectContaining({ field: "productType", value: "desk-chair" }),
+    ]));
+
+    const explicit = softenInferredBundleProductTypes(plan, "I need a writing desk and desk chair");
+    expect(explicit.filters.productTypes).toEqual(["writing-desk", "desk-chair"]);
   });
 
   it("keeps provider-free search functional and application logs sanitized", async () => {

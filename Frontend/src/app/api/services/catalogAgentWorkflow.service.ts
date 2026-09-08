@@ -17,9 +17,10 @@ import type { CatalogIntelligenceContextV1 } from "@/interfaces/intelligence";
 import type { SearchSuggestion } from "@/interfaces/intelligence";
 import type { CatalogQueryPlanV1, CompileSearchData } from "@/interfaces/search";
 import type { SceneWorkflowContext } from "@/interfaces/scene";
+import { PRODUCT_TYPE_ALIASES } from "@/config/catalogIntelligence";
 import { executeCatalogQuery } from "@/utils/catalogQuery";
 import { agentWorkflowProgressCopy } from "@/utils/agentWorkflowProgress";
-import { interpretationSchema, queryPlanSchema } from "@/utils/queryPlan";
+import { interpretationSchema, isPlanConstraintActive, queryPlanSchema } from "@/utils/queryPlan";
 import { compileFallbackQuery, isRefinementPrompt } from "@/utils/searchFallback";
 import { buildSearchVocabulary, normalizeCompiledSearch } from "@/utils/searchVocabulary";
 import { logAgentWorkflowEvent } from "./agentWorkflowLog.service";
@@ -74,6 +75,40 @@ const applyScenePlan = (plan: CatalogQueryPlanV1, prompt: string, scene: SceneWo
   return next;
 };
 
+const phrasePattern = (phrase: string) => new RegExp(`\\b${phrase.trim().replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/[\s-]+/g, "[\\s-]+")}s?\\b`, "i");
+
+const explicitlyRequestedProductType = (prompt: string, productType: CatalogQueryPlanV1["filters"]["productTypes"][number]) =>
+  [productType.replaceAll("-", " "), ...(PRODUCT_TYPE_ALIASES[productType] ?? [])]
+    .some((phrase) => phrasePattern(phrase).test(prompt));
+
+export const softenInferredBundleProductTypes = (plan: CatalogQueryPlanV1, prompt: string): CatalogQueryPlanV1 => {
+  if (plan.mode !== "bundle" || !plan.filters.productTypes.length) return plan;
+  const next = structuredClone(plan);
+  const inferred = next.filters.productTypes.filter((productType) => !explicitlyRequestedProductType(prompt, productType));
+  if (!inferred.length) return next;
+  next.filters.productTypes = next.filters.productTypes.filter((productType) => !inferred.includes(productType));
+  for (const productType of inferred) {
+    if (!next.preferences.some((preference) => preference.field === "productType" && preference.value === productType)) {
+      next.preferences.push({ field: "productType", value: productType, weight: 0.55 });
+    }
+  }
+  return next;
+};
+
+const normalizeWorkflowResult = (compiled: CompileSearchData, products: Product[], prompt: string, scene: SceneWorkflowContext | null): CompileSearchData => {
+  const vocabulary = buildSearchVocabulary(products);
+  const normalized = normalizeCompiledSearch(compiled, vocabulary);
+  const plan = applyScenePlan(softenInferredBundleProductTypes(normalized.plan, prompt), prompt, scene);
+  return {
+    ...normalized,
+    plan,
+    interpretation: {
+      ...normalized.interpretation,
+      chips: normalized.interpretation.chips.filter((chip) => isPlanConstraintActive(plan, chip)),
+    },
+  };
+};
+
 const queryCatalogueParameters = z.object({ plan: queryPlanSchema });
 
 const queryCatalogueTool = tool<typeof queryCatalogueParameters, SearchRunContext>({
@@ -84,11 +119,11 @@ const queryCatalogueTool = tool<typeof queryCatalogueParameters, SearchRunContex
     if (!runContext) throw new Error("Catalogue context is unavailable.");
     runContext.context.toolCalls += 1;
     if (runContext.context.toolCalls > 1) throw new Error("The catalogue tool may be called only once.");
-    const normalizedPlan = normalizeCompiledSearch({
+    const normalizedPlan = normalizeWorkflowResult({
       plan,
       compiler: "fallback",
       interpretation: { summary: "Catalogue query", chips: [], assumptions: [] },
-    }, buildSearchVocabulary(runContext.context.products)).plan;
+    }, runContext.context.products, runContext.context.prompt, runContext.context.scene).plan;
     const authoritativePlanBase = runContext.context.preserveHardConstraintsFrom
       ? preserveHardConstraints(runContext.context.preserveHardConstraintsFrom, normalizedPlan)
       : normalizedPlan;
@@ -314,8 +349,7 @@ export const runCatalogAgentWorkflow = async ({
   const deterministicFallback = (error?: unknown): ConciergeQueryData => {
     progress(AgentWorkflowProgressStep.Fallback, "fallback", "catalogue");
     const compiled = compileFallbackQuery(prompt, previousPlan, context);
-    const normalizedBase = normalizeCompiledSearch(compiled, buildSearchVocabulary(products));
-    const normalized = { ...normalizedBase, plan: applyScenePlan(normalizedBase.plan, prompt, scene) };
+    const normalized = normalizeWorkflowResult(compiled, products, prompt, scene);
     const catalog = executeCatalogQuery(products, normalized.plan);
     const candidateIds = selectReviewCandidates(catalog).map((item) => item.product.id);
     if (error) workflowEvent(requestId, workflowId, AgentWorkflowStep.WorkflowFailed, { agent: "workflow", errorName: error instanceof Error ? error.name : typeof error });
@@ -359,8 +393,7 @@ export const runCatalogAgentWorkflow = async ({
       const searchStarted = Date.now();
       const searchRun = await agentRunner.run(searchAgent, searchInput(prompt, context, previousPlan, undefined, scene), { context: initialSearchContext, maxTurns: 3 });
       if (!searchRun.finalOutput) throw new Error("Search agent returned no output.");
-      const compiledBase: SearchAgentResult = normalizeCompiledSearch({ ...searchRun.finalOutput, compiler: MODEL }, buildSearchVocabulary(products));
-      let compiled: SearchAgentResult = { ...compiledBase, plan: applyScenePlan(compiledBase.plan, prompt, scene) };
+      let compiled: SearchAgentResult = normalizeWorkflowResult({ ...searchRun.finalOutput, compiler: MODEL }, products, prompt, scene);
       if (initialSearchContext.toolCalls !== 1 || !initialSearchContext.plan || !initialSearchContext.result) {
         throw new Error("Search agent did not execute exactly one authoritative catalogue query.");
       }
@@ -448,7 +481,7 @@ export const runCatalogAgentWorkflow = async ({
           };
           const retryRun = await agentRunner.run(searchAgent, searchInput(prompt, context, compiled.plan, review, scene), { context: retryContext, maxTurns: 3 });
           if (!retryRun.finalOutput) throw new Error("Retry search agent returned no output.");
-          const retryCompiled = normalizeCompiledSearch({ ...retryRun.finalOutput, compiler: MODEL }, buildSearchVocabulary(products));
+          const retryCompiled = normalizeWorkflowResult({ ...retryRun.finalOutput, compiler: MODEL }, products, prompt, scene);
           const retryPlan = preserveHardConstraints(compiled.plan, retryCompiled.plan);
           if (retryContext.toolCalls !== 1 || !retryContext.plan || !retryContext.result) {
             throw new Error("Retry search did not execute exactly one authoritative catalogue query.");
