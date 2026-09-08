@@ -1,0 +1,6103 @@
+[
+  {
+    "id": "cx-seating-01",
+    "slug": "alder-lounge-chair",
+    "sourceHash": "3b27d45c1da6c0cb40c3a479d9de112467013732be4becfc98ed340b0f8379f2",
+    "retailer": "Norr & Vale",
+    "name": "Alder Lounge Chair",
+    "description": "A considered lounge chair with a scandinavian profile, tactile oak, and practical proportions for everyday rooms.",
+    "category": "seating",
+    "productType": "lounge-chair",
+    "currentPrice": 129,
+    "originalPrice": 129,
+    "discountPercent": 0,
+    "inventory": 8,
+    "availability": "in_stock",
+    "deliveryDays": 3,
+    "rooms": [
+      "living room",
+      "dining room"
+    ],
+    "styles": [
+      "Scandinavian",
+      "modern"
+    ],
+    "colors": [
+      "oat"
+    ],
+    "materials": [
+      "oak",
+      "linen"
+    ],
+    "useCases": [
+      "everyday living room",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "statement silhouette"
+    ],
+    "tags": [
+      "lounge chair",
+      "scandinavian",
+      "oat",
+      "oak",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 28,
+      "height": 32,
+      "depth": 29,
+      "unit": "in"
+    },
+    "rating": 3.8,
+    "reviewCount": 18,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "seating",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-seating-01%2Fhero.jpg?alt=media&token=5b0beffb-ac77-4a14-a849-cbc731415e29",
+      "storagePath": "projects/CatalogX/assets/products/cx-seating-01/hero.jpg",
+      "alt": "Alder lounge chair in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-seating-02",
+    "slug": "birka-dining-chair",
+    "sourceHash": "46ac215ca0b2022624647f53f72d7b61c21ea127f45bf47632ec7799668910e3",
+    "retailer": "Norr & Vale",
+    "name": "Birka Dining Chair",
+    "description": "A considered dining chair with a modern profile, tactile linen, and practical proportions for everyday rooms.",
+    "category": "seating",
+    "productType": "dining-chair",
+    "currentPrice": 128.7,
+    "originalPrice": 143,
+    "discountPercent": 10,
+    "inventory": 12,
+    "availability": "in_stock",
+    "deliveryDays": 4,
+    "rooms": [
+      "dining room",
+      "home office"
+    ],
+    "styles": [
+      "modern",
+      "minimal"
+    ],
+    "colors": [
+      "charcoal"
+    ],
+    "materials": [
+      "linen",
+      "wool"
+    ],
+    "useCases": [
+      "everyday dining room",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "compact footprint"
+    ],
+    "tags": [
+      "dining chair",
+      "modern",
+      "charcoal",
+      "linen",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 29.5,
+      "height": 34,
+      "depth": 30,
+      "unit": "in"
+    },
+    "rating": 4,
+    "reviewCount": 55,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "seating",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-seating-02%2Fhero.jpg?alt=media&token=f6c870b4-278c-45e0-bf8b-2c346389dc7e",
+      "storagePath": "projects/CatalogX/assets/products/cx-seating-02/hero.jpg",
+      "alt": "Birka dining chair in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-seating-03",
+    "slug": "cove-armchair",
+    "sourceHash": "4b0316cab207117c3b6d0c234a093b6d9fe60be41ef30f1f249f211a3b09f206",
+    "retailer": "Norr & Vale",
+    "name": "Cove Armchair",
+    "description": "A considered armchair with a minimal profile, tactile wool, and practical proportions for everyday rooms.",
+    "category": "seating",
+    "productType": "armchair",
+    "currentPrice": 157,
+    "originalPrice": 157,
+    "discountPercent": 0,
+    "inventory": 16,
+    "availability": "in_stock",
+    "deliveryDays": 5,
+    "rooms": [
+      "home office",
+      "living room"
+    ],
+    "styles": [
+      "minimal",
+      "Scandinavian"
+    ],
+    "colors": [
+      "sand"
+    ],
+    "materials": [
+      "wool",
+      "oak"
+    ],
+    "useCases": [
+      "everyday home office",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "compact footprint"
+    ],
+    "tags": [
+      "armchair",
+      "minimal",
+      "sand",
+      "wool",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 31,
+      "height": 36,
+      "depth": 31,
+      "unit": "in"
+    },
+    "rating": 4.2,
+    "reviewCount": 92,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "seating",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-seating-03%2Fhero.jpg?alt=media&token=f56b7a0a-73b0-4af6-8d14-f14f314b292e",
+      "storagePath": "projects/CatalogX/assets/products/cx-seating-03/hero.jpg",
+      "alt": "Cove armchair in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-seating-04",
+    "slug": "dalen-bench",
+    "sourceHash": "f10245c22e3d6d07407373951b9f19e71f9a7243bc934409e4dff1cbe0269dd8",
+    "retailer": "Norr & Vale",
+    "name": "Dalen Bench",
+    "description": "A considered bench with a scandinavian profile, tactile oak, and practical proportions for everyday rooms.",
+    "category": "seating",
+    "productType": "bench",
+    "currentPrice": 145.35,
+    "originalPrice": 171,
+    "discountPercent": 15,
+    "inventory": 20,
+    "availability": "in_stock",
+    "deliveryDays": 6,
+    "rooms": [
+      "living room",
+      "dining room"
+    ],
+    "styles": [
+      "Scandinavian",
+      "modern"
+    ],
+    "colors": [
+      "oat"
+    ],
+    "materials": [
+      "oak",
+      "linen"
+    ],
+    "useCases": [
+      "everyday living room",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "statement silhouette"
+    ],
+    "tags": [
+      "bench",
+      "scandinavian",
+      "oat",
+      "oak",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 32.5,
+      "height": 32,
+      "depth": 32,
+      "unit": "in"
+    },
+    "rating": 4.3,
+    "reviewCount": 129,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "seating",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-seating-04%2Fhero.jpg?alt=media&token=339c26e5-08e1-4b68-b3a5-94992f64738c",
+      "storagePath": "projects/CatalogX/assets/products/cx-seating-04/hero.jpg",
+      "alt": "Dalen bench in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-seating-05",
+    "slug": "eira-stool",
+    "sourceHash": "6005c9d00a8e918eb9494783c7f154d567662dd94107e009285da93eb3ecd98f",
+    "retailer": "Norr & Vale",
+    "name": "Eira Stool",
+    "description": "A considered stool with a modern profile, tactile linen, and practical proportions for everyday rooms.",
+    "category": "seating",
+    "productType": "stool",
+    "currentPrice": 148,
+    "originalPrice": 185,
+    "discountPercent": 20,
+    "inventory": 24,
+    "availability": "in_stock",
+    "deliveryDays": 7,
+    "rooms": [
+      "dining room",
+      "home office"
+    ],
+    "styles": [
+      "modern",
+      "minimal"
+    ],
+    "colors": [
+      "charcoal"
+    ],
+    "materials": [
+      "linen",
+      "wool"
+    ],
+    "useCases": [
+      "everyday dining room",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "compact footprint"
+    ],
+    "tags": [
+      "stool",
+      "modern",
+      "charcoal",
+      "linen",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 34,
+      "height": 34,
+      "depth": 29,
+      "unit": "in"
+    },
+    "rating": 4.5,
+    "reviewCount": 166,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "seating",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-seating-05%2Fhero.jpg?alt=media&token=01a3cdd5-e6cd-48a1-b989-25d5ab15a4f7",
+      "storagePath": "projects/CatalogX/assets/products/cx-seating-05/hero.jpg",
+      "alt": "Eira stool in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-seating-06",
+    "slug": "fenne-accent-chair",
+    "sourceHash": "09786f30ee947be2407749cef2338777e99680bdc3cb1cd86f487e92cd0eb1b9",
+    "retailer": "Norr & Vale",
+    "name": "Fenne Accent Chair",
+    "description": "A considered accent chair with a minimal profile, tactile wool, and practical proportions for everyday rooms.",
+    "category": "seating",
+    "productType": "accent-chair",
+    "currentPrice": 199,
+    "originalPrice": 199,
+    "discountPercent": 0,
+    "inventory": 28,
+    "availability": "in_stock",
+    "deliveryDays": 8,
+    "rooms": [
+      "home office",
+      "living room"
+    ],
+    "styles": [
+      "minimal",
+      "Scandinavian"
+    ],
+    "colors": [
+      "sand"
+    ],
+    "materials": [
+      "wool",
+      "oak"
+    ],
+    "useCases": [
+      "everyday home office",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "compact footprint"
+    ],
+    "tags": [
+      "accent chair",
+      "minimal",
+      "sand",
+      "wool",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 35.5,
+      "height": 36,
+      "depth": 30,
+      "unit": "in"
+    },
+    "rating": 4.7,
+    "reviewCount": 203,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "seating",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-seating-06%2Fhero.jpg?alt=media&token=54d4277c-cb89-4ae7-8ebf-0bbddff4622a",
+      "storagePath": "projects/CatalogX/assets/products/cx-seating-06/hero.jpg",
+      "alt": "Fenne accent chair in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-seating-07",
+    "slug": "grove-loveseat",
+    "sourceHash": "fbbd8a517154dfab2cb9fd9d62a0e805eccb8953b766d55415766da50493596b",
+    "retailer": "Norr & Vale",
+    "name": "Grove Loveseat",
+    "description": "A considered loveseat with a scandinavian profile, tactile oak, and practical proportions for everyday rooms.",
+    "category": "seating",
+    "productType": "loveseat",
+    "currentPrice": 159.75,
+    "originalPrice": 213,
+    "discountPercent": 25,
+    "inventory": 32,
+    "availability": "in_stock",
+    "deliveryDays": 3,
+    "rooms": [
+      "living room",
+      "dining room"
+    ],
+    "styles": [
+      "Scandinavian",
+      "modern"
+    ],
+    "colors": [
+      "oat"
+    ],
+    "materials": [
+      "oak",
+      "linen"
+    ],
+    "useCases": [
+      "everyday living room",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "statement silhouette"
+    ],
+    "tags": [
+      "loveseat",
+      "scandinavian",
+      "oat",
+      "oak",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 37,
+      "height": 32,
+      "depth": 31,
+      "unit": "in"
+    },
+    "rating": 4.9,
+    "reviewCount": 240,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "seating",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-seating-07%2Fhero.jpg?alt=media&token=fe50248c-2c3a-42e6-8325-d9b3ed4feaff",
+      "storagePath": "projects/CatalogX/assets/products/cx-seating-07/hero.jpg",
+      "alt": "Grove loveseat in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-seating-08",
+    "slug": "havn-rocking-chair",
+    "sourceHash": "719ac2ae55bf0cfb3e8f9f4a2d145bbb2521667f9f03ecd1e868ae0a8b435d9c",
+    "retailer": "Norr & Vale",
+    "name": "Havn Rocking Chair",
+    "description": "A considered rocking chair with a modern profile, tactile linen, and practical proportions for everyday rooms.",
+    "category": "seating",
+    "productType": "rocking-chair",
+    "currentPrice": 204.3,
+    "originalPrice": 227,
+    "discountPercent": 10,
+    "inventory": 3,
+    "availability": "low_stock",
+    "deliveryDays": 4,
+    "rooms": [
+      "dining room",
+      "home office"
+    ],
+    "styles": [
+      "modern",
+      "minimal"
+    ],
+    "colors": [
+      "charcoal"
+    ],
+    "materials": [
+      "linen",
+      "wool"
+    ],
+    "useCases": [
+      "everyday dining room",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "compact footprint"
+    ],
+    "tags": [
+      "rocking chair",
+      "modern",
+      "charcoal",
+      "linen",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 38.5,
+      "height": 34,
+      "depth": 32,
+      "unit": "in"
+    },
+    "rating": 3.8,
+    "reviewCount": 277,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "seating",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-seating-08%2Fhero.jpg?alt=media&token=cc76ef9e-7ee7-401f-818b-2b892fe9da9b",
+      "storagePath": "projects/CatalogX/assets/products/cx-seating-08/hero.jpg",
+      "alt": "Havn rocking chair in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-seating-09",
+    "slug": "isen-ottoman",
+    "sourceHash": "0a85159eb4b1cbb6443b781e63915ba55daba48237445558b38af4990e3e4e8c",
+    "retailer": "Norr & Vale",
+    "name": "Isen Ottoman",
+    "description": "A considered ottoman with a minimal profile, tactile wool, and practical proportions for everyday rooms.",
+    "category": "seating",
+    "productType": "ottoman",
+    "currentPrice": 241,
+    "originalPrice": 241,
+    "discountPercent": 0,
+    "inventory": 0,
+    "availability": "backorder",
+    "deliveryDays": 28,
+    "rooms": [
+      "home office",
+      "living room"
+    ],
+    "styles": [
+      "minimal",
+      "Scandinavian"
+    ],
+    "colors": [
+      "sand"
+    ],
+    "materials": [
+      "wool",
+      "oak"
+    ],
+    "useCases": [
+      "everyday home office",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "compact footprint"
+    ],
+    "tags": [
+      "ottoman",
+      "minimal",
+      "sand",
+      "wool",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 40,
+      "height": 36,
+      "depth": 29,
+      "unit": "in"
+    },
+    "rating": 4,
+    "reviewCount": 314,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "seating",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-seating-09%2Fhero.jpg?alt=media&token=8fc3f550-72a2-4689-99ac-28239050809c",
+      "storagePath": "projects/CatalogX/assets/products/cx-seating-09/hero.jpg",
+      "alt": "Isen ottoman in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-seating-10",
+    "slug": "jora-desk-chair",
+    "sourceHash": "f22286abe06d888d758d39cf8054c6b74348c3ccec1d852816cdbc323ee3b2fa",
+    "retailer": "Norr & Vale",
+    "name": "Jora Desk Chair",
+    "description": "A considered desk chair with a scandinavian profile, tactile oak, and practical proportions for everyday rooms.",
+    "category": "seating",
+    "productType": "desk-chair",
+    "currentPrice": 216.75,
+    "originalPrice": 255,
+    "discountPercent": 15,
+    "inventory": 0,
+    "availability": "out_of_stock",
+    "deliveryDays": 6,
+    "rooms": [
+      "living room",
+      "dining room"
+    ],
+    "styles": [
+      "Scandinavian",
+      "modern"
+    ],
+    "colors": [
+      "oat"
+    ],
+    "materials": [
+      "oak",
+      "linen"
+    ],
+    "useCases": [
+      "everyday living room",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "statement silhouette"
+    ],
+    "tags": [
+      "desk chair",
+      "scandinavian",
+      "oat",
+      "oak",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 41.5,
+      "height": 32,
+      "depth": 30,
+      "unit": "in"
+    },
+    "rating": 4.2,
+    "reviewCount": 351,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "seating",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-seating-10%2Fhero.jpg?alt=media&token=78a8a515-920a-4364-8c0f-c86375ae6298",
+      "storagePath": "projects/CatalogX/assets/products/cx-seating-10/hero.jpg",
+      "alt": "Jora desk chair in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-tables-desks-01",
+    "slug": "klint-coffee-table",
+    "sourceHash": "35789ad776beca6ae7a271c1cdbed30b7028b574c0ab4d1926e362254d6e87bd",
+    "retailer": "Norr & Vale",
+    "name": "Klint Coffee Table",
+    "description": "A considered coffee table with a minimal profile, tactile oak, and practical proportions for everyday rooms.",
+    "category": "tables-desks",
+    "productType": "coffee-table",
+    "currentPrice": 159,
+    "originalPrice": 159,
+    "discountPercent": 0,
+    "inventory": 8,
+    "availability": "in_stock",
+    "deliveryDays": 3,
+    "rooms": [
+      "living room",
+      "dining room"
+    ],
+    "styles": [
+      "minimal",
+      "Japandi"
+    ],
+    "colors": [
+      "natural"
+    ],
+    "materials": [
+      "oak",
+      "ash"
+    ],
+    "useCases": [
+      "everyday living room",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "statement silhouette"
+    ],
+    "tags": [
+      "coffee table",
+      "minimal",
+      "natural",
+      "oak",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 42,
+      "height": 29,
+      "depth": 24,
+      "unit": "in"
+    },
+    "rating": 3.8,
+    "reviewCount": 18,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "tables-desks",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-tables-desks-01%2Fhero.jpg?alt=media&token=4adfd230-87a2-462b-b9ad-d75e7495fd3f",
+      "storagePath": "projects/CatalogX/assets/products/cx-tables-desks-01/hero.jpg",
+      "alt": "Klint coffee table in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-tables-desks-02",
+    "slug": "luma-writing-desk",
+    "sourceHash": "e63c77c7d772cb3819ad40886b4776b3485f82ec8ccf926022906fdf26f7a6bc",
+    "retailer": "Norr & Vale",
+    "name": "Luma Writing Desk",
+    "description": "A considered writing desk with a japandi profile, tactile ash, and practical proportions for everyday rooms.",
+    "category": "tables-desks",
+    "productType": "writing-desk",
+    "currentPrice": 158.4,
+    "originalPrice": 176,
+    "discountPercent": 10,
+    "inventory": 12,
+    "availability": "in_stock",
+    "deliveryDays": 4,
+    "rooms": [
+      "dining room",
+      "home office"
+    ],
+    "styles": [
+      "Japandi",
+      "modern"
+    ],
+    "colors": [
+      "walnut"
+    ],
+    "materials": [
+      "ash",
+      "steel"
+    ],
+    "useCases": [
+      "everyday dining room",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "compact footprint"
+    ],
+    "tags": [
+      "writing desk",
+      "japandi",
+      "walnut",
+      "ash",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 43.5,
+      "height": 31,
+      "depth": 25,
+      "unit": "in"
+    },
+    "rating": 4,
+    "reviewCount": 55,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "tables-desks",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-tables-desks-02%2Fhero.jpg?alt=media&token=5689553c-f0e5-462c-88fa-33c27f0286da",
+      "storagePath": "projects/CatalogX/assets/products/cx-tables-desks-02/hero.jpg",
+      "alt": "Luma writing desk in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-tables-desks-03",
+    "slug": "maren-dining-table",
+    "sourceHash": "64b6fac19d56cca36a567353cc58813965d6865782db3fa55b82647c831f999d",
+    "retailer": "Norr & Vale",
+    "name": "Maren Dining Table",
+    "description": "A considered dining table with a modern profile, tactile steel, and practical proportions for everyday rooms.",
+    "category": "tables-desks",
+    "productType": "dining-table",
+    "currentPrice": 193,
+    "originalPrice": 193,
+    "discountPercent": 0,
+    "inventory": 16,
+    "availability": "in_stock",
+    "deliveryDays": 5,
+    "rooms": [
+      "home office",
+      "living room"
+    ],
+    "styles": [
+      "modern",
+      "minimal"
+    ],
+    "colors": [
+      "black"
+    ],
+    "materials": [
+      "steel",
+      "oak"
+    ],
+    "useCases": [
+      "everyday home office",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "compact footprint"
+    ],
+    "tags": [
+      "dining table",
+      "modern",
+      "black",
+      "steel",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 45,
+      "height": 33,
+      "depth": 26,
+      "unit": "in"
+    },
+    "rating": 4.2,
+    "reviewCount": 92,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "tables-desks",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-tables-desks-03%2Fhero.jpg?alt=media&token=3eb00672-6577-4d71-9405-5183afdc0cc1",
+      "storagePath": "projects/CatalogX/assets/products/cx-tables-desks-03/hero.jpg",
+      "alt": "Maren dining table in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-tables-desks-04",
+    "slug": "norr-side-table",
+    "sourceHash": "ba449632928f25d7a7020834115c649c5e909c6a7d3675bcc9fe5ce09ec51119",
+    "retailer": "Norr & Vale",
+    "name": "Norr Side Table",
+    "description": "A considered side table with a minimal profile, tactile oak, and practical proportions for everyday rooms.",
+    "category": "tables-desks",
+    "productType": "side-table",
+    "currentPrice": 178.5,
+    "originalPrice": 210,
+    "discountPercent": 15,
+    "inventory": 20,
+    "availability": "in_stock",
+    "deliveryDays": 6,
+    "rooms": [
+      "living room",
+      "dining room"
+    ],
+    "styles": [
+      "minimal",
+      "Japandi"
+    ],
+    "colors": [
+      "natural"
+    ],
+    "materials": [
+      "oak",
+      "ash"
+    ],
+    "useCases": [
+      "everyday living room",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "statement silhouette"
+    ],
+    "tags": [
+      "side table",
+      "minimal",
+      "natural",
+      "oak",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 46.5,
+      "height": 29,
+      "depth": 27,
+      "unit": "in"
+    },
+    "rating": 4.3,
+    "reviewCount": 129,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "tables-desks",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-tables-desks-04%2Fhero.jpg?alt=media&token=7e5f69a3-8764-4efb-8389-96042311bdb5",
+      "storagePath": "projects/CatalogX/assets/products/cx-tables-desks-04/hero.jpg",
+      "alt": "Norr side table in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-tables-desks-05",
+    "slug": "onda-console",
+    "sourceHash": "25cc551017767954bffc755a227c0bc1ef761938f30e4a7b27812fe9ccf5191d",
+    "retailer": "Norr & Vale",
+    "name": "Onda Console",
+    "description": "A considered console with a japandi profile, tactile ash, and practical proportions for everyday rooms.",
+    "category": "tables-desks",
+    "productType": "console",
+    "currentPrice": 181.6,
+    "originalPrice": 227,
+    "discountPercent": 20,
+    "inventory": 24,
+    "availability": "in_stock",
+    "deliveryDays": 7,
+    "rooms": [
+      "dining room",
+      "home office"
+    ],
+    "styles": [
+      "Japandi",
+      "modern"
+    ],
+    "colors": [
+      "walnut"
+    ],
+    "materials": [
+      "ash",
+      "steel"
+    ],
+    "useCases": [
+      "everyday dining room",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "compact footprint"
+    ],
+    "tags": [
+      "console",
+      "japandi",
+      "walnut",
+      "ash",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 48,
+      "height": 31,
+      "depth": 24,
+      "unit": "in"
+    },
+    "rating": 4.5,
+    "reviewCount": 166,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "tables-desks",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-tables-desks-05%2Fhero.jpg?alt=media&token=1c0861ce-5e63-4d7e-94dd-8287824a302c",
+      "storagePath": "projects/CatalogX/assets/products/cx-tables-desks-05/hero.jpg",
+      "alt": "Onda console in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-tables-desks-06",
+    "slug": "pela-standing-desk",
+    "sourceHash": "dc870bab7db20d7608c1fa39883dc5dd8dc4cf48dd3a335aacd8532a1297d608",
+    "retailer": "Norr & Vale",
+    "name": "Pela Standing Desk",
+    "description": "A considered standing desk with a modern profile, tactile steel, and practical proportions for everyday rooms.",
+    "category": "tables-desks",
+    "productType": "standing-desk",
+    "currentPrice": 244,
+    "originalPrice": 244,
+    "discountPercent": 0,
+    "inventory": 28,
+    "availability": "in_stock",
+    "deliveryDays": 8,
+    "rooms": [
+      "home office",
+      "living room"
+    ],
+    "styles": [
+      "modern",
+      "minimal"
+    ],
+    "colors": [
+      "black"
+    ],
+    "materials": [
+      "steel",
+      "oak"
+    ],
+    "useCases": [
+      "everyday home office",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "compact footprint"
+    ],
+    "tags": [
+      "standing desk",
+      "modern",
+      "black",
+      "steel",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 49.5,
+      "height": 33,
+      "depth": 25,
+      "unit": "in"
+    },
+    "rating": 4.7,
+    "reviewCount": 203,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "tables-desks",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-tables-desks-06%2Fhero.jpg?alt=media&token=6b5a5148-0473-414f-9e8f-61eeeac4bf7a",
+      "storagePath": "projects/CatalogX/assets/products/cx-tables-desks-06/hero.jpg",
+      "alt": "Pela standing desk in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-tables-desks-07",
+    "slug": "ravn-nesting-table",
+    "sourceHash": "e538cc6533cf1b515150d643a1373a1afa567372a5f46be28dd0f353ab1b0ce0",
+    "retailer": "Norr & Vale",
+    "name": "Ravn Nesting Table",
+    "description": "A considered nesting table with a minimal profile, tactile oak, and practical proportions for everyday rooms.",
+    "category": "tables-desks",
+    "productType": "nesting-table",
+    "currentPrice": 195.75,
+    "originalPrice": 261,
+    "discountPercent": 25,
+    "inventory": 32,
+    "availability": "in_stock",
+    "deliveryDays": 3,
+    "rooms": [
+      "living room",
+      "dining room"
+    ],
+    "styles": [
+      "minimal",
+      "Japandi"
+    ],
+    "colors": [
+      "natural"
+    ],
+    "materials": [
+      "oak",
+      "ash"
+    ],
+    "useCases": [
+      "everyday living room",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "statement silhouette"
+    ],
+    "tags": [
+      "nesting table",
+      "minimal",
+      "natural",
+      "oak",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 51,
+      "height": 29,
+      "depth": 26,
+      "unit": "in"
+    },
+    "rating": 4.9,
+    "reviewCount": 240,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "tables-desks",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-tables-desks-07%2Fhero.jpg?alt=media&token=ff50b841-50b5-4ea6-8f82-1fb3af7a477f",
+      "storagePath": "projects/CatalogX/assets/products/cx-tables-desks-07/hero.jpg",
+      "alt": "Ravn nesting table in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-tables-desks-08",
+    "slug": "sora-round-table",
+    "sourceHash": "9bb079cc249fb0fb4c2e44df49fe3b15b7b54af9c28850e54942320224b176ca",
+    "retailer": "Norr & Vale",
+    "name": "Sora Round Table",
+    "description": "A considered round table with a japandi profile, tactile ash, and practical proportions for everyday rooms.",
+    "category": "tables-desks",
+    "productType": "round-table",
+    "currentPrice": 250.2,
+    "originalPrice": 278,
+    "discountPercent": 10,
+    "inventory": 3,
+    "availability": "low_stock",
+    "deliveryDays": 4,
+    "rooms": [
+      "dining room",
+      "home office"
+    ],
+    "styles": [
+      "Japandi",
+      "modern"
+    ],
+    "colors": [
+      "walnut"
+    ],
+    "materials": [
+      "ash",
+      "steel"
+    ],
+    "useCases": [
+      "everyday dining room",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "compact footprint"
+    ],
+    "tags": [
+      "round table",
+      "japandi",
+      "walnut",
+      "ash",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 52.5,
+      "height": 31,
+      "depth": 27,
+      "unit": "in"
+    },
+    "rating": 3.8,
+    "reviewCount": 277,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "tables-desks",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-tables-desks-08%2Fhero.jpg?alt=media&token=d360f806-50ae-49d7-9adb-57330ef7e022",
+      "storagePath": "projects/CatalogX/assets/products/cx-tables-desks-08/hero.jpg",
+      "alt": "Sora round table in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-tables-desks-09",
+    "slug": "tide-work-table",
+    "sourceHash": "d036fb04e592adcc44030f1ba274413d77f73c332da81b216876a167cf40b89b",
+    "retailer": "Norr & Vale",
+    "name": "Tide Work Table",
+    "description": "A considered work table with a modern profile, tactile steel, and practical proportions for everyday rooms.",
+    "category": "tables-desks",
+    "productType": "work-table",
+    "currentPrice": 295,
+    "originalPrice": 295,
+    "discountPercent": 0,
+    "inventory": 0,
+    "availability": "backorder",
+    "deliveryDays": 28,
+    "rooms": [
+      "home office",
+      "living room"
+    ],
+    "styles": [
+      "modern",
+      "minimal"
+    ],
+    "colors": [
+      "black"
+    ],
+    "materials": [
+      "steel",
+      "oak"
+    ],
+    "useCases": [
+      "everyday home office",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "compact footprint"
+    ],
+    "tags": [
+      "work table",
+      "modern",
+      "black",
+      "steel",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 54,
+      "height": 33,
+      "depth": 24,
+      "unit": "in"
+    },
+    "rating": 4,
+    "reviewCount": 314,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "tables-desks",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-tables-desks-09%2Fhero.jpg?alt=media&token=fb742b41-16d5-4b7a-8c18-87cf6a117404",
+      "storagePath": "projects/CatalogX/assets/products/cx-tables-desks-09/hero.jpg",
+      "alt": "Tide work table in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-tables-desks-10",
+    "slug": "ulla-bedside-table",
+    "sourceHash": "67d706c44eea00e9e4d3f1470880ad9b67c0e3de44eab96e16e795b0596ba526",
+    "retailer": "Norr & Vale",
+    "name": "Ulla Bedside Table",
+    "description": "A considered bedside table with a minimal profile, tactile oak, and practical proportions for everyday rooms.",
+    "category": "tables-desks",
+    "productType": "bedside-table",
+    "currentPrice": 265.2,
+    "originalPrice": 312,
+    "discountPercent": 15,
+    "inventory": 0,
+    "availability": "out_of_stock",
+    "deliveryDays": 6,
+    "rooms": [
+      "bedroom",
+      "living room"
+    ],
+    "styles": [
+      "minimal",
+      "Japandi"
+    ],
+    "colors": [
+      "natural"
+    ],
+    "materials": [
+      "oak",
+      "ash"
+    ],
+    "useCases": [
+      "bedside storage",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "statement silhouette"
+    ],
+    "tags": [
+      "bedside table",
+      "minimal",
+      "natural",
+      "oak",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 22,
+      "height": 24,
+      "depth": 18,
+      "unit": "in"
+    },
+    "rating": 4.2,
+    "reviewCount": 351,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "tables-desks",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-tables-desks-10%2Fhero.jpg?alt=media&token=381b1b57-2227-4a59-bc8b-809188438256",
+      "storagePath": "projects/CatalogX/assets/products/cx-tables-desks-10/hero.jpg",
+      "alt": "Ulla bedside table in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-beds-01",
+    "slug": "vela-platform-bed",
+    "sourceHash": "d013cf88b89a597c0e042c96157d60493ec1f9c6406c8b44459b677312b5d345",
+    "retailer": "Norr & Vale",
+    "name": "Vela Platform Bed",
+    "description": "A considered platform bed with a scandinavian profile, tactile oak, and practical proportions for everyday rooms.",
+    "category": "beds",
+    "productType": "platform-bed",
+    "currentPrice": 499,
+    "originalPrice": 499,
+    "discountPercent": 0,
+    "inventory": 8,
+    "availability": "in_stock",
+    "deliveryDays": 3,
+    "rooms": [
+      "bedroom",
+      "guest room"
+    ],
+    "styles": [
+      "Scandinavian",
+      "soft modern"
+    ],
+    "colors": [
+      "oat"
+    ],
+    "materials": [
+      "oak",
+      "linen"
+    ],
+    "useCases": [
+      "everyday bedroom",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "statement silhouette"
+    ],
+    "tags": [
+      "platform bed",
+      "scandinavian",
+      "oat",
+      "oak",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 64,
+      "height": 38,
+      "depth": 84,
+      "unit": "in"
+    },
+    "rating": 3.8,
+    "reviewCount": 18,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "beds",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-beds-01%2Fhero.jpg?alt=media&token=6bf1246e-95cd-44d5-a16e-bc5b286c059c",
+      "storagePath": "projects/CatalogX/assets/products/cx-beds-01/hero.jpg",
+      "alt": "Vela platform bed in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-beds-02",
+    "slug": "wynn-upholstered-bed",
+    "sourceHash": "310f19c53538777e9ee7ef18cda691c425a134be8c39a1c82588433f54876a7c",
+    "retailer": "Norr & Vale",
+    "name": "Wynn Upholstered Bed",
+    "description": "A considered upholstered bed with a soft modern profile, tactile linen, and practical proportions for everyday rooms.",
+    "category": "beds",
+    "productType": "upholstered-bed",
+    "currentPrice": 498.6,
+    "originalPrice": 554,
+    "discountPercent": 10,
+    "inventory": 12,
+    "availability": "in_stock",
+    "deliveryDays": 4,
+    "rooms": [
+      "guest room",
+      "bedroom"
+    ],
+    "styles": [
+      "soft modern",
+      "minimal"
+    ],
+    "colors": [
+      "natural"
+    ],
+    "materials": [
+      "linen",
+      "beech"
+    ],
+    "useCases": [
+      "everyday guest room",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "compact footprint"
+    ],
+    "tags": [
+      "upholstered bed",
+      "soft modern",
+      "natural",
+      "linen",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 65.5,
+      "height": 40,
+      "depth": 85,
+      "unit": "in"
+    },
+    "rating": 4,
+    "reviewCount": 55,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "beds",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-beds-02%2Fhero.jpg?alt=media&token=4549831c-355c-4103-8f30-8fc0ff1a8781",
+      "storagePath": "projects/CatalogX/assets/products/cx-beds-02/hero.jpg",
+      "alt": "Wynn upholstered bed in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-beds-03",
+    "slug": "ylva-daybed",
+    "sourceHash": "4f2f895131b46ff23c671aff0914cf51d5111e768eb5b17045534ff04fe8f742",
+    "retailer": "Norr & Vale",
+    "name": "Ylva Daybed",
+    "description": "A considered daybed with a minimal profile, tactile beech, and practical proportions for everyday rooms.",
+    "category": "beds",
+    "productType": "daybed",
+    "currentPrice": 609,
+    "originalPrice": 609,
+    "discountPercent": 0,
+    "inventory": 16,
+    "availability": "in_stock",
+    "deliveryDays": 5,
+    "rooms": [
+      "bedroom",
+      "guest room"
+    ],
+    "styles": [
+      "minimal",
+      "Scandinavian"
+    ],
+    "colors": [
+      "smoke"
+    ],
+    "materials": [
+      "beech",
+      "oak"
+    ],
+    "useCases": [
+      "everyday bedroom",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "compact footprint"
+    ],
+    "tags": [
+      "daybed",
+      "minimal",
+      "smoke",
+      "beech",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 67,
+      "height": 42,
+      "depth": 86,
+      "unit": "in"
+    },
+    "rating": 4.2,
+    "reviewCount": 92,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "beds",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-beds-03%2Fhero.jpg?alt=media&token=323f040d-cac6-4b8f-8447-9468b5e75a05",
+      "storagePath": "projects/CatalogX/assets/products/cx-beds-03/hero.jpg",
+      "alt": "Ylva daybed in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-beds-04",
+    "slug": "aster-storage-bed",
+    "sourceHash": "cbf02c138901a3bc5601f45d6da34754a9dd53612e1af967ab57ad0a5c025ad3",
+    "retailer": "Norr & Vale",
+    "name": "Aster Storage Bed",
+    "description": "A considered storage bed with a scandinavian profile, tactile oak, and practical proportions for everyday rooms.",
+    "category": "beds",
+    "productType": "storage-bed",
+    "currentPrice": 564.4,
+    "originalPrice": 664,
+    "discountPercent": 15,
+    "inventory": 20,
+    "availability": "in_stock",
+    "deliveryDays": 6,
+    "rooms": [
+      "guest room",
+      "bedroom"
+    ],
+    "styles": [
+      "Scandinavian",
+      "soft modern"
+    ],
+    "colors": [
+      "oat"
+    ],
+    "materials": [
+      "oak",
+      "linen"
+    ],
+    "useCases": [
+      "everyday guest room",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "statement silhouette"
+    ],
+    "tags": [
+      "storage bed",
+      "scandinavian",
+      "oat",
+      "oak",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 68.5,
+      "height": 38,
+      "depth": 87,
+      "unit": "in"
+    },
+    "rating": 4.3,
+    "reviewCount": 129,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "beds",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-beds-04%2Fhero.jpg?alt=media&token=4368a9f9-5c13-438d-b657-57c004e544dc",
+      "storagePath": "projects/CatalogX/assets/products/cx-beds-04/hero.jpg",
+      "alt": "Aster storage bed in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-beds-05",
+    "slug": "bram-canopy-bed",
+    "sourceHash": "b8e1ce1420b9a004be0a1021cfa6f4ad664c7c3a399048e6b807695e5d7f0966",
+    "retailer": "Norr & Vale",
+    "name": "Bram Canopy Bed",
+    "description": "A considered canopy bed with a soft modern profile, tactile linen, and practical proportions for everyday rooms.",
+    "category": "beds",
+    "productType": "canopy-bed",
+    "currentPrice": 575.2,
+    "originalPrice": 719,
+    "discountPercent": 20,
+    "inventory": 24,
+    "availability": "in_stock",
+    "deliveryDays": 7,
+    "rooms": [
+      "bedroom",
+      "guest room"
+    ],
+    "styles": [
+      "soft modern",
+      "minimal"
+    ],
+    "colors": [
+      "natural"
+    ],
+    "materials": [
+      "linen",
+      "beech"
+    ],
+    "useCases": [
+      "everyday bedroom",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "compact footprint"
+    ],
+    "tags": [
+      "canopy bed",
+      "soft modern",
+      "natural",
+      "linen",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 70,
+      "height": 40,
+      "depth": 84,
+      "unit": "in"
+    },
+    "rating": 4.5,
+    "reviewCount": 166,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "beds",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-beds-05%2Fhero.jpg?alt=media&token=b1702151-5d47-41bc-b325-47364e3a7296",
+      "storagePath": "projects/CatalogX/assets/products/cx-beds-05/hero.jpg",
+      "alt": "Bram canopy bed in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-beds-06",
+    "slug": "cirka-guest-bed",
+    "sourceHash": "8d1dd354b009bf82f4a32771e3aa0a1a09c896114da6d0ea95ffc8c1526b1f6a",
+    "retailer": "Norr & Vale",
+    "name": "Cirka Guest Bed",
+    "description": "A considered guest bed with a minimal profile, tactile beech, and practical proportions for everyday rooms.",
+    "category": "beds",
+    "productType": "guest-bed",
+    "currentPrice": 774,
+    "originalPrice": 774,
+    "discountPercent": 0,
+    "inventory": 28,
+    "availability": "in_stock",
+    "deliveryDays": 8,
+    "rooms": [
+      "guest room",
+      "bedroom"
+    ],
+    "styles": [
+      "minimal",
+      "Scandinavian"
+    ],
+    "colors": [
+      "smoke"
+    ],
+    "materials": [
+      "beech",
+      "oak"
+    ],
+    "useCases": [
+      "everyday guest room",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "compact footprint"
+    ],
+    "tags": [
+      "guest bed",
+      "minimal",
+      "smoke",
+      "beech",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 71.5,
+      "height": 42,
+      "depth": 85,
+      "unit": "in"
+    },
+    "rating": 4.7,
+    "reviewCount": 203,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "beds",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-beds-06%2Fhero.jpg?alt=media&token=75e828f4-ffe3-415e-b31d-b75056553e8e",
+      "storagePath": "projects/CatalogX/assets/products/cx-beds-06/hero.jpg",
+      "alt": "Cirka guest bed in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-beds-07",
+    "slug": "dovre-low-bed",
+    "sourceHash": "501d49e055718a2738eb775f5577f328c3f43d17e4951ddc03a961edb9074cf4",
+    "retailer": "Norr & Vale",
+    "name": "Dovre Low Bed",
+    "description": "A considered low bed with a scandinavian profile, tactile oak, and practical proportions for everyday rooms.",
+    "category": "beds",
+    "productType": "low-bed",
+    "currentPrice": 621.75,
+    "originalPrice": 829,
+    "discountPercent": 25,
+    "inventory": 32,
+    "availability": "in_stock",
+    "deliveryDays": 3,
+    "rooms": [
+      "bedroom",
+      "guest room"
+    ],
+    "styles": [
+      "Scandinavian",
+      "soft modern"
+    ],
+    "colors": [
+      "oat"
+    ],
+    "materials": [
+      "oak",
+      "linen"
+    ],
+    "useCases": [
+      "everyday bedroom",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "statement silhouette"
+    ],
+    "tags": [
+      "low bed",
+      "scandinavian",
+      "oat",
+      "oak",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 73,
+      "height": 38,
+      "depth": 86,
+      "unit": "in"
+    },
+    "rating": 4.9,
+    "reviewCount": 240,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "beds",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-beds-07%2Fhero.jpg?alt=media&token=e01b0e58-c803-4af2-9ef1-34eb8c061e1e",
+      "storagePath": "projects/CatalogX/assets/products/cx-beds-07/hero.jpg",
+      "alt": "Dovre low bed in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-beds-08",
+    "slug": "elin-oak-bed",
+    "sourceHash": "faa516d59e01a2bd2e325ee45c5bc198aabaef3da21f816eb7fef2fc11325eee",
+    "retailer": "Norr & Vale",
+    "name": "Elin Oak Bed",
+    "description": "A considered oak bed with a soft modern profile, tactile linen, and practical proportions for everyday rooms.",
+    "category": "beds",
+    "productType": "oak-bed",
+    "currentPrice": 795.6,
+    "originalPrice": 884,
+    "discountPercent": 10,
+    "inventory": 3,
+    "availability": "low_stock",
+    "deliveryDays": 4,
+    "rooms": [
+      "guest room",
+      "bedroom"
+    ],
+    "styles": [
+      "soft modern",
+      "minimal"
+    ],
+    "colors": [
+      "natural"
+    ],
+    "materials": [
+      "linen",
+      "beech"
+    ],
+    "useCases": [
+      "everyday guest room",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "compact footprint"
+    ],
+    "tags": [
+      "oak bed",
+      "soft modern",
+      "natural",
+      "linen",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 74.5,
+      "height": 40,
+      "depth": 87,
+      "unit": "in"
+    },
+    "rating": 3.8,
+    "reviewCount": 277,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "beds",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-beds-08%2Fhero.jpg?alt=media&token=8aada564-7eb1-4a01-af97-1ebc8bf5682f",
+      "storagePath": "projects/CatalogX/assets/products/cx-beds-08/hero.jpg",
+      "alt": "Elin oak bed in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-beds-09",
+    "slug": "fjord-linen-bed",
+    "sourceHash": "d623f47cfb22d7e8dcf2b325bad8f4261fb8d74915dd90cead3ee7daad19eca0",
+    "retailer": "Norr & Vale",
+    "name": "Fjord Linen Bed",
+    "description": "A considered linen bed with a minimal profile, tactile beech, and practical proportions for everyday rooms.",
+    "category": "beds",
+    "productType": "linen-bed",
+    "currentPrice": 939,
+    "originalPrice": 939,
+    "discountPercent": 0,
+    "inventory": 0,
+    "availability": "backorder",
+    "deliveryDays": 28,
+    "rooms": [
+      "bedroom",
+      "guest room"
+    ],
+    "styles": [
+      "minimal",
+      "Scandinavian"
+    ],
+    "colors": [
+      "smoke"
+    ],
+    "materials": [
+      "beech",
+      "oak"
+    ],
+    "useCases": [
+      "everyday bedroom",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "compact footprint"
+    ],
+    "tags": [
+      "linen bed",
+      "minimal",
+      "smoke",
+      "beech",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 76,
+      "height": 42,
+      "depth": 84,
+      "unit": "in"
+    },
+    "rating": 4,
+    "reviewCount": 314,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "beds",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-beds-09%2Fhero.jpg?alt=media&token=65a1271b-904a-4530-8184-6cef79a042a8",
+      "storagePath": "projects/CatalogX/assets/products/cx-beds-09/hero.jpg",
+      "alt": "Fjord linen bed in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-beds-10",
+    "slug": "glim-slatted-bed",
+    "sourceHash": "7f29bd8a99b184860343c6bdb9b517fa912a71eac02641326db8d8887e10f2de",
+    "retailer": "Norr & Vale",
+    "name": "Glim Slatted Bed",
+    "description": "A considered slatted bed with a scandinavian profile, tactile oak, and practical proportions for everyday rooms.",
+    "category": "beds",
+    "productType": "slatted-bed",
+    "currentPrice": 844.9,
+    "originalPrice": 994,
+    "discountPercent": 15,
+    "inventory": 0,
+    "availability": "out_of_stock",
+    "deliveryDays": 6,
+    "rooms": [
+      "guest room",
+      "bedroom"
+    ],
+    "styles": [
+      "Scandinavian",
+      "soft modern"
+    ],
+    "colors": [
+      "oat"
+    ],
+    "materials": [
+      "oak",
+      "linen"
+    ],
+    "useCases": [
+      "everyday guest room",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "statement silhouette"
+    ],
+    "tags": [
+      "slatted bed",
+      "scandinavian",
+      "oat",
+      "oak",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 77.5,
+      "height": 38,
+      "depth": 85,
+      "unit": "in"
+    },
+    "rating": 4.2,
+    "reviewCount": 351,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "beds",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-beds-10%2Fhero.jpg?alt=media&token=db5ed151-2c61-40c2-b615-0b761eb73236",
+      "storagePath": "projects/CatalogX/assets/products/cx-beds-10/hero.jpg",
+      "alt": "Glim slatted bed in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-storage-01",
+    "slug": "hede-cabinet",
+    "sourceHash": "421fb8e47aae330b2be3fa6bb226ee5ac1e39a3574ef2f731c327c2851ccf6b9",
+    "retailer": "Norr & Vale",
+    "name": "Hede Cabinet",
+    "description": "A considered cabinet with a modern profile, tactile oak, and practical proportions for everyday rooms.",
+    "category": "storage",
+    "productType": "cabinet",
+    "currentPrice": 189,
+    "originalPrice": 189,
+    "discountPercent": 0,
+    "inventory": 8,
+    "availability": "in_stock",
+    "deliveryDays": 3,
+    "rooms": [
+      "living room",
+      "bedroom"
+    ],
+    "styles": [
+      "modern",
+      "Scandinavian"
+    ],
+    "colors": [
+      "natural"
+    ],
+    "materials": [
+      "oak",
+      "steel"
+    ],
+    "useCases": [
+      "everyday living room",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "statement silhouette"
+    ],
+    "tags": [
+      "cabinet",
+      "modern",
+      "natural",
+      "oak",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 36,
+      "height": 58,
+      "depth": 17,
+      "unit": "in"
+    },
+    "rating": 3.8,
+    "reviewCount": 18,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "storage",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-storage-01%2Fhero.jpg?alt=media&token=fb19d9f6-a1da-4544-9985-ba6abd834b7b",
+      "storagePath": "projects/CatalogX/assets/products/cx-storage-01/hero.jpg",
+      "alt": "Hede cabinet in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-storage-02",
+    "slug": "ivarn-bookcase",
+    "sourceHash": "a672444c94dd0d63623da7752e7b04dce53e3e8a1d498853340babce598419e5",
+    "retailer": "Norr & Vale",
+    "name": "Ivarn Bookcase",
+    "description": "A considered bookcase with a scandinavian profile, tactile steel, and practical proportions for everyday rooms.",
+    "category": "storage",
+    "productType": "bookcase",
+    "currentPrice": 189,
+    "originalPrice": 210,
+    "discountPercent": 10,
+    "inventory": 12,
+    "availability": "in_stock",
+    "deliveryDays": 4,
+    "rooms": [
+      "bedroom",
+      "home office"
+    ],
+    "styles": [
+      "Scandinavian",
+      "industrial"
+    ],
+    "colors": [
+      "white"
+    ],
+    "materials": [
+      "steel",
+      "rattan"
+    ],
+    "useCases": [
+      "everyday bedroom",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "compact footprint"
+    ],
+    "tags": [
+      "bookcase",
+      "scandinavian",
+      "white",
+      "steel",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 37.5,
+      "height": 60,
+      "depth": 18,
+      "unit": "in"
+    },
+    "rating": 4,
+    "reviewCount": 55,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "storage",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-storage-02%2Fhero.jpg?alt=media&token=664f6072-dd3b-439c-8629-c53e24f83567",
+      "storagePath": "projects/CatalogX/assets/products/cx-storage-02/hero.jpg",
+      "alt": "Ivarn bookcase in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-storage-03",
+    "slug": "jun-sideboard",
+    "sourceHash": "df0007a3a5f15671765d1934037f373b20d1c2bfbd74eda2f3096272584b9488",
+    "retailer": "Norr & Vale",
+    "name": "Jun Sideboard",
+    "description": "A considered sideboard with a industrial profile, tactile rattan, and practical proportions for everyday rooms.",
+    "category": "storage",
+    "productType": "sideboard",
+    "currentPrice": 231,
+    "originalPrice": 231,
+    "discountPercent": 0,
+    "inventory": 16,
+    "availability": "in_stock",
+    "deliveryDays": 5,
+    "rooms": [
+      "home office",
+      "living room"
+    ],
+    "styles": [
+      "industrial",
+      "modern"
+    ],
+    "colors": [
+      "graphite"
+    ],
+    "materials": [
+      "rattan",
+      "oak"
+    ],
+    "useCases": [
+      "everyday home office",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "compact footprint"
+    ],
+    "tags": [
+      "sideboard",
+      "industrial",
+      "graphite",
+      "rattan",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 39,
+      "height": 62,
+      "depth": 19,
+      "unit": "in"
+    },
+    "rating": 4.2,
+    "reviewCount": 92,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "storage",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-storage-03%2Fhero.jpg?alt=media&token=f90115b4-1492-4a61-bebf-f8a93e0276e4",
+      "storagePath": "projects/CatalogX/assets/products/cx-storage-03/hero.jpg",
+      "alt": "Jun sideboard in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-storage-04",
+    "slug": "kora-wardrobe",
+    "sourceHash": "d871da7dd419bb95e45d78f7abd4139880c65008e6bb6330a1f071bafc7a6f19",
+    "retailer": "Norr & Vale",
+    "name": "Kora Wardrobe",
+    "description": "A considered wardrobe with a modern profile, tactile oak, and practical proportions for everyday rooms.",
+    "category": "storage",
+    "productType": "wardrobe",
+    "currentPrice": 214.2,
+    "originalPrice": 252,
+    "discountPercent": 15,
+    "inventory": 20,
+    "availability": "in_stock",
+    "deliveryDays": 6,
+    "rooms": [
+      "living room",
+      "bedroom"
+    ],
+    "styles": [
+      "modern",
+      "Scandinavian"
+    ],
+    "colors": [
+      "natural"
+    ],
+    "materials": [
+      "oak",
+      "steel"
+    ],
+    "useCases": [
+      "everyday living room",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "statement silhouette"
+    ],
+    "tags": [
+      "wardrobe",
+      "modern",
+      "natural",
+      "oak",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 40.5,
+      "height": 58,
+      "depth": 20,
+      "unit": "in"
+    },
+    "rating": 4.3,
+    "reviewCount": 129,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "storage",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-storage-04%2Fhero.jpg?alt=media&token=11a8562f-070f-49f1-b652-98a93b28d607",
+      "storagePath": "projects/CatalogX/assets/products/cx-storage-04/hero.jpg",
+      "alt": "Kora wardrobe in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-storage-05",
+    "slug": "linde-shelving-unit",
+    "sourceHash": "70ed5243fdd43e777fe0d035f53eba8cc46d6cdd51df02af7cca1a59582701f3",
+    "retailer": "Norr & Vale",
+    "name": "Linde Shelving Unit",
+    "description": "A considered shelving unit with a scandinavian profile, tactile steel, and practical proportions for everyday rooms.",
+    "category": "storage",
+    "productType": "shelving-unit",
+    "currentPrice": 218.4,
+    "originalPrice": 273,
+    "discountPercent": 20,
+    "inventory": 24,
+    "availability": "in_stock",
+    "deliveryDays": 7,
+    "rooms": [
+      "bedroom",
+      "home office"
+    ],
+    "styles": [
+      "Scandinavian",
+      "industrial"
+    ],
+    "colors": [
+      "white"
+    ],
+    "materials": [
+      "steel",
+      "rattan"
+    ],
+    "useCases": [
+      "everyday bedroom",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "compact footprint"
+    ],
+    "tags": [
+      "shelving unit",
+      "scandinavian",
+      "white",
+      "steel",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 42,
+      "height": 60,
+      "depth": 17,
+      "unit": "in"
+    },
+    "rating": 4.5,
+    "reviewCount": 166,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "storage",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-storage-05%2Fhero.jpg?alt=media&token=5b10e8bc-4123-4a1b-b6b4-ac078bb1168d",
+      "storagePath": "projects/CatalogX/assets/products/cx-storage-05/hero.jpg",
+      "alt": "Linde shelving unit in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-storage-06",
+    "slug": "moss-drawer-chest",
+    "sourceHash": "c29c77674dbdf7e289853b81f1fd4fa6a86a878f1ae082ea8e07dda781534299",
+    "retailer": "Norr & Vale",
+    "name": "Moss Drawer Chest",
+    "description": "A considered drawer chest with a industrial profile, tactile rattan, and practical proportions for everyday rooms.",
+    "category": "storage",
+    "productType": "drawer-chest",
+    "currentPrice": 294,
+    "originalPrice": 294,
+    "discountPercent": 0,
+    "inventory": 28,
+    "availability": "in_stock",
+    "deliveryDays": 8,
+    "rooms": [
+      "home office",
+      "living room"
+    ],
+    "styles": [
+      "industrial",
+      "modern"
+    ],
+    "colors": [
+      "graphite"
+    ],
+    "materials": [
+      "rattan",
+      "oak"
+    ],
+    "useCases": [
+      "everyday home office",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "compact footprint"
+    ],
+    "tags": [
+      "drawer chest",
+      "industrial",
+      "graphite",
+      "rattan",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 43.5,
+      "height": 62,
+      "depth": 18,
+      "unit": "in"
+    },
+    "rating": 4.7,
+    "reviewCount": 203,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "storage",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-storage-06%2Fhero.jpg?alt=media&token=7d7aa3e8-60f9-4b2b-b163-dc2fe4ba269a",
+      "storagePath": "projects/CatalogX/assets/products/cx-storage-06/hero.jpg",
+      "alt": "Moss drawer chest in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-storage-07",
+    "slug": "niva-media-console",
+    "sourceHash": "007c27e805e60ecaa367a0cabd1dbdc7b0b35ae6783d7e222e2a9a457d7b769b",
+    "retailer": "Norr & Vale",
+    "name": "Niva Media Console",
+    "description": "A considered media console with a modern profile, tactile oak, and practical proportions for everyday rooms.",
+    "category": "storage",
+    "productType": "media-console",
+    "currentPrice": 236.25,
+    "originalPrice": 315,
+    "discountPercent": 25,
+    "inventory": 32,
+    "availability": "in_stock",
+    "deliveryDays": 3,
+    "rooms": [
+      "living room",
+      "bedroom"
+    ],
+    "styles": [
+      "modern",
+      "Scandinavian"
+    ],
+    "colors": [
+      "natural"
+    ],
+    "materials": [
+      "oak",
+      "steel"
+    ],
+    "useCases": [
+      "everyday living room",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "statement silhouette"
+    ],
+    "tags": [
+      "media console",
+      "modern",
+      "natural",
+      "oak",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 45,
+      "height": 58,
+      "depth": 19,
+      "unit": "in"
+    },
+    "rating": 4.9,
+    "reviewCount": 240,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "storage",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-storage-07%2Fhero.jpg?alt=media&token=b369851a-6b99-4ec4-b53b-e80aedd120f5",
+      "storagePath": "projects/CatalogX/assets/products/cx-storage-07/hero.jpg",
+      "alt": "Niva media console in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-storage-08",
+    "slug": "orsa-wall-shelf",
+    "sourceHash": "13eaf2062b827e69eab642ef9ed1fff2a67cb23425b81e6c5fa525db5fe9a067",
+    "retailer": "Norr & Vale",
+    "name": "Orsa Wall Shelf",
+    "description": "A considered wall shelf with a scandinavian profile, tactile steel, and practical proportions for everyday rooms.",
+    "category": "storage",
+    "productType": "wall-shelf",
+    "currentPrice": 302.4,
+    "originalPrice": 336,
+    "discountPercent": 10,
+    "inventory": 3,
+    "availability": "low_stock",
+    "deliveryDays": 4,
+    "rooms": [
+      "bedroom",
+      "home office"
+    ],
+    "styles": [
+      "Scandinavian",
+      "industrial"
+    ],
+    "colors": [
+      "white"
+    ],
+    "materials": [
+      "steel",
+      "rattan"
+    ],
+    "useCases": [
+      "everyday bedroom",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "compact footprint"
+    ],
+    "tags": [
+      "wall shelf",
+      "scandinavian",
+      "white",
+      "steel",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 46.5,
+      "height": 60,
+      "depth": 20,
+      "unit": "in"
+    },
+    "rating": 3.8,
+    "reviewCount": 277,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "storage",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-storage-08%2Fhero.jpg?alt=media&token=9891ed6f-3041-4670-97b5-d9fddb3af800",
+      "storagePath": "projects/CatalogX/assets/products/cx-storage-08/hero.jpg",
+      "alt": "Orsa wall shelf in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-storage-09",
+    "slug": "pine-storage-bench",
+    "sourceHash": "0826dcfaa468105102fe1ec41925159e64c95582b894f45904e4e393b4080df2",
+    "retailer": "Norr & Vale",
+    "name": "Pine Storage Bench",
+    "description": "A considered storage bench with a industrial profile, tactile rattan, and practical proportions for everyday rooms.",
+    "category": "storage",
+    "productType": "storage-bench",
+    "currentPrice": 357,
+    "originalPrice": 357,
+    "discountPercent": 0,
+    "inventory": 0,
+    "availability": "backorder",
+    "deliveryDays": 28,
+    "rooms": [
+      "home office",
+      "living room"
+    ],
+    "styles": [
+      "industrial",
+      "modern"
+    ],
+    "colors": [
+      "graphite"
+    ],
+    "materials": [
+      "rattan",
+      "oak"
+    ],
+    "useCases": [
+      "everyday home office",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "compact footprint"
+    ],
+    "tags": [
+      "storage bench",
+      "industrial",
+      "graphite",
+      "rattan",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 48,
+      "height": 62,
+      "depth": 17,
+      "unit": "in"
+    },
+    "rating": 4,
+    "reviewCount": 314,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "storage",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-storage-09%2Fhero.jpg?alt=media&token=294071eb-919b-461d-8a7f-f8a9cf4a3396",
+      "storagePath": "projects/CatalogX/assets/products/cx-storage-09/hero.jpg",
+      "alt": "Pine storage bench in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-storage-10",
+    "slug": "ro-display-cabinet",
+    "sourceHash": "df82c01a8f75b712ca320c359873d9319d24856d2982e028c11f5f3c3bdd6bec",
+    "retailer": "Norr & Vale",
+    "name": "Ro Display Cabinet",
+    "description": "A considered display cabinet with a modern profile, tactile oak, and practical proportions for everyday rooms.",
+    "category": "storage",
+    "productType": "display-cabinet",
+    "currentPrice": 321.3,
+    "originalPrice": 378,
+    "discountPercent": 15,
+    "inventory": 0,
+    "availability": "out_of_stock",
+    "deliveryDays": 6,
+    "rooms": [
+      "living room",
+      "bedroom"
+    ],
+    "styles": [
+      "modern",
+      "Scandinavian"
+    ],
+    "colors": [
+      "natural"
+    ],
+    "materials": [
+      "oak",
+      "steel"
+    ],
+    "useCases": [
+      "everyday living room",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "statement silhouette"
+    ],
+    "tags": [
+      "display cabinet",
+      "modern",
+      "natural",
+      "oak",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 49.5,
+      "height": 58,
+      "depth": 18,
+      "unit": "in"
+    },
+    "rating": 4.2,
+    "reviewCount": 351,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "storage",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-storage-10%2Fhero.jpg?alt=media&token=3247bc6a-5554-49dd-89b1-a91dd67e8536",
+      "storagePath": "projects/CatalogX/assets/products/cx-storage-10/hero.jpg",
+      "alt": "Ro display cabinet in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-lighting-01",
+    "slug": "sken-floor-lamp",
+    "sourceHash": "790d1d9e2a47c4cea3b6d89832e873ac88fc8afbe4119d239545d722480b3dc0",
+    "retailer": "Norr & Vale",
+    "name": "Sken Floor Lamp",
+    "description": "A considered floor lamp with a minimal profile, tactile steel, and practical proportions for everyday rooms.",
+    "category": "lighting",
+    "productType": "floor-lamp",
+    "currentPrice": 69,
+    "originalPrice": 69,
+    "discountPercent": 0,
+    "inventory": 8,
+    "availability": "in_stock",
+    "deliveryDays": 3,
+    "rooms": [
+      "living room",
+      "bedroom"
+    ],
+    "styles": [
+      "minimal",
+      "modern"
+    ],
+    "colors": [
+      "black"
+    ],
+    "materials": [
+      "steel",
+      "glass"
+    ],
+    "useCases": [
+      "everyday living room",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "statement silhouette"
+    ],
+    "tags": [
+      "floor lamp",
+      "minimal",
+      "black",
+      "steel",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 16,
+      "height": 54,
+      "depth": 16,
+      "unit": "in"
+    },
+    "rating": 3.8,
+    "reviewCount": 18,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "lighting",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-lighting-01%2Fhero.jpg?alt=media&token=c91be3ba-7792-4e3f-81dc-5b775b22bb26",
+      "storagePath": "projects/CatalogX/assets/products/cx-lighting-01/hero.jpg",
+      "alt": "Sken floor lamp in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-lighting-02",
+    "slug": "tova-table-lamp",
+    "sourceHash": "6431c599ae303d5fe273cfd577f4e80cff5406fec746d5505a1ba58be85c00f3",
+    "retailer": "Norr & Vale",
+    "name": "Tova Table Lamp",
+    "description": "A considered table lamp with a modern profile, tactile glass, and practical proportions for everyday rooms.",
+    "category": "lighting",
+    "productType": "table-lamp",
+    "currentPrice": 71.1,
+    "originalPrice": 79,
+    "discountPercent": 10,
+    "inventory": 12,
+    "availability": "in_stock",
+    "deliveryDays": 4,
+    "rooms": [
+      "bedroom",
+      "home office"
+    ],
+    "styles": [
+      "modern",
+      "organic"
+    ],
+    "colors": [
+      "cream"
+    ],
+    "materials": [
+      "glass",
+      "paper"
+    ],
+    "useCases": [
+      "everyday bedroom",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "compact footprint"
+    ],
+    "tags": [
+      "table lamp",
+      "modern",
+      "cream",
+      "glass",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 17.5,
+      "height": 56,
+      "depth": 17,
+      "unit": "in"
+    },
+    "rating": 4,
+    "reviewCount": 55,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "lighting",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-lighting-02%2Fhero.jpg?alt=media&token=036abad4-964f-4059-9dbb-298379f0af19",
+      "storagePath": "projects/CatalogX/assets/products/cx-lighting-02/hero.jpg",
+      "alt": "Tova table lamp in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-lighting-03",
+    "slug": "ume-pendant",
+    "sourceHash": "e4b90856ace2d6e89e378b3ee4517bdd7637b1c81271ada022ff543fab59908b",
+    "retailer": "Norr & Vale",
+    "name": "Ume Pendant",
+    "description": "A considered pendant with a organic profile, tactile paper, and practical proportions for everyday rooms.",
+    "category": "lighting",
+    "productType": "pendant",
+    "currentPrice": 89,
+    "originalPrice": 89,
+    "discountPercent": 0,
+    "inventory": 16,
+    "availability": "in_stock",
+    "deliveryDays": 5,
+    "rooms": [
+      "home office",
+      "living room"
+    ],
+    "styles": [
+      "organic",
+      "minimal"
+    ],
+    "colors": [
+      "brass"
+    ],
+    "materials": [
+      "paper",
+      "steel"
+    ],
+    "useCases": [
+      "everyday home office",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "compact footprint"
+    ],
+    "tags": [
+      "pendant",
+      "organic",
+      "brass",
+      "paper",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 19,
+      "height": 58,
+      "depth": 18,
+      "unit": "in"
+    },
+    "rating": 4.2,
+    "reviewCount": 92,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "lighting",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-lighting-03%2Fhero.jpg?alt=media&token=fc45a609-294b-444b-be14-5f26ae4bb80c",
+      "storagePath": "projects/CatalogX/assets/products/cx-lighting-03/hero.jpg",
+      "alt": "Ume pendant in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-lighting-04",
+    "slug": "vann-wall-lamp",
+    "sourceHash": "baad9a09efb46a973c35892a1d7bb7778ff5af612002fc110920a0ffca87776b",
+    "retailer": "Norr & Vale",
+    "name": "Vann Wall Lamp",
+    "description": "A considered wall lamp with a minimal profile, tactile steel, and practical proportions for everyday rooms.",
+    "category": "lighting",
+    "productType": "wall-lamp",
+    "currentPrice": 84.15,
+    "originalPrice": 99,
+    "discountPercent": 15,
+    "inventory": 20,
+    "availability": "in_stock",
+    "deliveryDays": 6,
+    "rooms": [
+      "living room",
+      "bedroom"
+    ],
+    "styles": [
+      "minimal",
+      "modern"
+    ],
+    "colors": [
+      "black"
+    ],
+    "materials": [
+      "steel",
+      "glass"
+    ],
+    "useCases": [
+      "everyday living room",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "statement silhouette"
+    ],
+    "tags": [
+      "wall lamp",
+      "minimal",
+      "black",
+      "steel",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 20.5,
+      "height": 54,
+      "depth": 19,
+      "unit": "in"
+    },
+    "rating": 4.3,
+    "reviewCount": 129,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "lighting",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-lighting-04%2Fhero.jpg?alt=media&token=205ef093-b80d-45f4-ba62-1e2ef18d62d3",
+      "storagePath": "projects/CatalogX/assets/products/cx-lighting-04/hero.jpg",
+      "alt": "Vann wall lamp in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-lighting-05",
+    "slug": "wisp-desk-lamp",
+    "sourceHash": "7935ba3b615988d1f4e7ab6e461313337ff2e56e1ac3bb46ffef824dd5beba30",
+    "retailer": "Norr & Vale",
+    "name": "Wisp Desk Lamp",
+    "description": "A considered desk lamp with a modern profile, tactile glass, and practical proportions for everyday rooms.",
+    "category": "lighting",
+    "productType": "desk-lamp",
+    "currentPrice": 87.2,
+    "originalPrice": 109,
+    "discountPercent": 20,
+    "inventory": 24,
+    "availability": "in_stock",
+    "deliveryDays": 7,
+    "rooms": [
+      "bedroom",
+      "home office"
+    ],
+    "styles": [
+      "modern",
+      "organic"
+    ],
+    "colors": [
+      "cream"
+    ],
+    "materials": [
+      "glass",
+      "paper"
+    ],
+    "useCases": [
+      "everyday bedroom",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "compact footprint"
+    ],
+    "tags": [
+      "desk lamp",
+      "modern",
+      "cream",
+      "glass",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 22,
+      "height": 56,
+      "depth": 16,
+      "unit": "in"
+    },
+    "rating": 4.5,
+    "reviewCount": 166,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "lighting",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-lighting-05%2Fhero.jpg?alt=media&token=ceafae6d-ba29-40fc-8e5b-997d9ea91c27",
+      "storagePath": "projects/CatalogX/assets/products/cx-lighting-05/hero.jpg",
+      "alt": "Wisp desk lamp in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-lighting-06",
+    "slug": "yra-ceiling-light",
+    "sourceHash": "05450750973c9399768800b732fa7a3e22563822516d45da3e63c79f3faede86",
+    "retailer": "Norr & Vale",
+    "name": "Yra Ceiling Light",
+    "description": "A considered ceiling light with a organic profile, tactile paper, and practical proportions for everyday rooms.",
+    "category": "lighting",
+    "productType": "ceiling-light",
+    "currentPrice": 119,
+    "originalPrice": 119,
+    "discountPercent": 0,
+    "inventory": 28,
+    "availability": "in_stock",
+    "deliveryDays": 8,
+    "rooms": [
+      "home office",
+      "living room"
+    ],
+    "styles": [
+      "organic",
+      "minimal"
+    ],
+    "colors": [
+      "brass"
+    ],
+    "materials": [
+      "paper",
+      "steel"
+    ],
+    "useCases": [
+      "everyday home office",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "compact footprint"
+    ],
+    "tags": [
+      "ceiling light",
+      "organic",
+      "brass",
+      "paper",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 23.5,
+      "height": 58,
+      "depth": 17,
+      "unit": "in"
+    },
+    "rating": 4.7,
+    "reviewCount": 203,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "lighting",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-lighting-06%2Fhero.jpg?alt=media&token=7c58e8c0-ccd5-4289-8e56-7f76a6833d3e",
+      "storagePath": "projects/CatalogX/assets/products/cx-lighting-06/hero.jpg",
+      "alt": "Yra ceiling light in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-lighting-07",
+    "slug": "alva-reading-lamp",
+    "sourceHash": "b93691b7d27328b667816c1defbd9abc1d93bac0d79b694300e3657830a7603f",
+    "retailer": "Norr & Vale",
+    "name": "Alva Reading Lamp",
+    "description": "A considered reading lamp with a minimal profile, tactile steel, and practical proportions for everyday rooms.",
+    "category": "lighting",
+    "productType": "reading-lamp",
+    "currentPrice": 96.75,
+    "originalPrice": 129,
+    "discountPercent": 25,
+    "inventory": 32,
+    "availability": "in_stock",
+    "deliveryDays": 3,
+    "rooms": [
+      "living room",
+      "bedroom"
+    ],
+    "styles": [
+      "minimal",
+      "modern"
+    ],
+    "colors": [
+      "black"
+    ],
+    "materials": [
+      "steel",
+      "glass"
+    ],
+    "useCases": [
+      "everyday living room",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "statement silhouette"
+    ],
+    "tags": [
+      "reading lamp",
+      "minimal",
+      "black",
+      "steel",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 25,
+      "height": 54,
+      "depth": 18,
+      "unit": "in"
+    },
+    "rating": 4.9,
+    "reviewCount": 240,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "lighting",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-lighting-07%2Fhero.jpg?alt=media&token=81c35a4c-f27d-4aa0-9d2a-b7e284632538",
+      "storagePath": "projects/CatalogX/assets/products/cx-lighting-07/hero.jpg",
+      "alt": "Alva reading lamp in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-lighting-08",
+    "slug": "bris-lantern",
+    "sourceHash": "097f3a77f5a2818653754797e4730b538fb348ce7366f1f8fbf37e7f4db9e248",
+    "retailer": "Norr & Vale",
+    "name": "Bris Lantern",
+    "description": "A considered lantern with a modern profile, tactile glass, and practical proportions for everyday rooms.",
+    "category": "lighting",
+    "productType": "lantern",
+    "currentPrice": 125.1,
+    "originalPrice": 139,
+    "discountPercent": 10,
+    "inventory": 3,
+    "availability": "low_stock",
+    "deliveryDays": 4,
+    "rooms": [
+      "bedroom",
+      "home office"
+    ],
+    "styles": [
+      "modern",
+      "organic"
+    ],
+    "colors": [
+      "cream"
+    ],
+    "materials": [
+      "glass",
+      "paper"
+    ],
+    "useCases": [
+      "everyday bedroom",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "compact footprint"
+    ],
+    "tags": [
+      "lantern",
+      "modern",
+      "cream",
+      "glass",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 26.5,
+      "height": 56,
+      "depth": 19,
+      "unit": "in"
+    },
+    "rating": 3.8,
+    "reviewCount": 277,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "lighting",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-lighting-08%2Fhero.jpg?alt=media&token=54e78dc8-5272-4655-bdec-109502db683d",
+      "storagePath": "projects/CatalogX/assets/products/cx-lighting-08/hero.jpg",
+      "alt": "Bris lantern in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-lighting-09",
+    "slug": "ciel-cluster-light",
+    "sourceHash": "9798ec956f1644017aeab2b4c6e1f4d80adcb2b4514a53409d3f577c1245ec9a",
+    "retailer": "Norr & Vale",
+    "name": "Ciel Cluster Light",
+    "description": "A considered cluster light with a organic profile, tactile paper, and practical proportions for everyday rooms.",
+    "category": "lighting",
+    "productType": "cluster-light",
+    "currentPrice": 149,
+    "originalPrice": 149,
+    "discountPercent": 0,
+    "inventory": 0,
+    "availability": "backorder",
+    "deliveryDays": 28,
+    "rooms": [
+      "home office",
+      "living room"
+    ],
+    "styles": [
+      "organic",
+      "minimal"
+    ],
+    "colors": [
+      "brass"
+    ],
+    "materials": [
+      "paper",
+      "steel"
+    ],
+    "useCases": [
+      "everyday home office",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "compact footprint"
+    ],
+    "tags": [
+      "cluster light",
+      "organic",
+      "brass",
+      "paper",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 28,
+      "height": 58,
+      "depth": 16,
+      "unit": "in"
+    },
+    "rating": 4,
+    "reviewCount": 314,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "lighting",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-lighting-09%2Fhero.jpg?alt=media&token=0b6b825c-d823-4577-9399-59e9e50dcb63",
+      "storagePath": "projects/CatalogX/assets/products/cx-lighting-09/hero.jpg",
+      "alt": "Ciel cluster light in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-lighting-10",
+    "slug": "disa-task-light",
+    "sourceHash": "c74a3602285e7ac20cff8706bdfa4cef56d955e1704aa10e45fbe01aac0baf51",
+    "retailer": "Norr & Vale",
+    "name": "Disa Task Light",
+    "description": "A considered task light with a minimal profile, tactile steel, and practical proportions for everyday rooms.",
+    "category": "lighting",
+    "productType": "task-light",
+    "currentPrice": 135.15,
+    "originalPrice": 159,
+    "discountPercent": 15,
+    "inventory": 0,
+    "availability": "out_of_stock",
+    "deliveryDays": 6,
+    "rooms": [
+      "living room",
+      "bedroom"
+    ],
+    "styles": [
+      "minimal",
+      "modern"
+    ],
+    "colors": [
+      "black"
+    ],
+    "materials": [
+      "steel",
+      "glass"
+    ],
+    "useCases": [
+      "everyday living room",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "statement silhouette"
+    ],
+    "tags": [
+      "task light",
+      "minimal",
+      "black",
+      "steel",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 29.5,
+      "height": 54,
+      "depth": 17,
+      "unit": "in"
+    },
+    "rating": 4.2,
+    "reviewCount": 351,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "lighting",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-lighting-10%2Fhero.jpg?alt=media&token=c6b1bb0d-5aff-46bc-b76a-5aa13925b56d",
+      "storagePath": "projects/CatalogX/assets/products/cx-lighting-10/hero.jpg",
+      "alt": "Disa task light in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-rugs-textiles-01",
+    "slug": "edda-wool-rug",
+    "sourceHash": "8421d51c2dd28416a0c490588571d68a1f8f76b68fb78aab3ba0d1f08e2b5da5",
+    "retailer": "Norr & Vale",
+    "name": "Edda Wool Rug",
+    "description": "A considered wool rug with a textural profile, tactile wool, and practical proportions for everyday rooms.",
+    "category": "rugs-textiles",
+    "productType": "wool-rug",
+    "currentPrice": 59,
+    "originalPrice": 59,
+    "discountPercent": 0,
+    "inventory": 8,
+    "availability": "in_stock",
+    "deliveryDays": 3,
+    "rooms": [
+      "living room",
+      "bedroom"
+    ],
+    "styles": [
+      "textural",
+      "Scandinavian"
+    ],
+    "colors": [
+      "ivory"
+    ],
+    "materials": [
+      "wool",
+      "cotton"
+    ],
+    "useCases": [
+      "everyday living room",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "statement silhouette"
+    ],
+    "tags": [
+      "wool rug",
+      "textural",
+      "ivory",
+      "wool",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 60,
+      "height": 1,
+      "depth": 84,
+      "unit": "in"
+    },
+    "rating": 3.8,
+    "reviewCount": 18,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "rugs-textiles",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-rugs-textiles-01%2Fhero.jpg?alt=media&token=e4772620-3b6b-4b2d-9a70-d14ecbe4c9b2",
+      "storagePath": "projects/CatalogX/assets/products/cx-rugs-textiles-01/hero.jpg",
+      "alt": "Edda wool rug in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-rugs-textiles-02",
+    "slug": "flok-flatweave-rug",
+    "sourceHash": "34d291fe184c3ecffe4bb3a776e17ecc3a9b5239022cbb49803df535839e6b2c",
+    "retailer": "Norr & Vale",
+    "name": "Flok Flatweave Rug",
+    "description": "A considered flatweave rug with a scandinavian profile, tactile cotton, and practical proportions for everyday rooms.",
+    "category": "rugs-textiles",
+    "productType": "flatweave-rug",
+    "currentPrice": 62.1,
+    "originalPrice": 69,
+    "discountPercent": 10,
+    "inventory": 12,
+    "availability": "in_stock",
+    "deliveryDays": 4,
+    "rooms": [
+      "bedroom",
+      "dining room"
+    ],
+    "styles": [
+      "Scandinavian",
+      "bohemian"
+    ],
+    "colors": [
+      "clay"
+    ],
+    "materials": [
+      "cotton",
+      "jute"
+    ],
+    "useCases": [
+      "everyday bedroom",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "compact footprint"
+    ],
+    "tags": [
+      "flatweave rug",
+      "scandinavian",
+      "clay",
+      "cotton",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 61.5,
+      "height": 3,
+      "depth": 85,
+      "unit": "in"
+    },
+    "rating": 4,
+    "reviewCount": 55,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "rugs-textiles",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-rugs-textiles-02%2Fhero.jpg?alt=media&token=542e3c7b-dd74-4e85-8f45-09b0929bdfdf",
+      "storagePath": "projects/CatalogX/assets/products/cx-rugs-textiles-02/hero.jpg",
+      "alt": "Flok flatweave rug in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-rugs-textiles-03",
+    "slug": "grain-throw",
+    "sourceHash": "c2c3c0cb03e669b41136d4112d310a8d71ac5a0c6aa6c4fb18633aafcacdd034",
+    "retailer": "Norr & Vale",
+    "name": "Grain Throw",
+    "description": "A considered throw with a bohemian profile, tactile jute, and practical proportions for everyday rooms.",
+    "category": "rugs-textiles",
+    "productType": "throw",
+    "currentPrice": 79,
+    "originalPrice": 79,
+    "discountPercent": 0,
+    "inventory": 16,
+    "availability": "in_stock",
+    "deliveryDays": 5,
+    "rooms": [
+      "dining room",
+      "living room"
+    ],
+    "styles": [
+      "bohemian",
+      "textural"
+    ],
+    "colors": [
+      "charcoal"
+    ],
+    "materials": [
+      "jute",
+      "wool"
+    ],
+    "useCases": [
+      "everyday dining room",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "compact footprint"
+    ],
+    "tags": [
+      "throw",
+      "bohemian",
+      "charcoal",
+      "jute",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 50,
+      "height": 0.25,
+      "depth": 70,
+      "unit": "in"
+    },
+    "rating": 4.2,
+    "reviewCount": 92,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "rugs-textiles",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-rugs-textiles-03%2Fhero.jpg?alt=media&token=4549e847-0292-46a7-95e8-219689cebcb1",
+      "storagePath": "projects/CatalogX/assets/products/cx-rugs-textiles-03/hero.jpg",
+      "alt": "Grain throw in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-rugs-textiles-04",
+    "slug": "hush-cushion-set",
+    "sourceHash": "bdce3d99390cb5a065d21b1a0da583621d8511fc36cfda9f1c5134271d30f74a",
+    "retailer": "Norr & Vale",
+    "name": "Hush Cushion Set",
+    "description": "A considered cushion set with a textural profile, tactile wool, and practical proportions for everyday rooms.",
+    "category": "rugs-textiles",
+    "productType": "cushion-set",
+    "currentPrice": 75.65,
+    "originalPrice": 89,
+    "discountPercent": 15,
+    "inventory": 20,
+    "availability": "in_stock",
+    "deliveryDays": 6,
+    "rooms": [
+      "living room",
+      "bedroom"
+    ],
+    "styles": [
+      "textural",
+      "Scandinavian"
+    ],
+    "colors": [
+      "ivory"
+    ],
+    "materials": [
+      "wool",
+      "cotton"
+    ],
+    "useCases": [
+      "everyday living room",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "statement silhouette"
+    ],
+    "tags": [
+      "cushion set",
+      "textural",
+      "ivory",
+      "wool",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 20,
+      "height": 6,
+      "depth": 20,
+      "unit": "in"
+    },
+    "rating": 4.3,
+    "reviewCount": 129,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "rugs-textiles",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-rugs-textiles-04%2Fhero.jpg?alt=media&token=672e8083-3eb4-462e-b4fd-eccf5dbdf2aa",
+      "storagePath": "projects/CatalogX/assets/products/cx-rugs-textiles-04/hero.jpg",
+      "alt": "Hush cushion set in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-rugs-textiles-05",
+    "slug": "inga-runner",
+    "sourceHash": "4faa5e4902cc716b0df0ca3824221f1d642fadc83a1af6d017000d04b295b3bc",
+    "retailer": "Norr & Vale",
+    "name": "Inga Runner",
+    "description": "A considered runner with a scandinavian profile, tactile cotton, and practical proportions for everyday rooms.",
+    "category": "rugs-textiles",
+    "productType": "runner",
+    "currentPrice": 79.2,
+    "originalPrice": 99,
+    "discountPercent": 20,
+    "inventory": 24,
+    "availability": "in_stock",
+    "deliveryDays": 7,
+    "rooms": [
+      "bedroom",
+      "dining room"
+    ],
+    "styles": [
+      "Scandinavian",
+      "bohemian"
+    ],
+    "colors": [
+      "clay"
+    ],
+    "materials": [
+      "cotton",
+      "jute"
+    ],
+    "useCases": [
+      "everyday bedroom",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "compact footprint"
+    ],
+    "tags": [
+      "runner",
+      "scandinavian",
+      "clay",
+      "cotton",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 66,
+      "height": 3,
+      "depth": 84,
+      "unit": "in"
+    },
+    "rating": 4.5,
+    "reviewCount": 166,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "rugs-textiles",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-rugs-textiles-05%2Fhero.jpg?alt=media&token=cc08cb77-2e1d-418c-898c-019db68ea9dd",
+      "storagePath": "projects/CatalogX/assets/products/cx-rugs-textiles-05/hero.jpg",
+      "alt": "Inga runner in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-rugs-textiles-06",
+    "slug": "kelp-curtain-pair",
+    "sourceHash": "3d9e51fc273ac3cf8aa3f516ade2f798c50cb4d424c11fa1958e6491eb7aaa0f",
+    "retailer": "Norr & Vale",
+    "name": "Kelp Curtain Pair",
+    "description": "A considered curtain pair with a bohemian profile, tactile jute, and practical proportions for everyday rooms.",
+    "category": "rugs-textiles",
+    "productType": "curtain-pair",
+    "currentPrice": 109,
+    "originalPrice": 109,
+    "discountPercent": 0,
+    "inventory": 28,
+    "availability": "in_stock",
+    "deliveryDays": 8,
+    "rooms": [
+      "dining room",
+      "living room"
+    ],
+    "styles": [
+      "bohemian",
+      "textural"
+    ],
+    "colors": [
+      "charcoal"
+    ],
+    "materials": [
+      "jute",
+      "wool"
+    ],
+    "useCases": [
+      "everyday dining room",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "compact footprint"
+    ],
+    "tags": [
+      "curtain pair",
+      "bohemian",
+      "charcoal",
+      "jute",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 67.5,
+      "height": 5,
+      "depth": 85,
+      "unit": "in"
+    },
+    "rating": 4.7,
+    "reviewCount": 203,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "rugs-textiles",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-rugs-textiles-06%2Fhero.jpg?alt=media&token=dd0bfb30-09e1-49bc-9260-9bc889908719",
+      "storagePath": "projects/CatalogX/assets/products/cx-rugs-textiles-06/hero.jpg",
+      "alt": "Kelp curtain pair in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-rugs-textiles-07",
+    "slug": "loom-cotton-rug",
+    "sourceHash": "7922d76021859a8d377cddb0c4f5c8a17120a8f48b2e00ff2c13f784c72aab53",
+    "retailer": "Norr & Vale",
+    "name": "Loom Cotton Rug",
+    "description": "A considered cotton rug with a textural profile, tactile wool, and practical proportions for everyday rooms.",
+    "category": "rugs-textiles",
+    "productType": "cotton-rug",
+    "currentPrice": 89.25,
+    "originalPrice": 119,
+    "discountPercent": 25,
+    "inventory": 32,
+    "availability": "in_stock",
+    "deliveryDays": 3,
+    "rooms": [
+      "living room",
+      "bedroom"
+    ],
+    "styles": [
+      "textural",
+      "Scandinavian"
+    ],
+    "colors": [
+      "ivory"
+    ],
+    "materials": [
+      "wool",
+      "cotton"
+    ],
+    "useCases": [
+      "everyday living room",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "statement silhouette"
+    ],
+    "tags": [
+      "cotton rug",
+      "textural",
+      "ivory",
+      "wool",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 69,
+      "height": 1,
+      "depth": 86,
+      "unit": "in"
+    },
+    "rating": 4.9,
+    "reviewCount": 240,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "rugs-textiles",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-rugs-textiles-07%2Fhero.jpg?alt=media&token=39c0ab2e-01ce-46af-867d-b9ca20a15d48",
+      "storagePath": "projects/CatalogX/assets/products/cx-rugs-textiles-07/hero.jpg",
+      "alt": "Loom cotton rug in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-rugs-textiles-08",
+    "slug": "mila-bedspread",
+    "sourceHash": "730336aaaab809e636baeeefba5149f9a00bab4a336eb91ef6467ab084c03156",
+    "retailer": "Norr & Vale",
+    "name": "Mila Bedspread",
+    "description": "A considered bedspread with a scandinavian profile, tactile cotton, and practical proportions for everyday rooms.",
+    "category": "rugs-textiles",
+    "productType": "bedspread",
+    "currentPrice": 116.1,
+    "originalPrice": 129,
+    "discountPercent": 10,
+    "inventory": 3,
+    "availability": "low_stock",
+    "deliveryDays": 4,
+    "rooms": [
+      "bedroom",
+      "dining room"
+    ],
+    "styles": [
+      "Scandinavian",
+      "bohemian"
+    ],
+    "colors": [
+      "clay"
+    ],
+    "materials": [
+      "cotton",
+      "jute"
+    ],
+    "useCases": [
+      "everyday bedroom",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "compact footprint"
+    ],
+    "tags": [
+      "bedspread",
+      "scandinavian",
+      "clay",
+      "cotton",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 70.5,
+      "height": 3,
+      "depth": 87,
+      "unit": "in"
+    },
+    "rating": 3.8,
+    "reviewCount": 277,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "rugs-textiles",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-rugs-textiles-08%2Fhero.jpg?alt=media&token=66f290b4-ea63-409a-81ee-4276c5459216",
+      "storagePath": "projects/CatalogX/assets/products/cx-rugs-textiles-08/hero.jpg",
+      "alt": "Mila bedspread in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-rugs-textiles-09",
+    "slug": "nube-woven-mat",
+    "sourceHash": "7b45c2c8dde2f92821184708bade69bbb24364af44105c9b4220590eca768646",
+    "retailer": "Norr & Vale",
+    "name": "Nube Woven Mat",
+    "description": "A considered woven mat with a bohemian profile, tactile jute, and practical proportions for everyday rooms.",
+    "category": "rugs-textiles",
+    "productType": "woven-mat",
+    "currentPrice": 139,
+    "originalPrice": 139,
+    "discountPercent": 0,
+    "inventory": 0,
+    "availability": "backorder",
+    "deliveryDays": 28,
+    "rooms": [
+      "dining room",
+      "living room"
+    ],
+    "styles": [
+      "bohemian",
+      "textural"
+    ],
+    "colors": [
+      "charcoal"
+    ],
+    "materials": [
+      "jute",
+      "wool"
+    ],
+    "useCases": [
+      "everyday dining room",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "compact footprint"
+    ],
+    "tags": [
+      "woven mat",
+      "bohemian",
+      "charcoal",
+      "jute",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 72,
+      "height": 5,
+      "depth": 84,
+      "unit": "in"
+    },
+    "rating": 4,
+    "reviewCount": 314,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "rugs-textiles",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-rugs-textiles-09%2Fhero.jpg?alt=media&token=ee3544a7-60a9-4361-ae95-83eb12fd16e6",
+      "storagePath": "projects/CatalogX/assets/products/cx-rugs-textiles-09/hero.jpg",
+      "alt": "Nube woven mat in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-rugs-textiles-10",
+    "slug": "osa-floor-cushion",
+    "sourceHash": "37544727f1680db71ab80a687919efa09f70cfa4802b29a342a24af872c25f0e",
+    "retailer": "Norr & Vale",
+    "name": "Osa Floor Cushion",
+    "description": "A considered floor cushion with a textural profile, tactile wool, and practical proportions for everyday rooms.",
+    "category": "rugs-textiles",
+    "productType": "floor-cushion",
+    "currentPrice": 126.65,
+    "originalPrice": 149,
+    "discountPercent": 15,
+    "inventory": 0,
+    "availability": "out_of_stock",
+    "deliveryDays": 6,
+    "rooms": [
+      "living room",
+      "bedroom"
+    ],
+    "styles": [
+      "textural",
+      "Scandinavian"
+    ],
+    "colors": [
+      "ivory"
+    ],
+    "materials": [
+      "wool",
+      "cotton"
+    ],
+    "useCases": [
+      "everyday living room",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "statement silhouette"
+    ],
+    "tags": [
+      "floor cushion",
+      "textural",
+      "ivory",
+      "wool",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 73.5,
+      "height": 1,
+      "depth": 85,
+      "unit": "in"
+    },
+    "rating": 4.2,
+    "reviewCount": 351,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "rugs-textiles",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-rugs-textiles-10%2Fhero.jpg?alt=media&token=40d44765-0010-4044-a124-a51cc627b621",
+      "storagePath": "projects/CatalogX/assets/products/cx-rugs-textiles-10/hero.jpg",
+      "alt": "Osa floor cushion in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-kitchen-dining-01",
+    "slug": "pori-dinnerware-set",
+    "sourceHash": "01262d941d58f96359c3f55c658de47e5a25e900e77a42cdecdcb0233c087dee",
+    "retailer": "Norr & Vale",
+    "name": "Pori Dinnerware Set",
+    "description": "A considered dinnerware set with a modern profile, tactile ceramic, and practical proportions for everyday rooms.",
+    "category": "kitchen-dining",
+    "productType": "dinnerware-set",
+    "currentPrice": 39,
+    "originalPrice": 39,
+    "discountPercent": 0,
+    "inventory": 8,
+    "availability": "in_stock",
+    "deliveryDays": 3,
+    "rooms": [
+      "kitchen",
+      "dining room"
+    ],
+    "styles": [
+      "modern",
+      "rustic"
+    ],
+    "colors": [
+      "chalk"
+    ],
+    "materials": [
+      "ceramic",
+      "glass"
+    ],
+    "useCases": [
+      "everyday kitchen",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "statement silhouette"
+    ],
+    "tags": [
+      "dinnerware set",
+      "modern",
+      "chalk",
+      "ceramic",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 13,
+      "height": 8,
+      "depth": 13,
+      "unit": "in"
+    },
+    "rating": 3.8,
+    "reviewCount": 18,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "kitchen-dining",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-kitchen-dining-01%2Fhero.jpg?alt=media&token=56bb3787-96e0-44de-acd9-2815bb85a558",
+      "storagePath": "projects/CatalogX/assets/products/cx-kitchen-dining-01/hero.jpg",
+      "alt": "Pori dinnerware set in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-kitchen-dining-02",
+    "slug": "quill-cutlery-set",
+    "sourceHash": "bb9f7a2aad8fa95fe46ddeb4279013030977db04cd73f9defc894972011282c9",
+    "retailer": "Norr & Vale",
+    "name": "Quill Cutlery Set",
+    "description": "A considered cutlery set with a rustic profile, tactile glass, and practical proportions for everyday rooms.",
+    "category": "kitchen-dining",
+    "productType": "cutlery-set",
+    "currentPrice": 44.1,
+    "originalPrice": 49,
+    "discountPercent": 10,
+    "inventory": 12,
+    "availability": "in_stock",
+    "deliveryDays": 4,
+    "rooms": [
+      "dining room",
+      "kitchen"
+    ],
+    "styles": [
+      "rustic",
+      "minimal"
+    ],
+    "colors": [
+      "smoke"
+    ],
+    "materials": [
+      "glass",
+      "wood"
+    ],
+    "useCases": [
+      "everyday dining room",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "compact footprint"
+    ],
+    "tags": [
+      "cutlery set",
+      "rustic",
+      "smoke",
+      "glass",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 14.5,
+      "height": 10,
+      "depth": 14,
+      "unit": "in"
+    },
+    "rating": 4,
+    "reviewCount": 55,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "kitchen-dining",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-kitchen-dining-02%2Fhero.jpg?alt=media&token=f16bf18a-b7fe-44cd-9cb6-a330ee71083e",
+      "storagePath": "projects/CatalogX/assets/products/cx-kitchen-dining-02/hero.jpg",
+      "alt": "Quill cutlery set in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-kitchen-dining-03",
+    "slug": "runa-serving-board",
+    "sourceHash": "1a0acbe62ca1e25181afda5aacc77b34cb839c3c4e8ee818b14a2c56548da09f",
+    "retailer": "Norr & Vale",
+    "name": "Runa Serving Board",
+    "description": "A considered serving board with a minimal profile, tactile wood, and practical proportions for everyday rooms.",
+    "category": "kitchen-dining",
+    "productType": "serving-board",
+    "currentPrice": 59,
+    "originalPrice": 59,
+    "discountPercent": 0,
+    "inventory": 16,
+    "availability": "in_stock",
+    "deliveryDays": 5,
+    "rooms": [
+      "kitchen",
+      "dining room"
+    ],
+    "styles": [
+      "minimal",
+      "modern"
+    ],
+    "colors": [
+      "natural"
+    ],
+    "materials": [
+      "wood",
+      "ceramic"
+    ],
+    "useCases": [
+      "everyday kitchen",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "compact footprint"
+    ],
+    "tags": [
+      "serving board",
+      "minimal",
+      "natural",
+      "wood",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 16,
+      "height": 12,
+      "depth": 15,
+      "unit": "in"
+    },
+    "rating": 4.2,
+    "reviewCount": 92,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "kitchen-dining",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-kitchen-dining-03%2Fhero.jpg?alt=media&token=4ddd24ac-f134-456e-979c-500f23fd977e",
+      "storagePath": "projects/CatalogX/assets/products/cx-kitchen-dining-03/hero.jpg",
+      "alt": "Runa serving board in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-kitchen-dining-04",
+    "slug": "sami-glass-set",
+    "sourceHash": "735a2b752174b445faaf59585547bff3a9716c59aa5506a6d32cbe400864b0d1",
+    "retailer": "Norr & Vale",
+    "name": "Sami Glass Set",
+    "description": "A considered glass set with a modern profile, tactile ceramic, and practical proportions for everyday rooms.",
+    "category": "kitchen-dining",
+    "productType": "glass-set",
+    "currentPrice": 58.65,
+    "originalPrice": 69,
+    "discountPercent": 15,
+    "inventory": 20,
+    "availability": "in_stock",
+    "deliveryDays": 6,
+    "rooms": [
+      "dining room",
+      "kitchen"
+    ],
+    "styles": [
+      "modern",
+      "rustic"
+    ],
+    "colors": [
+      "chalk"
+    ],
+    "materials": [
+      "ceramic",
+      "glass"
+    ],
+    "useCases": [
+      "everyday dining room",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "statement silhouette"
+    ],
+    "tags": [
+      "glass set",
+      "modern",
+      "chalk",
+      "ceramic",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 17.5,
+      "height": 8,
+      "depth": 16,
+      "unit": "in"
+    },
+    "rating": 4.3,
+    "reviewCount": 129,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "kitchen-dining",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-kitchen-dining-04%2Fhero.jpg?alt=media&token=987d9b63-1dc7-41c3-b293-908c2af4375d",
+      "storagePath": "projects/CatalogX/assets/products/cx-kitchen-dining-04/hero.jpg",
+      "alt": "Sami glass set in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-kitchen-dining-05",
+    "slug": "tern-carafe",
+    "sourceHash": "c746f277ea3d494303de099c382ac3cccb46937897dfa600555cfec9eed260a5",
+    "retailer": "Norr & Vale",
+    "name": "Tern Carafe",
+    "description": "A considered carafe with a rustic profile, tactile glass, and practical proportions for everyday rooms.",
+    "category": "kitchen-dining",
+    "productType": "carafe",
+    "currentPrice": 63.2,
+    "originalPrice": 79,
+    "discountPercent": 20,
+    "inventory": 24,
+    "availability": "in_stock",
+    "deliveryDays": 7,
+    "rooms": [
+      "kitchen",
+      "dining room"
+    ],
+    "styles": [
+      "rustic",
+      "minimal"
+    ],
+    "colors": [
+      "smoke"
+    ],
+    "materials": [
+      "glass",
+      "wood"
+    ],
+    "useCases": [
+      "everyday kitchen",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "compact footprint"
+    ],
+    "tags": [
+      "carafe",
+      "rustic",
+      "smoke",
+      "glass",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 19,
+      "height": 10,
+      "depth": 13,
+      "unit": "in"
+    },
+    "rating": 4.5,
+    "reviewCount": 166,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "kitchen-dining",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-kitchen-dining-05%2Fhero.jpg?alt=media&token=33f47e15-6e00-4656-9fbb-132cf933b23b",
+      "storagePath": "projects/CatalogX/assets/products/cx-kitchen-dining-05/hero.jpg",
+      "alt": "Tern carafe in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-kitchen-dining-06",
+    "slug": "una-bowl-set",
+    "sourceHash": "596190cd8732edba8b6c8cd100761672f8521bb35c7a835d877351488989dac3",
+    "retailer": "Norr & Vale",
+    "name": "Una Bowl Set",
+    "description": "A considered bowl set with a minimal profile, tactile wood, and practical proportions for everyday rooms.",
+    "category": "kitchen-dining",
+    "productType": "bowl-set",
+    "currentPrice": 89,
+    "originalPrice": 89,
+    "discountPercent": 0,
+    "inventory": 28,
+    "availability": "in_stock",
+    "deliveryDays": 8,
+    "rooms": [
+      "dining room",
+      "kitchen"
+    ],
+    "styles": [
+      "minimal",
+      "modern"
+    ],
+    "colors": [
+      "natural"
+    ],
+    "materials": [
+      "wood",
+      "ceramic"
+    ],
+    "useCases": [
+      "everyday dining room",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "compact footprint"
+    ],
+    "tags": [
+      "bowl set",
+      "minimal",
+      "natural",
+      "wood",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 20.5,
+      "height": 12,
+      "depth": 14,
+      "unit": "in"
+    },
+    "rating": 4.7,
+    "reviewCount": 203,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "kitchen-dining",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-kitchen-dining-06%2Fhero.jpg?alt=media&token=45c28252-a406-4ea2-8c0a-8721bf25c870",
+      "storagePath": "projects/CatalogX/assets/products/cx-kitchen-dining-06/hero.jpg",
+      "alt": "Una bowl set in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-kitchen-dining-07",
+    "slug": "voss-cookware-set",
+    "sourceHash": "ab9dbd6236106aeddc38733a0133f091a265a5c803cdda0a4f6e073f84738a05",
+    "retailer": "Norr & Vale",
+    "name": "Voss Cookware Set",
+    "description": "A considered cookware set with a modern profile, tactile ceramic, and practical proportions for everyday rooms.",
+    "category": "kitchen-dining",
+    "productType": "cookware-set",
+    "currentPrice": 74.25,
+    "originalPrice": 99,
+    "discountPercent": 25,
+    "inventory": 32,
+    "availability": "in_stock",
+    "deliveryDays": 3,
+    "rooms": [
+      "kitchen",
+      "dining room"
+    ],
+    "styles": [
+      "modern",
+      "rustic"
+    ],
+    "colors": [
+      "chalk"
+    ],
+    "materials": [
+      "ceramic",
+      "glass"
+    ],
+    "useCases": [
+      "everyday kitchen",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "statement silhouette"
+    ],
+    "tags": [
+      "cookware set",
+      "modern",
+      "chalk",
+      "ceramic",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 22,
+      "height": 8,
+      "depth": 15,
+      "unit": "in"
+    },
+    "rating": 4.9,
+    "reviewCount": 240,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "kitchen-dining",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-kitchen-dining-07%2Fhero.jpg?alt=media&token=0a0d5bef-9e88-4371-8a8e-b14ae9d46332",
+      "storagePath": "projects/CatalogX/assets/products/cx-kitchen-dining-07/hero.jpg",
+      "alt": "Voss cookware set in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-kitchen-dining-08",
+    "slug": "wren-tray",
+    "sourceHash": "243d41222880e013a864248515000caa03b025e32c985d4ed616c112b35c3c65",
+    "retailer": "Norr & Vale",
+    "name": "Wren Tray",
+    "description": "A considered tray with a rustic profile, tactile glass, and practical proportions for everyday rooms.",
+    "category": "kitchen-dining",
+    "productType": "tray",
+    "currentPrice": 98.1,
+    "originalPrice": 109,
+    "discountPercent": 10,
+    "inventory": 3,
+    "availability": "low_stock",
+    "deliveryDays": 4,
+    "rooms": [
+      "dining room",
+      "kitchen"
+    ],
+    "styles": [
+      "rustic",
+      "minimal"
+    ],
+    "colors": [
+      "smoke"
+    ],
+    "materials": [
+      "glass",
+      "wood"
+    ],
+    "useCases": [
+      "everyday dining room",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "compact footprint"
+    ],
+    "tags": [
+      "tray",
+      "rustic",
+      "smoke",
+      "glass",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 23.5,
+      "height": 10,
+      "depth": 16,
+      "unit": "in"
+    },
+    "rating": 3.8,
+    "reviewCount": 277,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "kitchen-dining",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-kitchen-dining-08%2Fhero.jpg?alt=media&token=5d852555-97d2-47e5-842f-e64641b6a387",
+      "storagePath": "projects/CatalogX/assets/products/cx-kitchen-dining-08/hero.jpg",
+      "alt": "Wren tray in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-kitchen-dining-09",
+    "slug": "yori-dining-set",
+    "sourceHash": "4a4f73dd413ef159f837515f437a4b58f58ab72ea9c582465735bd2fde5ec219",
+    "retailer": "Norr & Vale",
+    "name": "Yori Dining Set",
+    "description": "A considered dining set with a minimal profile, tactile wood, and practical proportions for everyday rooms.",
+    "category": "kitchen-dining",
+    "productType": "dining-set",
+    "currentPrice": 119,
+    "originalPrice": 119,
+    "discountPercent": 0,
+    "inventory": 0,
+    "availability": "backorder",
+    "deliveryDays": 28,
+    "rooms": [
+      "kitchen",
+      "dining room"
+    ],
+    "styles": [
+      "minimal",
+      "modern"
+    ],
+    "colors": [
+      "natural"
+    ],
+    "materials": [
+      "wood",
+      "ceramic"
+    ],
+    "useCases": [
+      "everyday kitchen",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "compact footprint"
+    ],
+    "tags": [
+      "dining set",
+      "minimal",
+      "natural",
+      "wood",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 25,
+      "height": 12,
+      "depth": 13,
+      "unit": "in"
+    },
+    "rating": 4,
+    "reviewCount": 314,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "kitchen-dining",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-kitchen-dining-09%2Fhero.jpg?alt=media&token=a817997d-9eb2-4197-92d8-4928fe9fd1c6",
+      "storagePath": "projects/CatalogX/assets/products/cx-kitchen-dining-09/hero.jpg",
+      "alt": "Yori dining set in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-kitchen-dining-10",
+    "slug": "zell-barware-set",
+    "sourceHash": "8b1e93e66e8330eeb33f9e2028eec936b4a2f2dd10a643d128b41bb7dfc0efd5",
+    "retailer": "Norr & Vale",
+    "name": "Zell Barware Set",
+    "description": "A considered barware set with a modern profile, tactile ceramic, and practical proportions for everyday rooms.",
+    "category": "kitchen-dining",
+    "productType": "barware-set",
+    "currentPrice": 109.65,
+    "originalPrice": 129,
+    "discountPercent": 15,
+    "inventory": 0,
+    "availability": "out_of_stock",
+    "deliveryDays": 6,
+    "rooms": [
+      "dining room",
+      "kitchen"
+    ],
+    "styles": [
+      "modern",
+      "rustic"
+    ],
+    "colors": [
+      "chalk"
+    ],
+    "materials": [
+      "ceramic",
+      "glass"
+    ],
+    "useCases": [
+      "everyday dining room",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "statement silhouette"
+    ],
+    "tags": [
+      "barware set",
+      "modern",
+      "chalk",
+      "ceramic",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 26.5,
+      "height": 8,
+      "depth": 14,
+      "unit": "in"
+    },
+    "rating": 4.2,
+    "reviewCount": 351,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "kitchen-dining",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-kitchen-dining-10%2Fhero.jpg?alt=media&token=4a829961-a0eb-41e9-bd74-0a1dcca15d9e",
+      "storagePath": "projects/CatalogX/assets/products/cx-kitchen-dining-10/hero.jpg",
+      "alt": "Zell barware set in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-outdoor-01",
+    "slug": "aero-lounge-chair",
+    "sourceHash": "e0e80a314077853ab6ee8ed37465f17ea4aa9d0505414e12ec79ae7a62587327",
+    "retailer": "Norr & Vale",
+    "name": "Aero Lounge Chair",
+    "description": "A considered lounge chair with a modern profile, tactile aluminum, and practical proportions for everyday rooms.",
+    "category": "outdoor",
+    "productType": "lounge-chair",
+    "currentPrice": 99,
+    "originalPrice": 99,
+    "discountPercent": 0,
+    "inventory": 8,
+    "availability": "in_stock",
+    "deliveryDays": 3,
+    "rooms": [
+      "patio",
+      "balcony"
+    ],
+    "styles": [
+      "modern",
+      "coastal"
+    ],
+    "colors": [
+      "sand"
+    ],
+    "materials": [
+      "aluminum",
+      "acacia"
+    ],
+    "useCases": [
+      "everyday patio",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "statement silhouette"
+    ],
+    "tags": [
+      "lounge chair",
+      "modern",
+      "sand",
+      "aluminum",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 30,
+      "height": 31,
+      "depth": 29,
+      "unit": "in"
+    },
+    "rating": 3.8,
+    "reviewCount": 18,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "outdoor",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-outdoor-01%2Fhero.jpg?alt=media&token=52451ff3-e8d1-4687-b4e2-44292c5968e7",
+      "storagePath": "projects/CatalogX/assets/products/cx-outdoor-01/hero.jpg",
+      "alt": "Aero lounge chair in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-outdoor-02",
+    "slug": "bryn-bistro-table",
+    "sourceHash": "f6735c3e4ad867733251c389565fdceb6260b1ca6fea9fd3be8384177ff8de80",
+    "retailer": "Norr & Vale",
+    "name": "Bryn Bistro Table",
+    "description": "A considered bistro table with a coastal profile, tactile acacia, and practical proportions for everyday rooms.",
+    "category": "outdoor",
+    "productType": "bistro-table",
+    "currentPrice": 99,
+    "originalPrice": 110,
+    "discountPercent": 10,
+    "inventory": 12,
+    "availability": "in_stock",
+    "deliveryDays": 4,
+    "rooms": [
+      "balcony",
+      "garden"
+    ],
+    "styles": [
+      "coastal",
+      "minimal"
+    ],
+    "colors": [
+      "sage"
+    ],
+    "materials": [
+      "acacia",
+      "woven fiber"
+    ],
+    "useCases": [
+      "everyday balcony",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "compact footprint"
+    ],
+    "tags": [
+      "bistro table",
+      "coastal",
+      "sage",
+      "acacia",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 31.5,
+      "height": 33,
+      "depth": 30,
+      "unit": "in"
+    },
+    "rating": 4,
+    "reviewCount": 55,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "outdoor",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-outdoor-02%2Fhero.jpg?alt=media&token=195e9d8f-2736-4bec-ba87-ef9ed5aab5d3",
+      "storagePath": "projects/CatalogX/assets/products/cx-outdoor-02/hero.jpg",
+      "alt": "Bryn bistro table in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-outdoor-03",
+    "slug": "canto-bench",
+    "sourceHash": "c64732f782f2b0df169a746e5e3d789221b3e0ad6c178209c22bfc9956669073",
+    "retailer": "Norr & Vale",
+    "name": "Canto Bench",
+    "description": "A considered bench with a minimal profile, tactile woven fiber, and practical proportions for everyday rooms.",
+    "category": "outdoor",
+    "productType": "bench",
+    "currentPrice": 121,
+    "originalPrice": 121,
+    "discountPercent": 0,
+    "inventory": 16,
+    "availability": "in_stock",
+    "deliveryDays": 5,
+    "rooms": [
+      "garden",
+      "patio"
+    ],
+    "styles": [
+      "minimal",
+      "modern"
+    ],
+    "colors": [
+      "black"
+    ],
+    "materials": [
+      "woven fiber",
+      "aluminum"
+    ],
+    "useCases": [
+      "everyday garden",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "compact footprint"
+    ],
+    "tags": [
+      "bench",
+      "minimal",
+      "black",
+      "woven fiber",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 50,
+      "height": 32,
+      "depth": 26,
+      "unit": "in"
+    },
+    "rating": 4.2,
+    "reviewCount": 92,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "outdoor",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-outdoor-03%2Fhero.jpg?alt=media&token=47e2823b-cd79-42a6-a984-0515f90054dc",
+      "storagePath": "projects/CatalogX/assets/products/cx-outdoor-03/hero.jpg",
+      "alt": "Canto bench in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-outdoor-04",
+    "slug": "dune-dining-chair",
+    "sourceHash": "4f9dce376d5eaab2ed5a5b2f7f33ca37f773ea152725eedbe2446ee1ffdae8c4",
+    "retailer": "Norr & Vale",
+    "name": "Dune Dining Chair",
+    "description": "A considered dining chair with a modern profile, tactile aluminum, and practical proportions for everyday rooms.",
+    "category": "outdoor",
+    "productType": "dining-chair",
+    "currentPrice": 112.2,
+    "originalPrice": 132,
+    "discountPercent": 15,
+    "inventory": 20,
+    "availability": "in_stock",
+    "deliveryDays": 6,
+    "rooms": [
+      "patio",
+      "balcony"
+    ],
+    "styles": [
+      "modern",
+      "coastal"
+    ],
+    "colors": [
+      "sand"
+    ],
+    "materials": [
+      "aluminum",
+      "acacia"
+    ],
+    "useCases": [
+      "everyday patio",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "statement silhouette"
+    ],
+    "tags": [
+      "dining chair",
+      "modern",
+      "sand",
+      "aluminum",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 34.5,
+      "height": 31,
+      "depth": 32,
+      "unit": "in"
+    },
+    "rating": 4.3,
+    "reviewCount": 129,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "outdoor",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-outdoor-04%2Fhero.jpg?alt=media&token=89dedeb6-abec-4a70-b5a3-7d059fb2ad3b",
+      "storagePath": "projects/CatalogX/assets/products/cx-outdoor-04/hero.jpg",
+      "alt": "Dune dining chair in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-outdoor-05",
+    "slug": "esker-planter",
+    "sourceHash": "b38228e35f207ae89fa6d2425445c20cd15a68dda73f3b71d4f48c5622e65c7c",
+    "retailer": "Norr & Vale",
+    "name": "Esker Planter",
+    "description": "A considered planter with a coastal profile, tactile acacia, and practical proportions for everyday rooms.",
+    "category": "outdoor",
+    "productType": "planter",
+    "currentPrice": 114.4,
+    "originalPrice": 143,
+    "discountPercent": 20,
+    "inventory": 24,
+    "availability": "in_stock",
+    "deliveryDays": 7,
+    "rooms": [
+      "balcony",
+      "garden"
+    ],
+    "styles": [
+      "coastal",
+      "minimal"
+    ],
+    "colors": [
+      "sage"
+    ],
+    "materials": [
+      "acacia",
+      "woven fiber"
+    ],
+    "useCases": [
+      "everyday balcony",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "compact footprint"
+    ],
+    "tags": [
+      "planter",
+      "coastal",
+      "sage",
+      "acacia",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 36,
+      "height": 33,
+      "depth": 29,
+      "unit": "in"
+    },
+    "rating": 4.5,
+    "reviewCount": 166,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "outdoor",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-outdoor-05%2Fhero.jpg?alt=media&token=c4be9ab5-6f34-4412-b210-a51fcc47a982",
+      "storagePath": "projects/CatalogX/assets/products/cx-outdoor-05/hero.jpg",
+      "alt": "Esker planter in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-outdoor-06",
+    "slug": "faro-side-table",
+    "sourceHash": "495e910e65d2868510682bf8a36fff139aff877fdbb64e1ecf6d1b7e1404f455",
+    "retailer": "Norr & Vale",
+    "name": "Faro Side Table",
+    "description": "A considered side table with a minimal profile, tactile woven fiber, and practical proportions for everyday rooms.",
+    "category": "outdoor",
+    "productType": "side-table",
+    "currentPrice": 154,
+    "originalPrice": 154,
+    "discountPercent": 0,
+    "inventory": 28,
+    "availability": "in_stock",
+    "deliveryDays": 8,
+    "rooms": [
+      "garden",
+      "patio"
+    ],
+    "styles": [
+      "minimal",
+      "modern"
+    ],
+    "colors": [
+      "black"
+    ],
+    "materials": [
+      "woven fiber",
+      "aluminum"
+    ],
+    "useCases": [
+      "everyday garden",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "compact footprint"
+    ],
+    "tags": [
+      "side table",
+      "minimal",
+      "black",
+      "woven fiber",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 37.5,
+      "height": 35,
+      "depth": 30,
+      "unit": "in"
+    },
+    "rating": 4.7,
+    "reviewCount": 203,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "outdoor",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-outdoor-06%2Fhero.jpg?alt=media&token=75e2e931-a9fb-487e-b3fd-7dd5efb061c1",
+      "storagePath": "projects/CatalogX/assets/products/cx-outdoor-06/hero.jpg",
+      "alt": "Faro side table in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-outdoor-07",
+    "slug": "gale-deck-chair",
+    "sourceHash": "d1031437137fa53d68cc505a8e3ee28f07eedd94afb84a434c313334b41290c0",
+    "retailer": "Norr & Vale",
+    "name": "Gale Deck Chair",
+    "description": "A considered deck chair with a modern profile, tactile aluminum, and practical proportions for everyday rooms.",
+    "category": "outdoor",
+    "productType": "deck-chair",
+    "currentPrice": 123.75,
+    "originalPrice": 165,
+    "discountPercent": 25,
+    "inventory": 32,
+    "availability": "in_stock",
+    "deliveryDays": 3,
+    "rooms": [
+      "patio",
+      "balcony"
+    ],
+    "styles": [
+      "modern",
+      "coastal"
+    ],
+    "colors": [
+      "sand"
+    ],
+    "materials": [
+      "aluminum",
+      "acacia"
+    ],
+    "useCases": [
+      "everyday patio",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "statement silhouette"
+    ],
+    "tags": [
+      "deck chair",
+      "modern",
+      "sand",
+      "aluminum",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 39,
+      "height": 31,
+      "depth": 31,
+      "unit": "in"
+    },
+    "rating": 4.9,
+    "reviewCount": 240,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "outdoor",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-outdoor-07%2Fhero.jpg?alt=media&token=10592ad2-f004-4954-af74-e6bd3995d43c",
+      "storagePath": "projects/CatalogX/assets/products/cx-outdoor-07/hero.jpg",
+      "alt": "Gale deck chair in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-outdoor-08",
+    "slug": "holt-outdoor-sofa",
+    "sourceHash": "3f6c76fad9b84fb1d31f0d6c909132575c0f5796d53ef1bfec8e1808d21b3018",
+    "retailer": "Norr & Vale",
+    "name": "Holt Outdoor Sofa",
+    "description": "A considered outdoor sofa with a coastal profile, tactile acacia, and practical proportions for everyday rooms.",
+    "category": "outdoor",
+    "productType": "outdoor-sofa",
+    "currentPrice": 158.4,
+    "originalPrice": 176,
+    "discountPercent": 10,
+    "inventory": 3,
+    "availability": "low_stock",
+    "deliveryDays": 4,
+    "rooms": [
+      "balcony",
+      "garden"
+    ],
+    "styles": [
+      "coastal",
+      "minimal"
+    ],
+    "colors": [
+      "sage"
+    ],
+    "materials": [
+      "acacia",
+      "woven fiber"
+    ],
+    "useCases": [
+      "everyday balcony",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "compact footprint"
+    ],
+    "tags": [
+      "outdoor sofa",
+      "coastal",
+      "sage",
+      "acacia",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 40.5,
+      "height": 33,
+      "depth": 32,
+      "unit": "in"
+    },
+    "rating": 3.8,
+    "reviewCount": 277,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "outdoor",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-outdoor-08%2Fhero.jpg?alt=media&token=40c16c11-a385-4f7b-8d16-f16d1f59cf30",
+      "storagePath": "projects/CatalogX/assets/products/cx-outdoor-08/hero.jpg",
+      "alt": "Holt outdoor sofa in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-outdoor-09",
+    "slug": "iris-stool",
+    "sourceHash": "776306750a9038aef3c57c9a7f3621e45c12537f1d77971bc31b6f68db98f0af",
+    "retailer": "Norr & Vale",
+    "name": "Iris Stool",
+    "description": "A considered stool with a minimal profile, tactile woven fiber, and practical proportions for everyday rooms.",
+    "category": "outdoor",
+    "productType": "stool",
+    "currentPrice": 187,
+    "originalPrice": 187,
+    "discountPercent": 0,
+    "inventory": 0,
+    "availability": "backorder",
+    "deliveryDays": 28,
+    "rooms": [
+      "garden",
+      "patio"
+    ],
+    "styles": [
+      "minimal",
+      "modern"
+    ],
+    "colors": [
+      "black"
+    ],
+    "materials": [
+      "woven fiber",
+      "aluminum"
+    ],
+    "useCases": [
+      "everyday garden",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "compact footprint"
+    ],
+    "tags": [
+      "stool",
+      "minimal",
+      "black",
+      "woven fiber",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 42,
+      "height": 35,
+      "depth": 29,
+      "unit": "in"
+    },
+    "rating": 4,
+    "reviewCount": 314,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "outdoor",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-outdoor-09%2Fhero.jpg?alt=media&token=05899c3a-2509-41e3-8599-4c6ba5758a2e",
+      "storagePath": "projects/CatalogX/assets/products/cx-outdoor-09/hero.jpg",
+      "alt": "Iris stool in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-outdoor-10",
+    "slug": "kust-dining-set",
+    "sourceHash": "48024f0cfa00958e856cdfa99e0b6121ab322ef3520cb34b8f6ba1bf45cb37e8",
+    "retailer": "Norr & Vale",
+    "name": "Kust Dining Set",
+    "description": "A considered dining set with a modern profile, tactile aluminum, and practical proportions for everyday rooms.",
+    "category": "outdoor",
+    "productType": "dining-set",
+    "currentPrice": 168.3,
+    "originalPrice": 198,
+    "discountPercent": 15,
+    "inventory": 0,
+    "availability": "out_of_stock",
+    "deliveryDays": 6,
+    "rooms": [
+      "patio",
+      "balcony"
+    ],
+    "styles": [
+      "modern",
+      "coastal"
+    ],
+    "colors": [
+      "sand"
+    ],
+    "materials": [
+      "aluminum",
+      "acacia"
+    ],
+    "useCases": [
+      "everyday patio",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "statement silhouette"
+    ],
+    "tags": [
+      "dining set",
+      "modern",
+      "sand",
+      "aluminum",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 43.5,
+      "height": 31,
+      "depth": 30,
+      "unit": "in"
+    },
+    "rating": 4.2,
+    "reviewCount": 351,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "outdoor",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-outdoor-10%2Fhero.jpg?alt=media&token=34daef94-9493-49fe-95a3-64613ed8fb1b",
+      "storagePath": "projects/CatalogX/assets/products/cx-outdoor-10/hero.jpg",
+      "alt": "Kust dining set in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-mirrors-wall-decor-01",
+    "slug": "lysa-round-mirror",
+    "sourceHash": "b9f57fd702aabbb7b1c7f60efb9b6a468daef33b3187665832ccf33ab9da6d16",
+    "retailer": "Norr & Vale",
+    "name": "Lysa Round Mirror",
+    "description": "A considered round mirror with a minimal profile, tactile glass, and practical proportions for everyday rooms.",
+    "category": "mirrors-wall-decor",
+    "productType": "round-mirror",
+    "currentPrice": 49,
+    "originalPrice": 49,
+    "discountPercent": 0,
+    "inventory": 8,
+    "availability": "in_stock",
+    "deliveryDays": 3,
+    "rooms": [
+      "living room",
+      "bedroom"
+    ],
+    "styles": [
+      "minimal",
+      "organic"
+    ],
+    "colors": [
+      "black"
+    ],
+    "materials": [
+      "glass",
+      "oak"
+    ],
+    "useCases": [
+      "everyday living room",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "statement silhouette"
+    ],
+    "tags": [
+      "round mirror",
+      "minimal",
+      "black",
+      "glass",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 28,
+      "height": 36,
+      "depth": 2,
+      "unit": "in"
+    },
+    "rating": 3.8,
+    "reviewCount": 18,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "mirrors-wall-decor",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-mirrors-wall-decor-01%2Fhero.jpg?alt=media&token=a1fc4cb7-0c56-480f-995e-f49a1de12118",
+      "storagePath": "projects/CatalogX/assets/products/cx-mirrors-wall-decor-01/hero.jpg",
+      "alt": "Lysa round mirror in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-mirrors-wall-decor-02",
+    "slug": "miro-wall-mirror",
+    "sourceHash": "b9bfc331b4dcb0ace174f66258fe3bb9126db9bab663edca953e3ee6f305f44d",
+    "retailer": "Norr & Vale",
+    "name": "Miro Wall Mirror",
+    "description": "A considered wall mirror with a organic profile, tactile oak, and practical proportions for everyday rooms.",
+    "category": "mirrors-wall-decor",
+    "productType": "wall-mirror",
+    "currentPrice": 53.1,
+    "originalPrice": 59,
+    "discountPercent": 10,
+    "inventory": 12,
+    "availability": "in_stock",
+    "deliveryDays": 4,
+    "rooms": [
+      "bedroom",
+      "entryway"
+    ],
+    "styles": [
+      "organic",
+      "contemporary"
+    ],
+    "colors": [
+      "natural"
+    ],
+    "materials": [
+      "oak",
+      "paper"
+    ],
+    "useCases": [
+      "everyday bedroom",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "compact footprint"
+    ],
+    "tags": [
+      "wall mirror",
+      "organic",
+      "natural",
+      "oak",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 29.5,
+      "height": 38,
+      "depth": 3,
+      "unit": "in"
+    },
+    "rating": 4,
+    "reviewCount": 55,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "mirrors-wall-decor",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-mirrors-wall-decor-02%2Fhero.jpg?alt=media&token=aa4791c7-e7f1-4c00-841d-8dbe0572b9b2",
+      "storagePath": "projects/CatalogX/assets/products/cx-mirrors-wall-decor-02/hero.jpg",
+      "alt": "Miro wall mirror in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-mirrors-wall-decor-03",
+    "slug": "nell-art-print",
+    "sourceHash": "42e49076a4797caf1f7181176c785958e59e668155338a6bcbb39b19d8478d42",
+    "retailer": "Norr & Vale",
+    "name": "Nell Art Print",
+    "description": "A considered art print with a contemporary profile, tactile paper, and practical proportions for everyday rooms.",
+    "category": "mirrors-wall-decor",
+    "productType": "art-print",
+    "currentPrice": 69,
+    "originalPrice": 69,
+    "discountPercent": 0,
+    "inventory": 16,
+    "availability": "in_stock",
+    "deliveryDays": 5,
+    "rooms": [
+      "entryway",
+      "living room"
+    ],
+    "styles": [
+      "contemporary",
+      "minimal"
+    ],
+    "colors": [
+      "cream"
+    ],
+    "materials": [
+      "paper",
+      "glass"
+    ],
+    "useCases": [
+      "everyday entryway",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "compact footprint"
+    ],
+    "tags": [
+      "art print",
+      "contemporary",
+      "cream",
+      "paper",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 24,
+      "height": 32,
+      "depth": 1,
+      "unit": "in"
+    },
+    "rating": 4.2,
+    "reviewCount": 92,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "mirrors-wall-decor",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-mirrors-wall-decor-03%2Fhero.jpg?alt=media&token=b095ea6f-14d1-4870-be2d-e34112fa9699",
+      "storagePath": "projects/CatalogX/assets/products/cx-mirrors-wall-decor-03/hero.jpg",
+      "alt": "Nell art print in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-mirrors-wall-decor-04",
+    "slug": "oro-textile-hanging",
+    "sourceHash": "6af2ce2340f73e56e9eeddcb55c9e03bb6e6dfb1cc24f7d405ce8037a4ee2eb2",
+    "retailer": "Norr & Vale",
+    "name": "Oro Textile Hanging",
+    "description": "A handwoven textile hanging with a minimal geometric profile, tactile wool, and a slim natural oak hanging rail.",
+    "category": "mirrors-wall-decor",
+    "productType": "textile-hanging",
+    "currentPrice": 67.15,
+    "originalPrice": 79,
+    "discountPercent": 15,
+    "inventory": 20,
+    "availability": "in_stock",
+    "deliveryDays": 6,
+    "rooms": [
+      "living room",
+      "bedroom"
+    ],
+    "styles": [
+      "minimal",
+      "organic"
+    ],
+    "colors": [
+      "black"
+    ],
+    "materials": [
+      "wool",
+      "cotton",
+      "oak"
+    ],
+    "useCases": [
+      "everyday living room",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "statement silhouette"
+    ],
+    "tags": [
+      "textile hanging",
+      "minimal",
+      "black",
+      "wool",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 28,
+      "height": 36,
+      "depth": 1,
+      "unit": "in"
+    },
+    "rating": 4.3,
+    "reviewCount": 129,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "mirrors-wall-decor",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-mirrors-wall-decor-04%2Fhero.jpg?alt=media&token=8357c421-ef1c-4ae3-b930-d2ba66e8b1b7",
+      "storagePath": "projects/CatalogX/assets/products/cx-mirrors-wall-decor-04/hero.jpg",
+      "alt": "Oro textile hanging in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-mirrors-wall-decor-05",
+    "slug": "pavo-arched-mirror",
+    "sourceHash": "4e7d3c18c0eef8fbc8ed14279d8ba062f9c35d8faadfc52cef575dbd99b793c3",
+    "retailer": "Norr & Vale",
+    "name": "Pavo Arched Mirror",
+    "description": "A considered arched mirror with a organic profile, tactile oak, and practical proportions for everyday rooms.",
+    "category": "mirrors-wall-decor",
+    "productType": "arched-mirror",
+    "currentPrice": 71.2,
+    "originalPrice": 89,
+    "discountPercent": 20,
+    "inventory": 24,
+    "availability": "in_stock",
+    "deliveryDays": 7,
+    "rooms": [
+      "bedroom",
+      "entryway"
+    ],
+    "styles": [
+      "organic",
+      "contemporary"
+    ],
+    "colors": [
+      "natural"
+    ],
+    "materials": [
+      "oak",
+      "paper"
+    ],
+    "useCases": [
+      "everyday bedroom",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "compact footprint"
+    ],
+    "tags": [
+      "arched mirror",
+      "organic",
+      "natural",
+      "oak",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 34,
+      "height": 38,
+      "depth": 2,
+      "unit": "in"
+    },
+    "rating": 4.5,
+    "reviewCount": 166,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "mirrors-wall-decor",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-mirrors-wall-decor-05%2Fhero.jpg?alt=media&token=60c8e8a8-8f9e-4f8e-be02-d9fee5c70e73",
+      "storagePath": "projects/CatalogX/assets/products/cx-mirrors-wall-decor-05/hero.jpg",
+      "alt": "Pavo arched mirror in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-mirrors-wall-decor-06",
+    "slug": "rime-wall-sculpture",
+    "sourceHash": "4396a6ca6653dc683c7c88c18b890ff444814baa013e50c9be3183535a722f8c",
+    "retailer": "Norr & Vale",
+    "name": "Rime Wall Sculpture",
+    "description": "A considered wall sculpture with a contemporary profile, tactile paper, and practical proportions for everyday rooms.",
+    "category": "mirrors-wall-decor",
+    "productType": "wall-sculpture",
+    "currentPrice": 99,
+    "originalPrice": 99,
+    "discountPercent": 0,
+    "inventory": 28,
+    "availability": "in_stock",
+    "deliveryDays": 8,
+    "rooms": [
+      "entryway",
+      "living room"
+    ],
+    "styles": [
+      "contemporary",
+      "minimal"
+    ],
+    "colors": [
+      "cream"
+    ],
+    "materials": [
+      "paper",
+      "glass"
+    ],
+    "useCases": [
+      "everyday entryway",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "compact footprint"
+    ],
+    "tags": [
+      "wall sculpture",
+      "contemporary",
+      "cream",
+      "paper",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 35.5,
+      "height": 40,
+      "depth": 3,
+      "unit": "in"
+    },
+    "rating": 4.7,
+    "reviewCount": 203,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "mirrors-wall-decor",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-mirrors-wall-decor-06%2Fhero.jpg?alt=media&token=657a6b5a-6e53-4c9a-88b9-26189fa14a74",
+      "storagePath": "projects/CatalogX/assets/products/cx-mirrors-wall-decor-06/hero.jpg",
+      "alt": "Rime wall sculpture in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-mirrors-wall-decor-07",
+    "slug": "sola-picture-ledge",
+    "sourceHash": "dff199aff0674c91bbc84208dd826d9e0e3d1a0cfd4ed4e685018a591a6ead41",
+    "retailer": "Norr & Vale",
+    "name": "Sola Picture Ledge",
+    "description": "A slim solid-oak picture ledge with a minimal black finish, shallow display lip, and concealed wall mounting.",
+    "category": "mirrors-wall-decor",
+    "productType": "picture-ledge",
+    "currentPrice": 81.75,
+    "originalPrice": 109,
+    "discountPercent": 25,
+    "inventory": 32,
+    "availability": "in_stock",
+    "deliveryDays": 3,
+    "rooms": [
+      "living room",
+      "bedroom"
+    ],
+    "styles": [
+      "minimal",
+      "organic"
+    ],
+    "colors": [
+      "black"
+    ],
+    "materials": [
+      "oak",
+      "steel"
+    ],
+    "useCases": [
+      "everyday living room",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "statement silhouette"
+    ],
+    "tags": [
+      "picture ledge",
+      "minimal",
+      "black",
+      "oak",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 37,
+      "height": 3,
+      "depth": 4,
+      "unit": "in"
+    },
+    "rating": 4.9,
+    "reviewCount": 240,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "mirrors-wall-decor",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-mirrors-wall-decor-07%2Fhero.jpg?alt=media&token=e15d0f5a-e405-400b-9315-a9721ede0138",
+      "storagePath": "projects/CatalogX/assets/products/cx-mirrors-wall-decor-07/hero.jpg",
+      "alt": "Sola picture ledge in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-mirrors-wall-decor-08",
+    "slug": "talo-framed-print",
+    "sourceHash": "c9a50129bf307258a81c4b5951a8b823055b4c3e3f82ab541cb8a736d19b619f",
+    "retailer": "Norr & Vale",
+    "name": "Talo Framed Print",
+    "description": "A considered framed print with a organic profile, tactile oak, and practical proportions for everyday rooms.",
+    "category": "mirrors-wall-decor",
+    "productType": "framed-print",
+    "currentPrice": 107.1,
+    "originalPrice": 119,
+    "discountPercent": 10,
+    "inventory": 3,
+    "availability": "low_stock",
+    "deliveryDays": 4,
+    "rooms": [
+      "bedroom",
+      "entryway"
+    ],
+    "styles": [
+      "organic",
+      "contemporary"
+    ],
+    "colors": [
+      "natural"
+    ],
+    "materials": [
+      "oak",
+      "paper"
+    ],
+    "useCases": [
+      "everyday bedroom",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "compact footprint"
+    ],
+    "tags": [
+      "framed print",
+      "organic",
+      "natural",
+      "oak",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 38.5,
+      "height": 38,
+      "depth": 5,
+      "unit": "in"
+    },
+    "rating": 3.8,
+    "reviewCount": 277,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "mirrors-wall-decor",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-mirrors-wall-decor-08%2Fhero.jpg?alt=media&token=f887b0e1-ff39-4755-a5c6-1fdf63569491",
+      "storagePath": "projects/CatalogX/assets/products/cx-mirrors-wall-decor-08/hero.jpg",
+      "alt": "Talo framed print in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-mirrors-wall-decor-09",
+    "slug": "vega-gallery-set",
+    "sourceHash": "d2231438f9ce993e76dcabf68ce6e02891ae753bb610b863f2bcaa5639a6fbb3",
+    "retailer": "Norr & Vale",
+    "name": "Vega Gallery Set",
+    "description": "A considered gallery set with a contemporary profile, tactile paper, and practical proportions for everyday rooms.",
+    "category": "mirrors-wall-decor",
+    "productType": "gallery-set",
+    "currentPrice": 129,
+    "originalPrice": 129,
+    "discountPercent": 0,
+    "inventory": 0,
+    "availability": "backorder",
+    "deliveryDays": 28,
+    "rooms": [
+      "entryway",
+      "living room"
+    ],
+    "styles": [
+      "contemporary",
+      "minimal"
+    ],
+    "colors": [
+      "cream"
+    ],
+    "materials": [
+      "paper",
+      "glass"
+    ],
+    "useCases": [
+      "everyday entryway",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "compact footprint"
+    ],
+    "tags": [
+      "gallery set",
+      "contemporary",
+      "cream",
+      "paper",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 40,
+      "height": 40,
+      "depth": 2,
+      "unit": "in"
+    },
+    "rating": 4,
+    "reviewCount": 314,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "mirrors-wall-decor",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-mirrors-wall-decor-09%2Fhero.jpg?alt=media&token=a08ec9f1-df0b-4d0e-9068-d1c2a6500e72",
+      "storagePath": "projects/CatalogX/assets/products/cx-mirrors-wall-decor-09/hero.jpg",
+      "alt": "Vega gallery set in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-mirrors-wall-decor-10",
+    "slug": "yonder-accent-mirror",
+    "sourceHash": "768483d3fe6c1a8c381ff679b9265891866297dba0a69b14e68ba3e4eec01eb5",
+    "retailer": "Norr & Vale",
+    "name": "Yonder Accent Mirror",
+    "description": "A considered accent mirror with a minimal profile, tactile glass, and practical proportions for everyday rooms.",
+    "category": "mirrors-wall-decor",
+    "productType": "accent-mirror",
+    "currentPrice": 118.15,
+    "originalPrice": 139,
+    "discountPercent": 15,
+    "inventory": 0,
+    "availability": "out_of_stock",
+    "deliveryDays": 6,
+    "rooms": [
+      "living room",
+      "bedroom"
+    ],
+    "styles": [
+      "minimal",
+      "organic"
+    ],
+    "colors": [
+      "black"
+    ],
+    "materials": [
+      "glass",
+      "oak"
+    ],
+    "useCases": [
+      "everyday living room",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "statement silhouette"
+    ],
+    "tags": [
+      "accent mirror",
+      "minimal",
+      "black",
+      "glass",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 41.5,
+      "height": 36,
+      "depth": 3,
+      "unit": "in"
+    },
+    "rating": 4.2,
+    "reviewCount": 351,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "mirrors-wall-decor",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-mirrors-wall-decor-10%2Fhero.jpg?alt=media&token=f1cadb06-714a-4313-89f2-8ee3fffd4cae",
+      "storagePath": "projects/CatalogX/assets/products/cx-mirrors-wall-decor-10/hero.jpg",
+      "alt": "Yonder accent mirror in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-accessories-01",
+    "slug": "ami-ceramic-vase",
+    "sourceHash": "43107d2950cf2ff89bce49a5d37c92868de081e572f3ae8a676a35b78874e344",
+    "retailer": "Norr & Vale",
+    "name": "Ami Ceramic Vase",
+    "description": "A considered ceramic vase with a organic profile, tactile ceramic, and practical proportions for everyday rooms.",
+    "category": "accessories",
+    "productType": "ceramic-vase",
+    "currentPrice": 19,
+    "originalPrice": 19,
+    "discountPercent": 0,
+    "inventory": 8,
+    "availability": "in_stock",
+    "deliveryDays": 3,
+    "rooms": [
+      "living room",
+      "bedroom"
+    ],
+    "styles": [
+      "organic",
+      "minimal"
+    ],
+    "colors": [
+      "chalk"
+    ],
+    "materials": [
+      "ceramic",
+      "wood"
+    ],
+    "useCases": [
+      "everyday living room",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "statement silhouette"
+    ],
+    "tags": [
+      "ceramic vase",
+      "organic",
+      "chalk",
+      "ceramic",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 9,
+      "height": 12,
+      "depth": 9,
+      "unit": "in"
+    },
+    "rating": 3.8,
+    "reviewCount": 18,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "accessories",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-accessories-01%2Fhero.jpg?alt=media&token=e3f4e87b-74fd-43c0-887a-e2f52c1dc31e",
+      "storagePath": "projects/CatalogX/assets/products/cx-accessories-01/hero.jpg",
+      "alt": "Ami ceramic vase in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-accessories-02",
+    "slug": "bela-candleholder",
+    "sourceHash": "4d96c4a2cd9c1c761dcfebe79058530e5a29b1b766c83b111a76832261d78922",
+    "retailer": "Norr & Vale",
+    "name": "Bela Candleholder",
+    "description": "A considered candleholder with a minimal profile, tactile wood, and practical proportions for everyday rooms.",
+    "category": "accessories",
+    "productType": "candleholder",
+    "currentPrice": 26.1,
+    "originalPrice": 29,
+    "discountPercent": 10,
+    "inventory": 12,
+    "availability": "in_stock",
+    "deliveryDays": 4,
+    "rooms": [
+      "bedroom",
+      "entryway"
+    ],
+    "styles": [
+      "minimal",
+      "artisanal"
+    ],
+    "colors": [
+      "stone"
+    ],
+    "materials": [
+      "wood",
+      "metal"
+    ],
+    "useCases": [
+      "everyday bedroom",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "compact footprint"
+    ],
+    "tags": [
+      "candleholder",
+      "minimal",
+      "stone",
+      "wood",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 10.5,
+      "height": 14,
+      "depth": 10,
+      "unit": "in"
+    },
+    "rating": 4,
+    "reviewCount": 55,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "accessories",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-accessories-02%2Fhero.jpg?alt=media&token=496839ca-9895-4291-a4de-1a2fab747052",
+      "storagePath": "projects/CatalogX/assets/products/cx-accessories-02/hero.jpg",
+      "alt": "Bela candleholder in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-accessories-03",
+    "slug": "cora-basket",
+    "sourceHash": "1b3f17660facb283fb4109dd1e9690832cc9d58544a7e93ee86e088dc2f37317",
+    "retailer": "Norr & Vale",
+    "name": "Cora Basket",
+    "description": "A considered basket with a artisanal profile, tactile metal, and practical proportions for everyday rooms.",
+    "category": "accessories",
+    "productType": "basket",
+    "currentPrice": 39,
+    "originalPrice": 39,
+    "discountPercent": 0,
+    "inventory": 16,
+    "availability": "in_stock",
+    "deliveryDays": 5,
+    "rooms": [
+      "entryway",
+      "living room"
+    ],
+    "styles": [
+      "artisanal",
+      "organic"
+    ],
+    "colors": [
+      "charcoal"
+    ],
+    "materials": [
+      "metal",
+      "ceramic"
+    ],
+    "useCases": [
+      "everyday entryway",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "compact footprint"
+    ],
+    "tags": [
+      "basket",
+      "artisanal",
+      "charcoal",
+      "metal",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 12,
+      "height": 16,
+      "depth": 11,
+      "unit": "in"
+    },
+    "rating": 4.2,
+    "reviewCount": 92,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "accessories",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-accessories-03%2Fhero.jpg?alt=media&token=858a519c-983e-4766-b12d-050dcd7f7002",
+      "storagePath": "projects/CatalogX/assets/products/cx-accessories-03/hero.jpg",
+      "alt": "Cora basket in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-accessories-04",
+    "slug": "demi-table-clock",
+    "sourceHash": "c4f5fba5bfd4df1b2656fd7c1dee734563d513d02ed6d826bffd2ea3fe5795de",
+    "retailer": "Norr & Vale",
+    "name": "Demi Table Clock",
+    "description": "A considered table clock with a organic profile, tactile ceramic, and practical proportions for everyday rooms.",
+    "category": "accessories",
+    "productType": "table-clock",
+    "currentPrice": 41.65,
+    "originalPrice": 49,
+    "discountPercent": 15,
+    "inventory": 20,
+    "availability": "in_stock",
+    "deliveryDays": 6,
+    "rooms": [
+      "living room",
+      "bedroom"
+    ],
+    "styles": [
+      "organic",
+      "minimal"
+    ],
+    "colors": [
+      "chalk"
+    ],
+    "materials": [
+      "ceramic",
+      "wood"
+    ],
+    "useCases": [
+      "everyday living room",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "statement silhouette"
+    ],
+    "tags": [
+      "table clock",
+      "organic",
+      "chalk",
+      "ceramic",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 13.5,
+      "height": 12,
+      "depth": 12,
+      "unit": "in"
+    },
+    "rating": 4.3,
+    "reviewCount": 129,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "accessories",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-accessories-04%2Fhero.jpg?alt=media&token=20d9633e-9fc8-4e68-9bc1-223e217f01e9",
+      "storagePath": "projects/CatalogX/assets/products/cx-accessories-04/hero.jpg",
+      "alt": "Demi table clock in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-accessories-05",
+    "slug": "enna-bookend-set",
+    "sourceHash": "973a68a0c2c5db7f4328b1baddf3ea56f60ff48a2b0365cee8fd3407fb4532a8",
+    "retailer": "Norr & Vale",
+    "name": "Enna Bookend Set",
+    "description": "A considered bookend set with a minimal profile, tactile wood, and practical proportions for everyday rooms.",
+    "category": "accessories",
+    "productType": "bookend-set",
+    "currentPrice": 47.2,
+    "originalPrice": 59,
+    "discountPercent": 20,
+    "inventory": 24,
+    "availability": "in_stock",
+    "deliveryDays": 7,
+    "rooms": [
+      "bedroom",
+      "entryway"
+    ],
+    "styles": [
+      "minimal",
+      "artisanal"
+    ],
+    "colors": [
+      "stone"
+    ],
+    "materials": [
+      "wood",
+      "metal"
+    ],
+    "useCases": [
+      "everyday bedroom",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "compact footprint"
+    ],
+    "tags": [
+      "bookend set",
+      "minimal",
+      "stone",
+      "wood",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 15,
+      "height": 14,
+      "depth": 9,
+      "unit": "in"
+    },
+    "rating": 4.5,
+    "reviewCount": 166,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "accessories",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-accessories-05%2Fhero.jpg?alt=media&token=29bd2674-dcda-4999-a499-a2c6be3a398e",
+      "storagePath": "projects/CatalogX/assets/products/cx-accessories-05/hero.jpg",
+      "alt": "Enna bookend set in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-accessories-06",
+    "slug": "fia-decorative-bowl",
+    "sourceHash": "ee084c91df5c87c796fe49815b3c22e7254f7380c324f1715ac71ef576c86cd1",
+    "retailer": "Norr & Vale",
+    "name": "Fia Decorative Bowl",
+    "description": "A considered decorative bowl with a artisanal profile, tactile metal, and practical proportions for everyday rooms.",
+    "category": "accessories",
+    "productType": "decorative-bowl",
+    "currentPrice": 69,
+    "originalPrice": 69,
+    "discountPercent": 0,
+    "inventory": 28,
+    "availability": "in_stock",
+    "deliveryDays": 8,
+    "rooms": [
+      "entryway",
+      "living room"
+    ],
+    "styles": [
+      "artisanal",
+      "organic"
+    ],
+    "colors": [
+      "charcoal"
+    ],
+    "materials": [
+      "metal",
+      "ceramic"
+    ],
+    "useCases": [
+      "everyday entryway",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "compact footprint"
+    ],
+    "tags": [
+      "decorative bowl",
+      "artisanal",
+      "charcoal",
+      "metal",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 16.5,
+      "height": 16,
+      "depth": 10,
+      "unit": "in"
+    },
+    "rating": 4.7,
+    "reviewCount": 203,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "accessories",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-accessories-06%2Fhero.jpg?alt=media&token=4c7532ff-c3b8-4fe4-a63b-6d48f2b74bcf",
+      "storagePath": "projects/CatalogX/assets/products/cx-accessories-06/hero.jpg",
+      "alt": "Fia decorative bowl in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-accessories-07",
+    "slug": "gio-plant-pot",
+    "sourceHash": "28c095cc8c5c0730d84f2250b570552881fe2e4f94f6ca1d2b8506531f79381f",
+    "retailer": "Norr & Vale",
+    "name": "Gio Plant Pot",
+    "description": "A considered plant pot with a organic profile, tactile ceramic, and practical proportions for everyday rooms.",
+    "category": "accessories",
+    "productType": "plant-pot",
+    "currentPrice": 59.25,
+    "originalPrice": 79,
+    "discountPercent": 25,
+    "inventory": 32,
+    "availability": "in_stock",
+    "deliveryDays": 3,
+    "rooms": [
+      "living room",
+      "bedroom"
+    ],
+    "styles": [
+      "organic",
+      "minimal"
+    ],
+    "colors": [
+      "chalk"
+    ],
+    "materials": [
+      "ceramic",
+      "wood"
+    ],
+    "useCases": [
+      "everyday living room",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "statement silhouette"
+    ],
+    "tags": [
+      "plant pot",
+      "organic",
+      "chalk",
+      "ceramic",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 18,
+      "height": 12,
+      "depth": 11,
+      "unit": "in"
+    },
+    "rating": 4.9,
+    "reviewCount": 240,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "accessories",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-accessories-07%2Fhero.jpg?alt=media&token=fb9873f0-0d67-4c59-a769-94cbbe2393e9",
+      "storagePath": "projects/CatalogX/assets/products/cx-accessories-07/hero.jpg",
+      "alt": "Gio plant pot in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-accessories-08",
+    "slug": "hana-catchall-tray",
+    "sourceHash": "0497ac3cf217dc148d81c25fe1ac63093dfc2d4d37bbacc4b7ff6f20672b8643",
+    "retailer": "Norr & Vale",
+    "name": "Hana Catchall Tray",
+    "description": "A considered catchall tray with a minimal profile, tactile wood, and practical proportions for everyday rooms.",
+    "category": "accessories",
+    "productType": "catchall-tray",
+    "currentPrice": 80.1,
+    "originalPrice": 89,
+    "discountPercent": 10,
+    "inventory": 3,
+    "availability": "low_stock",
+    "deliveryDays": 4,
+    "rooms": [
+      "bedroom",
+      "entryway"
+    ],
+    "styles": [
+      "minimal",
+      "artisanal"
+    ],
+    "colors": [
+      "stone"
+    ],
+    "materials": [
+      "wood",
+      "metal"
+    ],
+    "useCases": [
+      "everyday bedroom",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "compact footprint"
+    ],
+    "tags": [
+      "catchall tray",
+      "minimal",
+      "stone",
+      "wood",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 19.5,
+      "height": 14,
+      "depth": 12,
+      "unit": "in"
+    },
+    "rating": 3.8,
+    "reviewCount": 277,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "accessories",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-accessories-08%2Fhero.jpg?alt=media&token=082b4feb-5338-4ec3-ae7b-73f620306664",
+      "storagePath": "projects/CatalogX/assets/products/cx-accessories-08/hero.jpg",
+      "alt": "Hana catchall tray in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-accessories-09",
+    "slug": "ilo-sculptural-object",
+    "sourceHash": "b6d756c34990d947715801920ca54e4c1d84ae27f5a74a39f671dfffc00f18e0",
+    "retailer": "Norr & Vale",
+    "name": "Ilo Sculptural Object",
+    "description": "A considered sculptural object with a artisanal profile, tactile metal, and practical proportions for everyday rooms.",
+    "category": "accessories",
+    "productType": "sculptural-object",
+    "currentPrice": 99,
+    "originalPrice": 99,
+    "discountPercent": 0,
+    "inventory": 0,
+    "availability": "backorder",
+    "deliveryDays": 28,
+    "rooms": [
+      "entryway",
+      "living room"
+    ],
+    "styles": [
+      "artisanal",
+      "organic"
+    ],
+    "colors": [
+      "charcoal"
+    ],
+    "materials": [
+      "metal",
+      "ceramic"
+    ],
+    "useCases": [
+      "everyday entryway",
+      "layered interiors"
+    ],
+    "features": [
+      "responsibly sourced material",
+      "compact footprint"
+    ],
+    "tags": [
+      "sculptural object",
+      "artisanal",
+      "charcoal",
+      "metal",
+      "timeless"
+    ],
+    "dimensions": {
+      "width": 21,
+      "height": 16,
+      "depth": 9,
+      "unit": "in"
+    },
+    "rating": 4,
+    "reviewCount": 314,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "accessories",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-accessories-09%2Fhero.jpg?alt=media&token=99173c90-3328-42c8-bd45-985cf21b9c43",
+      "storagePath": "projects/CatalogX/assets/products/cx-accessories-09/hero.jpg",
+      "alt": "Ilo sculptural object in a warm neutral studio setting"
+    }
+  },
+  {
+    "id": "cx-accessories-10",
+    "slug": "juni-lantern",
+    "sourceHash": "4335e727a811829c94183a2881659776d3cbde3f5b49fdb3729e720e16610e16",
+    "retailer": "Norr & Vale",
+    "name": "Juni Lantern",
+    "description": "A considered lantern with a organic profile, tactile ceramic, and practical proportions for everyday rooms.",
+    "category": "accessories",
+    "productType": "lantern",
+    "currentPrice": 92.65,
+    "originalPrice": 109,
+    "discountPercent": 15,
+    "inventory": 0,
+    "availability": "out_of_stock",
+    "deliveryDays": 6,
+    "rooms": [
+      "living room",
+      "bedroom"
+    ],
+    "styles": [
+      "organic",
+      "minimal"
+    ],
+    "colors": [
+      "chalk"
+    ],
+    "materials": [
+      "ceramic",
+      "wood"
+    ],
+    "useCases": [
+      "everyday living room",
+      "small spaces"
+    ],
+    "features": [
+      "easy-care finish",
+      "statement silhouette"
+    ],
+    "tags": [
+      "lantern",
+      "organic",
+      "chalk",
+      "ceramic",
+      "space-saving"
+    ],
+    "dimensions": {
+      "width": 22.5,
+      "height": 12,
+      "depth": 10,
+      "unit": "in"
+    },
+    "rating": 4.2,
+    "reviewCount": 351,
+    "image": {
+      "status": "final",
+      "placeholderCategory": "accessories",
+      "heroUrl": "https://firebasestorage.googleapis.com/v0/b/bashbash-labs.firebasestorage.app/o/projects%2FCatalogX%2Fassets%2Fproducts%2Fcx-accessories-10%2Fhero.jpg?alt=media&token=3ae42538-3318-4703-927c-ba3d2c45e3a6",
+      "storagePath": "projects/CatalogX/assets/products/cx-accessories-10/hero.jpg",
+      "alt": "Juni lantern in a warm neutral studio setting"
+    }
+  }
+]

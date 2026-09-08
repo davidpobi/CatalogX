@@ -1,0 +1,28 @@
+import type { RootState } from "./store";
+
+export const selectAIDraft = (state: RootState) => state.ai.draft;
+export const selectAIPlan = (state: RootState) => state.ai.plan;
+export const selectAIInterpretation = (state: RootState) => state.ai.interpretation;
+export const selectConciergePresentation = (state: RootState) => state.ai.conciergePresentation;
+export const selectWorkflowProgress = (state: RootState) => state.ai.workflowProgress;
+export const selectCompletedWorkflowSteps = (state: RootState) => state.ai.completedWorkflowSteps;
+export const selectPendingSubmission = (state: RootState) => state.ai.pendingSubmission;
+export const selectCatalogueProducts = (state: RootState) => state.data.catalogueProducts;
+export const selectCatalogueReady = (state: RootState) => state.data.catalogueStatus === "succeeded";
+export const selectCatalogueStatus = (state: RootState) => state.data.catalogueStatus;
+export const selectVisibleResults = (state: RootState) => state.data.results;
+export const selectMatchedResultTotal = (state: RootState) => state.data.total;
+export const selectActiveBundle = (state: RootState) => state.data.bundle;
+export const selectSearchSuggestions = (state: RootState) => state.data.suggestions;
+export const selectQueryAssessment = (state: RootState) => state.data.assessment;
+export const selectCatalogFacets = (state: RootState) => state.data.facets;
+export const selectStoreBusy = (state: RootState) => state.ai.status === "loading" || state.data.queryStatus === "loading";
+export const selectStoreError = (state: RootState) => state.ai.error || state.data.error;
+export const selectSavedProductIds = (state: RootState) => state.data.savedProductIds;
+export const selectRecentSearches = (state: RootState) => state.data.recentSearches;
+export const selectSceneAnalysis = (state: RootState) => state.scene.analysis;
+export const selectSceneGeneration = (state: RootState) => state.scene.generation;
+export const selectSceneAuthorizedWorkflowId = (state: RootState) => state.scene.authorizedWorkflowId;
+export const selectSceneAuthorizedProductIds = (state: RootState) => state.scene.authorizedProductIds;
+export const selectSceneBusy = (state: RootState) => state.scene.uploadStatus === "loading" || state.scene.generationStatus === "loading";
+export const selectSceneError = (state: RootState) => state.scene.error;
