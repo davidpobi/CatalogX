@@ -1,4 +1,3 @@
-import type { Product } from "@/interfaces/catalog";
 import type { CatalogQueryPlanV1, InterpretationChip } from "@/interfaces/search";
 import type { SearchSuggestion } from "@/interfaces/intelligence";
 import { listProducts, queryProducts, replaceBundleProduct } from "@/services/catalog.service";
@@ -7,10 +6,10 @@ import { analyzeScene, generateScene, getSceneGeneration } from "@/services/scen
 import { SceneGenerationStatus } from "@/interfaces/scene";
 import { transcribeSearchAudio } from "@/services/audio.service";
 import { trackCatalogEvent } from "@/services/analytics.service";
-import { addRecentSearch, clearRecentSearches, getRecentSearches, getSavedProductIds, removeRecentSearch, toggleSavedProduct } from "@/services/persistence.service";
+import { addRecentSearch, clearRecentSearches, getRecentSearches, getSavedProductIds, removeRecentSearch } from "@/services/persistence.service";
 import { applyQueryPlanPatch, isPlanConstraintActive, removePlanConstraint } from "@/utils/queryPlan";
 import { aiRequestCompleted, aiRequestFailed, aiRequestStarted, aiWorkflowProgressed, clearPendingSubmission, markSubmissionConsumed, removeInterpretationChip, setAIDraft, setAIError, setAIPlan, suggestionApplied } from "./slices/aiSlice";
-import { catalogueLoadCompleted, catalogueLoadFailed, catalogueLoadStarted, localStateHydrated, queryCompleted, queryFailed, queryStarted, recentSearchesChanged, savedProductsChanged } from "./slices/dataSlice";
+import { catalogueLoadCompleted, catalogueLoadFailed, catalogueLoadStarted, localStateHydrated, queryCompleted, queryFailed, queryStarted, recentSearchesChanged } from "./slices/dataSlice";
 import { invalidateSceneWorkflow, sceneGenerationCompleted, sceneGenerationFailed, sceneGenerationProgressed, sceneGenerationStarted, sceneUploadCompleted, sceneUploadFailed, sceneUploadStarted, sceneWorkflowAuthorized } from "./slices/sceneSlice";
 import type { AppThunk, RootState } from "./store";
 
@@ -166,11 +165,6 @@ export const generateSceneAction = (): AppThunk<Promise<void>> => async (dispatc
     if (generation.status === SceneGenerationStatus.Completed) dispatch(sceneGenerationCompleted(generation));
     else dispatch(sceneGenerationFailed({ generationId: generation.generationId, error: generation.error ?? "The furnished view timed out." }));
   } catch (error) { dispatch(sceneGenerationFailed({ error: message(error, "The furnished view could not be generated.") })); }
-};
-
-export const toggleSavedProductAction = (product: Product): AppThunk => (dispatch) => {
-  dispatch(savedProductsChanged(toggleSavedProduct(product)));
-  void trackCatalogEvent("product_save", { category: product.category });
 };
 
 export const removeRecentSearchAction = (id: string): AppThunk => (dispatch) => {

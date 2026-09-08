@@ -1,0 +1,10 @@
+import { CustomerOperations, type CustomerLibraryData } from "@/interfaces/customer";
+import { postApi } from "./apiClient.service";
+const call = (operation: CustomerOperations, payload: Record<string, unknown> = {}) => postApi<CustomerLibraryData>("/api/customer", { operation, ...payload });
+export const listCustomerLibrary = () => call(CustomerOperations.ListLikes);
+export const setRemoteLike = (productId: string, liked: boolean) => call(liked ? CustomerOperations.AddLike : CustomerOperations.RemoveLike, { productId });
+export const mergeRemoteLikes = (productIds: string[]) => call(CustomerOperations.MergeLocalLikes, { productIds });
+export const createRemoteCollection = (name: string) => call(CustomerOperations.CreateCollection, { name });
+export const renameRemoteCollection = (collectionId: string, name: string) => call(CustomerOperations.RenameCollection, { collectionId, name });
+export const deleteRemoteCollection = (collectionId: string) => call(CustomerOperations.DeleteCollection, { collectionId });
+export const setRemoteCollectionItem = (collectionId: string, productId: string, included: boolean) => call(included ? CustomerOperations.AddCollectionItem : CustomerOperations.RemoveCollectionItem, { collectionId, productId });

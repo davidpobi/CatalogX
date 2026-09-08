@@ -1,7 +1,7 @@
 import "server-only";
 import { Agent, Runner, tool, withTrace, type AgentInputItem } from "@openai/agents";
 import { z } from "zod";
-import { PRODUCT_TYPE_IDS, type CatalogQueryData, type Product, type RankedProduct } from "@/interfaces/catalog";
+import { PRODUCT_TYPE_IDS, type CatalogQueryData, type CategoryId, type Product, type RankedProduct } from "@/interfaces/catalog";
 import {
   AgentWorkflowStatus,
   AgentWorkflowStep,
@@ -53,7 +53,7 @@ interface SearchRunContext {
   plan: CatalogQueryPlanV1 | null;
   toolCalls: number;
   preserveHardConstraintsFrom: CatalogQueryPlanV1 | null;
-  onCatalogueQuery?: () => void;
+  onCatalogueQuery?: (plan?: CatalogQueryPlanV1, result?: CatalogQueryData) => void;
   prompt: string;
   scene: SceneWorkflowContext | null;
 }
@@ -93,10 +93,10 @@ const queryCatalogueTool = tool<typeof queryCatalogueParameters, SearchRunContex
       ? preserveHardConstraints(runContext.context.preserveHardConstraintsFrom, normalizedPlan)
       : normalizedPlan;
     const authoritativePlan = applyScenePlan(authoritativePlanBase, runContext.context.prompt, runContext.context.scene);
-    runContext.context.onCatalogueQuery?.();
     const result = executeCatalogQuery(runContext.context.products, authoritativePlan);
     runContext.context.plan = authoritativePlan;
     runContext.context.result = result;
+    runContext.context.onCatalogueQuery?.(authoritativePlan, result);
     return {
       mode: result.mode,
       total: result.total,
@@ -171,6 +171,13 @@ export const selectReviewCandidates = (result: CatalogQueryData) => {
   }
   return candidates;
 };
+
+const resultCategoryIds = (items: RankedProduct[]): CategoryId[] => items.slice(0, 4).map((item) => item.product.category);
+
+const planCategoryIds = (plan: CatalogQueryPlanV1): CategoryId[] => [...new Set([
+  ...plan.categories,
+  ...(plan.bundle?.requiredCategories ?? []),
+])].slice(0, 4);
 
 const visualInput = (text: unknown, candidates: RankedProduct[], sceneImage?: string): AgentInputItem[] => [{
   role: "user",
@@ -288,7 +295,7 @@ export const runCatalogAgentWorkflow = async ({
 }): Promise<ConciergeQueryData> => {
   const workflowId = crypto.randomUUID();
   const startedAt = Date.now();
-  const progress = (step: AgentWorkflowProgressStep, status: AgentWorkflowProgress["status"], agent: AgentWorkflowProgress["agent"], details: Pick<AgentWorkflowProgress, "resultCount" | "reviewedCount" | "acceptedCount" | "retry"> = {}) => {
+  const progress = (step: AgentWorkflowProgressStep, status: AgentWorkflowProgress["status"], agent: AgentWorkflowProgress["agent"], details: Pick<AgentWorkflowProgress, "resultCount" | "reviewedCount" | "acceptedCount" | "retry" | "categoryIds"> = {}) => {
     const event: AgentWorkflowProgress = { requestId, workflowId, step, status, agent, ...details };
     const copy = agentWorkflowProgressCopy(event);
     workflowEvent(requestId, workflowId, AgentWorkflowStep.WorkflowProgress, {
@@ -340,7 +347,13 @@ export const runCatalogAgentWorkflow = async ({
       const agentRunner = runner();
       const initialSearchContext: SearchRunContext = {
         products, result: null, plan: null, toolCalls: 0, preserveHardConstraintsFrom: null,
-        onCatalogueQuery: () => progress(AgentWorkflowProgressStep.Searching, "running", "search"),
+        onCatalogueQuery: (plan, result) => {
+          const foundCategories = result ? resultCategoryIds(selectReviewCandidates(result)) : [];
+          progress(AgentWorkflowProgressStep.Searching, "running", "search", {
+            resultCount: result?.total,
+            categoryIds: foundCategories.length ? foundCategories : plan ? planCategoryIds(plan) : undefined,
+          });
+        },
         prompt, scene,
       };
       const searchStarted = Date.now();
@@ -368,7 +381,7 @@ export const runCatalogAgentWorkflow = async ({
       }
 
       const reviewStarted = Date.now();
-      progress(AgentWorkflowProgressStep.Reviewing, "running", "review", { resultCount: catalog.total, reviewedCount: candidates.length });
+      progress(AgentWorkflowProgressStep.Reviewing, "running", "review", { resultCount: catalog.total, reviewedCount: candidates.length, categoryIds: resultCategoryIds(candidates) });
       let reviewOutput: z.infer<typeof resultReviewOutputSchema>;
       try {
         const reviewInput = visualInput({
@@ -423,9 +436,16 @@ export const runCatalogAgentWorkflow = async ({
       const needsRetry = supportedReviewRetry || ordinaryRetry || bundleRetry;
       if (needsRetry) {
         workflowEvent(requestId, workflowId, AgentWorkflowStep.SearchRetryRequested, { agent: "search", retry: 1, acceptedCount: review.acceptedProductIds.length });
-        progress(AgentWorkflowProgressStep.Retrying, "running", "search", { retry: 1, acceptedCount: review.acceptedProductIds.length });
+        progress(AgentWorkflowProgressStep.Retrying, "running", "search", { retry: 1, acceptedCount: review.acceptedProductIds.length, categoryIds: resultCategoryIds(candidates.filter((item) => review.acceptedProductIds.includes(item.product.id))) });
         try {
-          const retryContext: SearchRunContext = { products, result: null, plan: null, toolCalls: 0, preserveHardConstraintsFrom: compiled.plan, prompt, scene };
+          const retryContext: SearchRunContext = {
+            products, result: null, plan: null, toolCalls: 0, preserveHardConstraintsFrom: compiled.plan, prompt, scene,
+            onCatalogueQuery: (_plan, result) => progress(AgentWorkflowProgressStep.Retrying, "running", "search", {
+              retry: 1,
+              resultCount: result?.total,
+              categoryIds: result ? resultCategoryIds(selectReviewCandidates(result)) : undefined,
+            }),
+          };
           const retryRun = await agentRunner.run(searchAgent, searchInput(prompt, context, compiled.plan, review, scene), { context: retryContext, maxTurns: 3 });
           if (!retryRun.finalOutput) throw new Error("Retry search agent returned no output.");
           const retryCompiled = normalizeCompiledSearch({ ...retryRun.finalOutput, compiler: MODEL }, buildSearchVocabulary(products));
@@ -455,7 +475,7 @@ export const runCatalogAgentWorkflow = async ({
       }
 
       const acceptedCandidates = candidates.filter((item) => review.acceptedProductIds.includes(item.product.id));
-      progress(AgentWorkflowProgressStep.Presenting, "running", "concierge", { resultCount: catalog.total, acceptedCount: acceptedCandidates.length });
+      progress(AgentWorkflowProgressStep.Presenting, "running", "concierge", { resultCount: catalog.total, acceptedCount: acceptedCandidates.length, categoryIds: resultCategoryIds(acceptedCandidates) });
       const conciergeInput = visualInput({
         prompt,
         interpretation: compiled.interpretation,

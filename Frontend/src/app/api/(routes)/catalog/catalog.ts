@@ -3,8 +3,8 @@ import type { ApiRouteResult } from "@/interfaces/api";
 import { CatalogOperations, type CatalogListData, type CatalogQueryData } from "@/interfaces/catalog";
 import { queryPlanSchema } from "@/utils/queryPlan";
 import { buildFacets, executeCatalogQuery, replaceCatalogBundleProduct } from "@/utils/catalogQuery";
-import { getCatalogProducts } from "../../services/catalog.repository";
-import { failure } from "../../utils/http";
+import { getCatalogProducts } from "../../services/catalog.service";
+import { failure } from "../../utils/httpUtils";
 import { catalogueVersionFor } from "../../services/catalogIntelligence.service";
 
 const queryRequestSchema = z.object({

@@ -2,7 +2,7 @@ import type { Availability, CategoryId, ProductType } from "./catalog";
 
 export interface StoreContext {
   brand: "CatalogX";
-  retailer: "Norr & Vale";
+  retailer: string;
   description: string;
   currency: "USD";
   market: string;

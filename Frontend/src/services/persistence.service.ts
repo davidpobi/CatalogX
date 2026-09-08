@@ -29,6 +29,7 @@ export const removeRecentSearch = (id: string) => {
 };
 export const clearRecentSearches = () => { write(keys.recent, []); return []; };
 export const getSavedProductIds = () => read<string[]>(keys.saved, []);
+export const clearSavedProductIds = () => { try { localStorage.removeItem(keys.saved); } catch { /* Persistence is optional. */ } };
 export const toggleSavedProduct = (product: Pick<Product, "id">) => {
   const saved = new Set(getSavedProductIds());
   if (saved.has(product.id)) saved.delete(product.id); else saved.add(product.id);

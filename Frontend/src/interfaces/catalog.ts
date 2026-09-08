@@ -65,7 +65,9 @@ export interface Product {
   id: string;
   slug: string;
   sourceHash: string;
-  retailer: "Norr & Vale";
+  source: "platform" | "merchant";
+  merchantId: string | null;
+  retailer: string;
   name: string;
   description: string;
   category: CategoryId;
@@ -87,10 +89,6 @@ export interface Product {
   rating: number;
   reviewCount: number;
   image: ProductImage;
-}
-
-export interface CatalogRepository {
-  list(): Promise<Product[]>;
 }
 
 export enum CatalogOperations {

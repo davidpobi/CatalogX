@@ -4,7 +4,7 @@ import type { CategoryId, ProductType } from "@/interfaces/catalog";
 export const STORE_CONTEXT: StoreContext = {
   brand: "CatalogX",
   retailer: "Norr & Vale",
-  description: "A fictional direct-to-consumer catalogue of considered furniture, lighting, textiles, décor, and home accessories.",
+  description: "A fictional multi-merchant catalogue of considered furniture, lighting, textiles, décor, and home accessories.",
   currency: "USD",
   market: "Fictional home-furnishings demonstration catalogue",
   customerPromise: "Turn a customer's room, product, mood, budget, dimension, and delivery intent into a precise, editable catalogue plan.",

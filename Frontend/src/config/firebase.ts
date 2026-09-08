@@ -1,6 +1,7 @@
 "use client";
 
 import { getApp, getApps, initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 import { getAnalytics, isSupported, type Analytics } from "firebase/analytics";
 
 const firebaseConfig = {
@@ -14,5 +15,6 @@ const firebaseConfig = {
 };
 
 export const firebaseApp = getApps().length ? getApp() : initializeApp(firebaseConfig);
+export const firebaseAuth = () => getAuth(firebaseApp);
 let analyticsPromise: Promise<Analytics | null> | null = null;
 export const getFirebaseAnalytics = () => analyticsPromise ??= isSupported().then((supported) => supported ? getAnalytics(firebaseApp) : null).catch(() => null);

@@ -2,7 +2,7 @@ import "server-only";
 import { createHash } from "node:crypto";
 import type { NextRequest } from "next/server";
 import type { RateLimitState } from "@/interfaces/api";
-import { getAdminDb } from "../config/firebaseAdmin";
+import { getFirestore } from "../utils/firestoreUtils";
 import { CATALOGX_PROJECT_DOCUMENT, CATALOGX_PROJECTS_COLLECTION, CATALOGX_RATE_LIMITS_SUBCOLLECTION } from "@/utils/catalogPersistence";
 import { resolveRateLimitRepository } from "@/utils/rateLimit";
 
@@ -27,7 +27,7 @@ const consumeMemoryRateLimit = (key: string, limit: number, windowMs: number) =>
 
 export const consumeRateLimit = async (key: string, limit: number, windowMs: number): Promise<RateLimitState> => {
   if (resolveRateLimitRepository(process.env) === "memory") return consumeMemoryRateLimit(key, limit, windowMs);
-  const db = getAdminDb();
+  const db = getFirestore();
   const reference = db.collection(CATALOGX_PROJECTS_COLLECTION).doc(CATALOGX_PROJECT_DOCUMENT).collection(CATALOGX_RATE_LIMITS_SUBCOLLECTION).doc(key);
   return db.runTransaction(async (transaction) => {
     const now = Date.now();

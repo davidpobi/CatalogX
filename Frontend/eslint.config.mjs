@@ -6,7 +6,7 @@ export default defineConfig([
   ...nextVitals,
   ...nextTs,
   {
-    files: ["src/components/**/*.{ts,tsx}", "src/app/**/page.tsx"],
+    files: ["src/components/**/*.{ts,tsx}"],
     rules: {
       "no-restricted-syntax": [
         "error",
@@ -15,6 +15,19 @@ export default defineConfig([
       "no-restricted-imports": [
         "error",
         { patterns: [{ group: ["@/app/api/**", "openai", "firebase-admin", "replicate"], message: "Server and provider modules cannot enter the UI bundle." }] },
+      ],
+    },
+  },
+  {
+    files: ["src/app/**/page.tsx"],
+    rules: {
+      "no-restricted-syntax": [
+        "error",
+        { selector: "CallExpression[callee.name='fetch']", message: "Pages must call a typed service instead of fetch()." },
+      ],
+      "no-restricted-imports": [
+        "error",
+        { patterns: [{ group: ["openai", "firebase-admin", "replicate"], message: "Provider modules cannot enter page modules directly." }] },
       ],
     },
   },

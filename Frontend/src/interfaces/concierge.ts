@@ -56,6 +56,7 @@ export interface AgentWorkflowProgress {
   reviewedCount?: number;
   acceptedCount?: number;
   retry?: number;
+  categoryIds?: import("./catalog").CategoryId[];
 }
 
 export type ConciergeStreamChunk =

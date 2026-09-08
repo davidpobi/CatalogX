@@ -1,6 +1,6 @@
 import { NextRequest } from "next/server";
 import { identifyClient, consumeRateLimit, rateLimitHeaders } from "../../services/rateLimit.service";
-import { failure, jsonResult, withRouteBoundary } from "../../utils/http";
+import { failure, jsonResult, withRouteBoundary } from "../../utils/httpUtils";
 import { handleTranscription } from "./audio";
 
 const post = async (request: NextRequest, requestId: string) => {

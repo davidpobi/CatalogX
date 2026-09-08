@@ -2,11 +2,11 @@ import { z } from "zod";
 import type { ApiRouteResult } from "@/interfaces/api";
 import { ConciergeOperations, type AgentWorkflowProgress, type ConciergeQueryData } from "@/interfaces/concierge";
 import { queryPlanSchema } from "@/utils/queryPlan";
-import { getCatalogProducts } from "../../services/catalog.repository";
+import { getCatalogProducts } from "../../services/catalog.service";
 import { getCatalogIntelligenceContext } from "../../services/catalogIntelligence.service";
 import { runCatalogAgentWorkflow } from "../../services/catalogAgentWorkflow.service";
 import { authorizeSceneWorkflow, getSceneWorkflowContext } from "../../services/scene.service";
-import { failure } from "../../utils/http";
+import { failure } from "../../utils/httpUtils";
 
 export const conciergeRequestSchema = z.object({
   operation: z.literal(ConciergeOperations.QueryCatalogue),

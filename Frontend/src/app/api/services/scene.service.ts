@@ -8,11 +8,14 @@ import { CATEGORY_IDS, PRODUCT_TYPE_IDS, type Product } from "@/interfaces/catal
 import { SceneGenerationStatus, type RoomSceneAnalysis, type SceneAnalysisData, type SceneGenerationData, type SceneVerification, type SceneWorkflowContext } from "@/interfaces/scene";
 import type { CatalogQueryPlanV1 } from "@/interfaces/search";
 import { getOpenAI } from "../config/openai";
-import { getAdminBucket, getAdminDb } from "../config/firebaseAdmin";
-import { getCatalogProducts } from "./catalog.repository";
+import { getAdminBucket } from "../config/firebaseAdmin";
+import { getFirestore } from "../utils/firestoreUtils";
+import { getCatalogProducts } from "./catalog.service";
 
 const MAX_BYTES = 10_000_000;
 const MAX_PIXELS = 20_000_000;
+const MAX_GENERATED_BYTES = 12_000_000;
+const GENERATED_IMAGE_TIMEOUT_MS = 15_000;
 const EXPIRES_MS = 24 * 60 * 60_000;
 const REFERENCE_LIMIT = 8;
 const SCENE_MODEL = "gpt-5.6-luna" as const;
@@ -48,8 +51,8 @@ const publicGeneration = (record: GenerationRecord): SceneGenerationData => ({
   attempt: record.attempt, illustrative: record.illustrative, verification: record.verification, error: record.error,
 });
 const isProductionStorage = () => process.env.NODE_ENV === "production" && Boolean(process.env.NEXT_PUBLIC_FIREBASE_PUBLIC_PROJECT_ID && process.env.FIREBASE_CLIENT_EMAIL && process.env.FIREBASE_PRIVATE_KEY);
-const sceneDocument = (id: string) => getAdminDb().collection("projects").doc("CatalogX").collection("scenes").doc(id);
-const generationDocument = (id: string) => getAdminDb().collection("projects").doc("CatalogX").collection("sceneGenerations").doc(id);
+const sceneDocument = (id: string) => getFirestore().collection("projects").doc("CatalogX").collection("scenes").doc(id);
+const generationDocument = (id: string) => getFirestore().collection("projects").doc("CatalogX").collection("sceneGenerations").doc(id);
 const dataUrl = (bytes: Buffer) => `data:image/jpeg;base64,${bytes.toString("base64")}`;
 const logSceneEvent = (event: string, details: Record<string, string | number | boolean | null>) => console.info(JSON.stringify({ source: "catalogx-scene-workflow", event, timestamp: new Date().toISOString(), ...details }));
 const isoDate = (value: unknown) => typeof value === "string" ? value : value && typeof value === "object" && "toDate" in value && typeof (value as { toDate: unknown }).toDate === "function" ? (value as { toDate: () => Date }).toDate().toISOString() : "";
@@ -170,6 +173,34 @@ export const startSceneGeneration = async (sceneId: string, workflowId: string, 
 
 const outputUrl = (output: unknown): string | null => typeof output === "string" ? output : Array.isArray(output) && typeof output[0] === "string" ? output[0] : output && typeof output === "object" && "url" in output && typeof (output as { url: unknown }).url === "function" ? String((output as { url: () => URL }).url()) : null;
 
+const downloadGeneratedImage = async (value: string): Promise<Buffer> => {
+  let source: URL;
+  try { source = new URL(value); } catch { throw new Error("The image provider returned an invalid visualization URL."); }
+  if (source.protocol !== "https:") throw new Error("The image provider returned an invalid visualization URL.");
+  const response = await fetch(source, { signal: AbortSignal.timeout(GENERATED_IMAGE_TIMEOUT_MS) });
+  const contentLength = Number(response.headers.get("content-length") || 0);
+  if (!response.ok || !response.headers.get("content-type")?.toLowerCase().startsWith("image/") || (Number.isFinite(contentLength) && contentLength > MAX_GENERATED_BYTES)) {
+    throw new Error("The generated image could not be stored.");
+  }
+  const reader = response.body?.getReader();
+  if (!reader) throw new Error("The generated image could not be stored.");
+  const chunks: Uint8Array[] = [];
+  let received = 0;
+  while (true) {
+    const { done, value: chunk } = await reader.read();
+    if (done) break;
+    received += chunk.byteLength;
+    if (received > MAX_GENERATED_BYTES) { await reader.cancel(); throw new Error("The generated image is too large."); }
+    chunks.push(chunk);
+  }
+  const bytes = Buffer.concat(chunks.map((chunk) => Buffer.from(chunk)));
+  const metadata = await sharp(bytes, { failOn: "error" }).metadata();
+  if (!metadata.width || !metadata.height || metadata.width * metadata.height > MAX_PIXELS || !["jpeg", "png", "webp"].includes(metadata.format ?? "")) {
+    throw new Error("The generated image could not be stored.");
+  }
+  return sharp(bytes).rotate().jpeg({ quality: 90, mozjpeg: true }).toBuffer();
+};
+
 const verifyGeneration = async (record: SceneRecord, generation: GenerationRecord, generatedUrl: string, products: Product[]): Promise<SceneVerification> => {
   const response = await getOpenAI().responses.parse({
     model: SCENE_MODEL, store: false, reasoning: { effort: "low" },
@@ -208,9 +239,7 @@ export const refreshSceneGeneration = async (generationId: string): Promise<Scen
     logSceneEvent("generation.retry_requested", { sceneId: scene.sceneId, generationId, attempt: 2, confidence: verification.confidence });
     await persistGeneration(next); return publicGeneration(next);
   }
-  const generatedResponse = await fetch(generatedUrl);
-  if (!generatedResponse.ok) throw new Error("The generated image could not be stored.");
-  const generatedBytes = Buffer.from(await generatedResponse.arrayBuffer());
+  const generatedBytes = await downloadGeneratedImage(generatedUrl);
   let finalUrl = dataUrl(generatedBytes);
   if (isProductionStorage()) {
     const path = `projects/CatalogX/scenes/${scene.sceneId}/generations/${generation.generationId}.jpg`;

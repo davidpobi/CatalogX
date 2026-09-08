@@ -2,7 +2,7 @@ import { parseBuffer } from "music-metadata";
 import type { ApiRouteResult } from "@/interfaces/api";
 import { AudioOperations, type AudioTranscriptionData } from "@/interfaces/audio";
 import { transcribeAudio } from "../../services/transcription.service";
-import { failure } from "../../utils/http";
+import { failure } from "../../utils/httpUtils";
 
 const supportedTypes = new Set(["audio/webm", "audio/mp4", "audio/mpeg", "audio/wav", "audio/ogg", "audio/x-m4a"]);
 

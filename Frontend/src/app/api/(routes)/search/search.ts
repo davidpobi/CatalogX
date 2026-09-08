@@ -3,9 +3,9 @@ import type { ApiRouteResult } from "@/interfaces/api";
 import { SearchOperations, type CompileSearchData } from "@/interfaces/search";
 import { queryPlanSchema } from "@/utils/queryPlan";
 import { compileSearchWithAI } from "../../services/searchCompiler.service";
-import { getCatalogProducts } from "../../services/catalog.repository";
+import { getCatalogProducts } from "../../services/catalog.service";
 import { buildSearchVocabulary, normalizeCompiledSearch } from "@/utils/searchVocabulary";
-import { failure } from "../../utils/http";
+import { failure } from "../../utils/httpUtils";
 import { getCatalogIntelligenceContext } from "../../services/catalogIntelligence.service";
 
 const requestSchema = z.object({

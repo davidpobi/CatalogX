@@ -1,14 +1,36 @@
 // @vitest-environment node
-import { readFile, readdir } from "node:fs/promises";
+import { access, readFile, readdir } from "node:fs/promises";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 
 const filesUnder = async (directory: string): Promise<string[]> => (await Promise.all((await readdir(directory, { withFileTypes: true })).map(async (entry) => entry.isDirectory() ? filesUnder(join(directory, entry.name)) : [join(directory, entry.name)]))).flat();
 
 describe("architecture boundaries", () => {
+  it("does not retain the legacy server or repository layers", async () => {
+    const root = join(process.cwd(), "src");
+    const files = await filesUnder(root);
+    await expect(access(join(root, "server"))).rejects.toThrow();
+    expect(files.filter((file) => file.endsWith(".repository.ts"))).toEqual([]);
+    const contents = await Promise.all(files.map((file) => readFile(file, "utf8")));
+    expect(contents.some((content) => content.includes("@/server/"))).toBe(false);
+  });
+
+  it("keeps API implementation imports out of client components", async () => {
+    const files = await filesUnder(join(process.cwd(), "src/components"));
+    const contents = await Promise.all(files.map((file) => readFile(file, "utf8")));
+    expect(contents.some((content) => /from ["']@\/app\/api\//.test(content))).toBe(false);
+  });
+
   it("keeps direct fetch calls out of components", async () => {
     const files = await filesUnder(join(process.cwd(), "src/components"));
     const contents = await Promise.all(files.map((file) => readFile(file, "utf8")));
+    expect(contents.some((content) => /\bfetch\s*\(/.test(content))).toBe(false);
+  });
+
+  it("keeps direct fetch calls out of page modules", async () => {
+    const appFiles = await filesUnder(join(process.cwd(), "src/app"));
+    const pageFiles = appFiles.filter((file) => file.endsWith("/page.tsx"));
+    const contents = await Promise.all(pageFiles.map((file) => readFile(file, "utf8")));
     expect(contents.some((content) => /\bfetch\s*\(/.test(content))).toBe(false);
   });
 

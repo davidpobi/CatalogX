@@ -1,7 +1,7 @@
 import { NextRequest } from "next/server";
 import { CatalogOperations } from "@/interfaces/catalog";
 import { identifyClient, consumeRateLimit, rateLimitHeaders } from "../../services/rateLimit.service";
-import { jsonResult, failure, readBoundedJson, withRouteBoundary } from "../../utils/http";
+import { jsonResult, failure, readBoundedJson, withRouteBoundary } from "../../utils/httpUtils";
 import * as catalog from "./catalog";
 
 const CATALOG_RATE_LIMITS: Record<CatalogOperations, { limit: number; windowMs: number }> = {

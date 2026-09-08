@@ -43,6 +43,7 @@
     "replicate": "^1.4.0",
     "server-only": "^0.0.1",
     "sharp": "0.35.4",
+    "vgpu": "^0.4.0",
     "zod": "^4.1.5"
   },
   "devDependencies": {

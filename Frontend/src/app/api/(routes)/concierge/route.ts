@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { ConciergeOperations } from "@/interfaces/concierge";
 import type { ConciergeStreamChunk } from "@/interfaces/concierge";
 import { identifyClient, consumeRateLimit, rateLimitHeaders } from "../../services/rateLimit.service";
-import { failure, jsonResult, readBoundedJson, withRouteBoundary } from "../../utils/http";
+import { failure, jsonResult, readBoundedJson, withRouteBoundary } from "../../utils/httpUtils";
 import { conciergeRequestSchema, queryCatalogue } from "./concierge";
 
 const streamCatalogue = (body: unknown, requestId: string, headers: Record<string, string>) => {

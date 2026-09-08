@@ -170,6 +170,8 @@ describe("catalogue agent workflow boundaries", () => {
       AgentWorkflowProgressStep.Presenting,
       AgentWorkflowProgressStep.Ready,
     ]);
+    expect(progress.find((event) => event.step === AgentWorkflowProgressStep.Reviewing)?.categoryIds)
+      .toEqual(candidates.slice(0, 4).map((item) => item.product.category));
     const logs = info.mock.calls.flat().join("\n");
     expect(logs).toContain('"event":"workflow.progress"');
     expect(logs).toContain(`"task":"Reviewing ${candidates.length} matches"`);

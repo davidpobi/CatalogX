@@ -1,7 +1,7 @@
 import { NextRequest } from "next/server";
 import { SearchOperations } from "@/interfaces/search";
 import { identifyClient, consumeRateLimit, rateLimitHeaders } from "../../services/rateLimit.service";
-import { failure, jsonResult, readBoundedJson, withRouteBoundary } from "../../utils/http";
+import { failure, jsonResult, readBoundedJson, withRouteBoundary } from "../../utils/httpUtils";
 import { compileSearch } from "./search";
 
 const post = async (request: NextRequest, requestId: string) => {

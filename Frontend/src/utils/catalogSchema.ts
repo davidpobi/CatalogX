@@ -6,10 +6,12 @@ export const productTypeSchema = z.enum(PRODUCT_TYPE_IDS as [typeof PRODUCT_TYPE
 export const availabilitySchema = z.enum(["in_stock", "low_stock", "backorder", "out_of_stock"]);
 
 export const productSchema = z.object({
-  id: z.string().regex(/^cx-[a-z0-9-]+-\d{2}$/),
+  id: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)+$/),
   slug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
   sourceHash: z.string().regex(/^[a-f0-9]{64}$/),
-  retailer: z.literal("Norr & Vale"),
+  source: z.enum(["platform", "merchant"]).default("platform"),
+  merchantId: z.string().min(1).nullable().default(null),
+  retailer: z.string().min(2).max(100),
   name: z.string().min(3).max(80),
   description: z.string().min(20).max(300),
   category: categorySchema,

@@ -33,7 +33,7 @@ const mockConcierge = async (page: Page, mode: "products" | "bundle", sceneId?: 
   }));
 };
 
-test("browses, filters, saves, and opens a product", async ({ page }) => {
+test("browses, filters, opens a product, and requires sign-in to save", async ({ page }) => {
   await page.goto("/store");
   await expect(page.getByRole("heading", { name: /Pieces for your space/i })).toBeVisible();
   await expect(page.locator(".product-card")).toHaveCount(100);
@@ -52,7 +52,8 @@ test("browses, filters, saves, and opens a product", async ({ page }) => {
   await expect(page).toHaveURL(/\/store$/);
   await expect(firstProduct.getByRole("button", { name: /View/ })).toBeFocused();
   await firstProduct.getByRole("button", { name: /^Save / }).click();
-  await expect(firstProduct.getByRole("button", { name: /^Remove .* from saved products$/ })).toBeVisible();
+  await expect(page).toHaveURL(/\/sign-in\?next=%2Fstore$/);
+  await expect(page.getByRole("button", { name: "Continue with Google" })).toBeVisible();
 });
 
 test("persists modal product details and shares the canonical URL", async ({ page }) => {
@@ -169,6 +170,7 @@ test("shows truthful streamed agent workflow states", async ({ page }) => {
   await page.getByLabel("Describe what you need").fill("oak seating under $300");
   await page.getByRole("button", { name: "Search catalogue" }).click();
   await expect(page.getByText("Understanding your request")).toBeVisible();
+  await expect(page.locator(".agent-decor-visual")).toBeVisible();
   await expect(page.getByText("Searching the catalogue")).toBeVisible();
   await expect(page.getByText("Reviewing 2 matches")).toBeVisible();
   await expect(page.getByText("Review agent working")).toBeVisible();
@@ -176,6 +178,7 @@ test("shows truthful streamed agent workflow states", async ({ page }) => {
   await expect(page.getByText("Preparing recommendations")).toBeVisible();
   await expect(page.getByText("Concierge agent working")).toBeVisible();
   await expect(page.getByText("Reviewed matches.")).toBeVisible();
+  await expect(page.locator(".agent-decor-visual")).toHaveCount(0);
 });
 
 test("uploads a room, searches with scene context, and generates a furnished view", async ({ page }) => {

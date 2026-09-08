@@ -5,7 +5,7 @@ import catalogue from "@/data/catalog.json" with { type: "json" };
 import type { Product } from "@/interfaces/catalog";
 import { CatalogApp } from "@/components/CatalogApp";
 import { productPath, productUrl } from "@/utils/catalogUrl";
-import { getCatalogProducts } from "@/server/catalog.repository";
+import { getCatalogProducts } from "@/app/api/services/catalog.service";
 
 const products = catalogue as Product[];
 export const revalidate = 60;

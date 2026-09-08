@@ -1,0 +1,11 @@
+import { MerchantOperations, type ListingImageData, type MerchantApplication, type MerchantDashboardData, type MerchantListing, type MerchantListingDraft } from "@/interfaces/merchant";
+import { postApi, postFormApi } from "./apiClient.service";
+const call = <T>(operation: MerchantOperations, payload: Record<string, unknown> = {}) => postApi<T>("/api/merchant", { operation, ...payload });
+export const getMerchantDashboard = () => call<MerchantDashboardData>(MerchantOperations.GetApplication);
+export const saveMerchantApplication = (application: Omit<MerchantApplication, "uid" | "status" | "rejectionReason" | "submittedAt" | "updatedAt">) => call<MerchantDashboardData>(MerchantOperations.SaveApplication, { application });
+export const submitMerchantApplication = () => call<MerchantDashboardData>(MerchantOperations.SubmitApplication);
+export const createRemoteListing = (draft: MerchantListingDraft) => call<MerchantListing>(MerchantOperations.CreateListing, { draft });
+export const updateRemoteListing = (listingId: string, draft: MerchantListingDraft) => call<MerchantListing>(MerchantOperations.UpdateListingDraft, { listingId, draft });
+export const submitRemoteListing = (listingId: string) => call<MerchantListing>(MerchantOperations.SubmitListing, { listingId });
+export const archiveRemoteListing = (listingId: string) => call<MerchantListing>(MerchantOperations.ArchiveListing, { listingId });
+export const uploadRemoteListingImage = (file: File) => { const form = new FormData(); form.set("operation", MerchantOperations.UploadListingImage); form.set("image", file); return postFormApi<ListingImageData>("/api/merchant", form); };

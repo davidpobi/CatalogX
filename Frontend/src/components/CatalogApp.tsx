@@ -17,9 +17,10 @@ import {
   submitSearchAction,
   analyzeSceneAction,
   generateSceneAction,
-  toggleSavedProductAction,
   transcribeAndSearchAction,
 } from "@/redux/catalogThunks";
+import { setLikeAction } from "@/redux/accountThunks";
+import { authPendingLike } from "@/redux/slices/authSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import {
   selectActiveBundle,
@@ -56,6 +57,9 @@ import { SearchComposer } from "./SearchComposer";
 import { ProductContextPanel } from "./ProductContextPanel";
 import { productPath, productUrl } from "@/utils/catalogUrl";
 import { Button, Chip, IconButton } from "./primitives";
+import dynamic from "next/dynamic";
+
+const AgentDecorShader = dynamic(() => import("./AgentDecorShader").then((module) => module.AgentDecorShader), { ssr: false });
 
 const price = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
 let pendingReturnFocusProductId: string | null = null;
@@ -167,6 +171,7 @@ export function CatalogApp({ initialProduct = null }: { initialProduct?: Product
   const busy = useAppSelector(selectStoreBusy);
   const error = useAppSelector(selectStoreError);
   const saved = useAppSelector(selectSavedProductIds);
+  const session = useAppSelector((state) => state.auth.session);
   const bundle = useAppSelector(selectActiveBundle);
   const scene = useAppSelector(selectSceneAnalysis);
   const sceneAuthorizedWorkflowId = useAppSelector(selectSceneAuthorizedWorkflowId);
@@ -250,6 +255,14 @@ export function CatalogApp({ initialProduct = null }: { initialProduct?: Product
       catch { setShareNotice({ slug: product.slug, message: "Unable to share this link" }); }
     }
   };
+  const saveProduct = (product: Product) => {
+    if (!session) {
+      dispatch(authPendingLike(product.id));
+      router.push(`/sign-in?next=${encodeURIComponent(selectedSlug ? `/store/${selectedSlug}` : "/store")}`);
+      return;
+    }
+    void dispatch(setLikeAction(product.id, !saved.includes(product.id)));
+  };
   const contextPanel = selectedProduct ? <ProductContextPanel
     product={selectedProduct}
     rationale={activeRationale ?? null}
@@ -263,7 +276,7 @@ export function CatalogApp({ initialProduct = null }: { initialProduct?: Product
     headingRef={productHeadingRef}
     shareStatus={shareNotice.slug === selectedProduct.slug ? shareNotice.message : ""}
     onClose={closeProduct}
-    onSave={() => dispatch(toggleSavedProductAction(selectedProduct))}
+    onSave={() => saveProduct(selectedProduct)}
     onShare={() => void shareProduct(selectedProduct)}
     onToggleMode={() => {
       const nextMode = !modalMode;
@@ -522,7 +535,7 @@ export function CatalogApp({ initialProduct = null }: { initialProduct?: Product
               {index === panelBeforeIndex && !modalMode && contextPanel}
               <ProductCard item={item} saved={saved.includes(item.product.id)} selected={selectedProduct?.id === item.product.id}
                 openButtonRef={(node) => node ? productButtonRefs.current.set(item.product.id, node) : productButtonRefs.current.delete(item.product.id)}
-                onSave={() => dispatch(toggleSavedProductAction(item.product))} onOpen={() => openProduct(item.product)} priority={index < 4} />
+                onSave={() => saveProduct(item.product)} onOpen={() => openProduct(item.product)} priority={index < 4} />
             </Fragment>)}
             {selectedProduct && !products.some((item) => item.product.id === selectedProduct.id) && !modalMode && contextPanel}
           </div>
@@ -543,9 +556,9 @@ export function CatalogApp({ initialProduct = null }: { initialProduct?: Product
               </p>
             )}
             {busy ? (
-              <div className="workflow-progress" aria-live="polite" aria-atomic="true">
-                <span className="workflow-pulse" aria-hidden="true" />
-                <div>
+              <div className="workflow-progress agent-workflow-progress" aria-live="polite" aria-atomic="true">
+                {workflowProgress && <AgentDecorShader progress={workflowProgress} />}
+                <div className="workflow-copy">
                   <strong>{activeProgressCopy.task}</strong>
                   <small>{activeProgressCopy.agentLabel}</small>
                 </div>

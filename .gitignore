@@ -9,6 +9,9 @@ artifacts/
 .vercel/
 scripts/
 docs/
+!Frontend/docs/
+Frontend/docs/*
+!Frontend/docs/FIREBASE_RULES.md
 *.tsbuildinfo
 *.log
 .DS_Store

@@ -2,7 +2,7 @@ import { z } from "zod";
 import type { ApiRouteResult } from "@/interfaces/api";
 import { SceneOperations, type SceneAnalysisData, type SceneGenerationData } from "@/interfaces/scene";
 import { analyzeRoomScene, refreshSceneGeneration, startSceneGeneration } from "../../services/scene.service";
-import { failure } from "../../utils/http";
+import { failure } from "../../utils/httpUtils";
 
 const id = z.string().uuid();
 const publicSceneError = (error: unknown, fallback: string) => {
