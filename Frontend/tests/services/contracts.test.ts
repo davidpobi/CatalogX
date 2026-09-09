@@ -11,7 +11,7 @@ describe("client service contracts", () => {
     const fetchMock = vi.fn().mockResolvedValue(new Response(JSON.stringify({ success: true, data: { products: [], facets: {}, catalogueVersion: "test" }, requestId: "1" }), { status: 200 }));
     vi.stubGlobal("fetch", fetchMock);
     await listProducts();
-    expect(fetchMock).toHaveBeenCalledWith("/api/catalog", expect.objectContaining({ body: JSON.stringify({ operation: "listProducts" }) }));
+    expect(fetchMock).toHaveBeenCalledWith("/api/catalog", expect.objectContaining({ body: JSON.stringify({ operation: "listProducts", cursor: null, limit: 24 }) }));
     fetchMock.mockResolvedValueOnce(new Response(JSON.stringify({ success: true, data: { mode: "products", products: [], bundle: null, total: 0, facets: {} }, requestId: "2" }), { status: 200 }));
     await queryProducts(emptyQueryPlan());
     expect(JSON.parse(fetchMock.mock.calls[1][1].body)).toMatchObject({ operation: "queryProducts" });

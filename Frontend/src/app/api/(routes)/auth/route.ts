@@ -11,10 +11,10 @@ const post = async (request: NextRequest, requestId: string) => {
   if (!body) return jsonResult(requestId, failure(422, "A valid authentication request is required."));
   const operation = body.operation as AuthOperations;
   const isSessionRead = operation === AuthOperations.GetSession;
-  if (!isSessionRead && !hasTrustedOrigin(request)) return jsonResult(requestId, failure(403, "Request origin is not allowed."));
-  const rate = await consumeRateLimit(`auth:${identifyClient(request)}`, isSessionRead ? 60 : 30, 10 * 60_000);
-  if (!rate.allowed) return jsonResult(requestId, { ...failure(429, "Authentication request limit reached."), headers: rateLimitHeaders(rate) });
   if (isSessionRead) return jsonResult(requestId, await auth.getAuthSession(request.cookies.get(SESSION_COOKIE)?.value));
+  if (!isSessionRead && !hasTrustedOrigin(request)) return jsonResult(requestId, failure(403, "Request origin is not allowed."));
+  const rate = await consumeRateLimit(`auth:${identifyClient(request)}`, 30, 10 * 60_000);
+  if (!rate.allowed) return jsonResult(requestId, { ...failure(429, "Authentication request limit reached."), headers: rateLimitHeaders(rate) });
   if (operation === AuthOperations.CreateSession) {
     const created = await auth.createAuthSession(body);
     if (!created) return jsonResult(requestId, failure(422, "A valid Firebase ID token is required."));

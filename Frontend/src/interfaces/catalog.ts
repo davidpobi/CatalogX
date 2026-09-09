@@ -112,6 +112,8 @@ export interface CatalogListData {
   products: Product[];
   facets: CatalogFacets;
   catalogueVersion: string;
+  total: number;
+  nextCursor: string | null;
 }
 
 export interface RankedProduct {

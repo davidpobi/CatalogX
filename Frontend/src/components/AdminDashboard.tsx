@@ -5,12 +5,16 @@ import { loadAdminAction, reviewListingAction, reviewMerchantAction, unpublishLi
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { AccountShell } from "./AccountShell";
 import { Button } from "./primitives";
+import { isAdmin } from "@/utils/authUtils";
 
 export function AdminDashboard({ view }: { view: "merchants" | "listings" }) {
   const dispatch = useAppDispatch();
   const admin = useAppSelector((state) => state.admin);
+  const auth = useAppSelector((state) => state.auth);
   const [reason, setReason] = useState<Record<string, string>>({});
-  useEffect(() => { void dispatch(loadAdminAction()); }, [dispatch]);
+  const authorized = isAdmin(auth.session);
+  useEffect(() => { if (authorized) void dispatch(loadAdminAction()); }, [authorized, dispatch]);
+  if (!authorized) return <AccountShell eyebrow="CatalogX administration" title="Checking administrator access."><div className="account-empty"><p>Administrator access is required.</p></div></AccountShell>;
   const items = view === "merchants" ? admin.applications : admin.listings;
   return <AccountShell eyebrow="CatalogX administration" title={view === "merchants" ? "Merchant applications." : "Listing review."}><div className="admin-tabs"><a href="/admin/merchants">Merchants</a><a href="/admin/listings">Listings</a></div><section className="management-list">{items.map((item) => {
     const id = "uid" in item ? item.uid : item.id;

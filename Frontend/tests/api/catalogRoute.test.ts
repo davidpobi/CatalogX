@@ -6,16 +6,8 @@ import { POST } from "@/app/api/(routes)/catalog/route";
 import { catalogueSchema } from "@/utils/catalogSchema";
 import { emptyQueryPlan } from "@/utils/queryPlan";
 
-const { consumeRateLimit, getCatalogProducts, rateLimitHeaders } = vi.hoisted(() => ({
-  consumeRateLimit: vi.fn(),
+const { getCatalogProducts } = vi.hoisted(() => ({
   getCatalogProducts: vi.fn(),
-  rateLimitHeaders: vi.fn(),
-}));
-
-vi.mock("@/app/api/services/rateLimit.service", () => ({
-  identifyClient: () => "test-client",
-  consumeRateLimit,
-  rateLimitHeaders,
 }));
 
 vi.mock("@/app/api/services/catalog.service", () => ({
@@ -28,8 +20,6 @@ const request = (body: unknown) => new NextRequest("http://localhost/api/catalog
 describe("catalogue route", () => {
   beforeEach(() => {
     getCatalogProducts.mockResolvedValue(catalogueSchema.parse(catalogue));
-    consumeRateLimit.mockResolvedValue({ allowed: true, limit: 120, remaining: 119, reset: 1_800_000_000 });
-    rateLimitHeaders.mockReturnValue({ "X-RateLimit-Limit": "120", "X-RateLimit-Remaining": "119", "X-RateLimit-Reset": "1800000000" });
   });
 
   it("rejects unknown operations", async () => {
@@ -57,29 +47,17 @@ describe("catalogue route", () => {
     const response = await POST(request({ operation: "listProducts" }));
     expect(response.status).toBe(200);
     const body = await response.json();
-    expect(body.data.products).toHaveLength(100);
-    expect(consumeRateLimit).toHaveBeenCalledWith("catalog:listProducts:test-client", 120, 600_000);
+    expect(body.data.products).toHaveLength(24);
+    expect(body.data.total).toBe(100);
   });
 
-  it("uses a separate limit for query and replacement operations", async () => {
+  it("does not rate limit deterministic catalogue operations", async () => {
     const plan = emptyQueryPlan();
-    await POST(request({ operation: CatalogOperations.QueryProducts, plan, excludedProductIds: [] }));
-    expect(consumeRateLimit).toHaveBeenCalledWith("catalog:queryProducts:test-client", 60, 600_000);
-    await POST(request({ operation: CatalogOperations.ReplaceBundleProduct, plan, currentProductIds: ["one", "two"], targetProductId: "one" }));
-    expect(consumeRateLimit).toHaveBeenCalledWith("catalog:replaceBundleProduct:test-client", 30, 600_000);
+    expect((await POST(request({ operation: CatalogOperations.QueryProducts, plan, excludedProductIds: [] }))).status).toBe(200);
   });
 
-  it("returns a sanitized, header-bearing response when a catalogue limit is reached", async () => {
-    consumeRateLimit.mockResolvedValueOnce({ allowed: false, limit: 120, remaining: 0, reset: 1_800_000_000 });
-    rateLimitHeaders.mockReturnValueOnce({ "X-RateLimit-Limit": "120", "X-RateLimit-Remaining": "0", "X-RateLimit-Reset": "1800000000" });
-    const response = await POST(request({ operation: CatalogOperations.ListProducts }));
-    expect(response.status).toBe(429);
-    expect(response.headers.get("X-RateLimit-Remaining")).toBe("0");
-    expect(await response.json()).toMatchObject({ success: false, data: null, message: "Catalogue limit reached. Please try again shortly." });
-  });
-
-  it("uses the shared error boundary when rate-limit storage fails", async () => {
-    consumeRateLimit.mockRejectedValueOnce(new Error("Firestore is unavailable"));
+  it("uses the shared error boundary when catalogue storage fails", async () => {
+    getCatalogProducts.mockRejectedValueOnce(new Error("Firestore is unavailable"));
     const response = await POST(request({ operation: CatalogOperations.ListProducts }));
     expect(response.status).toBe(503);
     expect(await response.json()).toMatchObject({ success: false, data: null, message: "The request is temporarily unavailable." });

@@ -43,7 +43,10 @@ export interface CatalogDataState {
   catalogueProducts: Product[];
   facets: CatalogFacets | null;
   catalogueVersion: string | null;
+  catalogueTotal: number;
+  catalogueNextCursor: string | null;
   catalogueStatus: RequestStatus;
+  cataloguePageStatus: RequestStatus;
   queryStatus: RequestStatus;
   total: number;
   results: RankedProduct[];

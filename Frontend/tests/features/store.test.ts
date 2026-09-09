@@ -29,7 +29,7 @@ describe("Redux application state", () => {
   beforeEach(() => vi.clearAllMocks());
 
   it("loads the catalogue once for the store lifetime", async () => {
-    vi.mocked(listProducts).mockResolvedValue({ products: [], facets, catalogueVersion: "v1" });
+    vi.mocked(listProducts).mockResolvedValue({ products: [], facets, catalogueVersion: "v1", total: 0, nextCursor: null });
     const store = makeStore();
     await store.dispatch(initializeCatalogAction());
     await store.dispatch(initializeCatalogAction());

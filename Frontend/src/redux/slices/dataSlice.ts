@@ -3,7 +3,8 @@ import type { CatalogListData, CatalogQueryData, Product } from "@/interfaces/ca
 import type { CatalogDataState, RecentSearch } from "@/interfaces/state";
 
 export const initialCatalogDataState: CatalogDataState = {
-  catalogueProducts: [], facets: null, catalogueVersion: null, catalogueStatus: "idle",
+  catalogueProducts: [], facets: null, catalogueVersion: null, catalogueTotal: 0, catalogueNextCursor: null,
+  catalogueStatus: "idle", cataloguePageStatus: "idle",
   queryStatus: "idle", total: 0, results: [], bundle: null, suggestions: [], assessment: null, activeRequestId: null, error: null,
   savedProductIds: [], recentSearches: [], localStateHydrated: false,
 };
@@ -15,12 +16,24 @@ const slice = createSlice({
     catalogueLoadStarted(state) { state.catalogueStatus = "loading"; state.error = null; },
     catalogueLoadCompleted(state, action: PayloadAction<CatalogListData>) {
       state.catalogueProducts = action.payload.products; state.facets = action.payload.facets;
-      state.catalogueVersion = action.payload.catalogueVersion; state.catalogueStatus = "succeeded";
+      state.catalogueVersion = action.payload.catalogueVersion; state.catalogueTotal = action.payload.total;
+      state.catalogueNextCursor = action.payload.nextCursor; state.catalogueStatus = "succeeded";
       if (state.queryStatus === "idle") {
         state.results = action.payload.products.map((product) => ({ product, score: product.rating, reasons: [] }));
-        state.total = action.payload.products.length;
+        state.total = action.payload.total;
       }
     },
+    cataloguePageLoadStarted(state) { state.cataloguePageStatus = "loading"; },
+    cataloguePageLoadCompleted(state, action: PayloadAction<CatalogListData>) {
+      const known = new Set(state.catalogueProducts.map((product) => product.id));
+      const products = action.payload.products.filter((product) => !known.has(product.id));
+      state.catalogueProducts.push(...products);
+      if (state.queryStatus === "idle") state.results.push(...products.map((product) => ({ product, score: product.rating, reasons: [] })));
+      state.catalogueTotal = action.payload.total;
+      state.catalogueNextCursor = action.payload.nextCursor;
+      state.cataloguePageStatus = "succeeded";
+    },
+    cataloguePageLoadFailed(state, action: PayloadAction<string>) { state.cataloguePageStatus = "failed"; state.error = action.payload; },
     catalogueLoadFailed(state, action: PayloadAction<string>) { state.catalogueStatus = "failed"; state.error = action.payload; },
     queryStarted(state, action: PayloadAction<string>) { state.queryStatus = "loading"; state.activeRequestId = action.payload; state.error = null; },
     queryCompleted(state, action: PayloadAction<{ requestId: string; result: CatalogQueryData }>) {
@@ -47,5 +60,5 @@ const slice = createSlice({
   },
 });
 
-export const { catalogueLoadCompleted, catalogueLoadFailed, catalogueLoadStarted, clearDataError, localStateHydrated, productUpdated, queryCompleted, queryFailed, queryStarted, recentSearchesChanged, savedProductsChanged } = slice.actions;
+export const { catalogueLoadCompleted, catalogueLoadFailed, catalogueLoadStarted, cataloguePageLoadCompleted, cataloguePageLoadFailed, cataloguePageLoadStarted, clearDataError, localStateHydrated, productUpdated, queryCompleted, queryFailed, queryStarted, recentSearchesChanged, savedProductsChanged } = slice.actions;
 export default slice.reducer;

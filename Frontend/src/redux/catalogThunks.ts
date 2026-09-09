@@ -9,7 +9,7 @@ import { trackCatalogEvent } from "@/services/analytics.service";
 import { addRecentSearch, clearRecentSearches, getRecentSearches, getSavedProductIds, removeRecentSearch } from "@/services/persistence.service";
 import { applyQueryPlanPatch, isPlanConstraintActive, removePlanConstraint } from "@/utils/queryPlan";
 import { aiRequestCompleted, aiRequestFailed, aiRequestStarted, aiWorkflowProgressed, clearPendingSubmission, markSubmissionConsumed, removeInterpretationChip, setAIDraft, setAIError, setAIPlan, suggestionApplied } from "./slices/aiSlice";
-import { catalogueLoadCompleted, catalogueLoadFailed, catalogueLoadStarted, localStateHydrated, queryCompleted, queryFailed, queryStarted, recentSearchesChanged } from "./slices/dataSlice";
+import { catalogueLoadCompleted, catalogueLoadFailed, catalogueLoadStarted, cataloguePageLoadCompleted, cataloguePageLoadFailed, cataloguePageLoadStarted, localStateHydrated, queryCompleted, queryFailed, queryStarted, recentSearchesChanged } from "./slices/dataSlice";
 import { invalidateSceneWorkflow, sceneGenerationCompleted, sceneGenerationFailed, sceneGenerationProgressed, sceneGenerationStarted, sceneUploadCompleted, sceneUploadFailed, sceneUploadStarted, sceneWorkflowAuthorized } from "./slices/sceneSlice";
 import type { AppThunk, RootState } from "./store";
 
@@ -22,6 +22,14 @@ export const initializeCatalogAction = (): AppThunk<Promise<void>> => async (dis
   dispatch(catalogueLoadStarted());
   try { dispatch(catalogueLoadCompleted(await listProducts())); }
   catch (error) { dispatch(catalogueLoadFailed(message(error, "The catalogue could not be loaded."))); }
+};
+
+export const loadNextCatalogPageAction = (): AppThunk<Promise<void>> => async (dispatch, getState) => {
+  const { catalogueNextCursor, cataloguePageStatus, queryStatus } = getState().data;
+  if (!catalogueNextCursor || cataloguePageStatus === "loading" || queryStatus !== "idle") return;
+  dispatch(cataloguePageLoadStarted());
+  try { dispatch(cataloguePageLoadCompleted(await listProducts(catalogueNextCursor))); }
+  catch (error) { dispatch(cataloguePageLoadFailed(message(error, "More catalogue pieces could not be loaded."))); }
 };
 
 export const hydrateLocalDataAction = (): AppThunk => (dispatch, getState) => {

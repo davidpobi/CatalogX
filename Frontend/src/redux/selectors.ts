@@ -10,6 +10,8 @@ export const selectPendingSubmission = (state: RootState) => state.ai.pendingSub
 export const selectCatalogueProducts = (state: RootState) => state.data.catalogueProducts;
 export const selectCatalogueReady = (state: RootState) => state.data.catalogueStatus === "succeeded";
 export const selectCatalogueStatus = (state: RootState) => state.data.catalogueStatus;
+export const selectCatalogueNextCursor = (state: RootState) => state.data.catalogueNextCursor;
+export const selectCataloguePageStatus = (state: RootState) => state.data.cataloguePageStatus;
 export const selectVisibleResults = (state: RootState) => state.data.results;
 export const selectMatchedResultTotal = (state: RootState) => state.data.total;
 export const selectActiveBundle = (state: RootState) => state.data.bundle;

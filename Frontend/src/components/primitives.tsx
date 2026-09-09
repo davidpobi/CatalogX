@@ -1,10 +1,15 @@
 "use client";
 
 import { X } from "lucide-react";
-import type { ButtonHTMLAttributes, ReactNode } from "react";
+import { useSyncExternalStore, type ButtonHTMLAttributes, type ReactNode } from "react";
 
-export function Button({ className = "", ...props }: ButtonHTMLAttributes<HTMLButtonElement>) {
-  return <button className={`button ${className}`} {...props} />;
+const subscribeToHydration = () => () => undefined;
+const hydratedSnapshot = () => true;
+const serverHydrationSnapshot = () => false;
+
+export function Button({ className = "", disabled, ...props }: ButtonHTMLAttributes<HTMLButtonElement>) {
+  const hydrated = useSyncExternalStore(subscribeToHydration, hydratedSnapshot, serverHydrationSnapshot);
+  return <button className={`button ${className}`} disabled={hydrated ? disabled : undefined} {...props} />;
 }
 
 export function IconButton({ label, className = "", children, ...props }: ButtonHTMLAttributes<HTMLButtonElement> & { label: string; children: ReactNode }) {

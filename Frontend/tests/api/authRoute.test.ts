@@ -27,10 +27,17 @@ describe("authentication route", () => {
     rateLimitHeaders.mockReturnValue({ "X-RateLimit-Limit": "60", "X-RateLimit-Remaining": "59", "X-RateLimit-Reset": "1800000000" });
   });
 
-  it("rate limits session reads", async () => {
+  it("does not rate limit guest session reads", async () => {
     const response = await POST(request({ operation: AuthOperations.GetSession }));
-    expect(response.status).toBe(401);
-    expect(consumeRateLimit).toHaveBeenCalledWith("auth:test-client", 60, 600_000);
+    expect(response.status).toBe(200);
+    expect(await response.json()).toMatchObject({ success: true, data: null });
+    expect(consumeRateLimit).not.toHaveBeenCalled();
+  });
+
+  it("rate limits session mutations", async () => {
+    const response = await POST(request({ operation: AuthOperations.CreateSession, idToken: "invalid" }, { origin: "http://localhost" }));
+    expect(response.status).toBe(422);
+    expect(consumeRateLimit).toHaveBeenCalledWith("auth:test-client", 30, 600_000);
   });
 
   it("requires the complete matching origin for mutations", () => {

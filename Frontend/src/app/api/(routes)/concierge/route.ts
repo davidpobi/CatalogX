@@ -9,7 +9,18 @@ const streamCatalogue = (body: unknown, requestId: string, headers: Record<strin
   const encoder = new TextEncoder();
   const stream = new ReadableStream<Uint8Array>({
     start(controller) {
-      const send = (chunk: ConciergeStreamChunk) => controller.enqueue(encoder.encode(`${JSON.stringify(chunk)}\n`));
+      let closed = false;
+      const send = (chunk: ConciergeStreamChunk) => {
+        if (closed) return;
+        try { controller.enqueue(encoder.encode(`${JSON.stringify(chunk)}\n`)); }
+        catch { closed = true; }
+      };
+      const close = () => {
+        if (closed) return;
+        closed = true;
+        try { controller.close(); }
+        catch { /* The browser cancelled an already-closed stream. */ }
+      };
       void queryCatalogue(body, requestId, (progress) => send({ type: "progress", data: progress }))
         .then((result) => {
           if (result.status >= 200 && result.status < 300 && result.data) send({ type: "result", data: result.data, requestId });
@@ -19,8 +30,9 @@ const streamCatalogue = (body: unknown, requestId: string, headers: Record<strin
           console.error("[concierge-api] stream_failed", { requestId, error: error instanceof Error ? { name: error.name } : { name: typeof error } });
           send({ type: "error", message: "The request is temporarily unavailable.", requestId });
         })
-        .finally(() => controller.close());
+        .finally(close);
     },
+    cancel() { /* The client navigated away or superseded this search. */ },
   });
   return new NextResponse(stream, {
     status: 200,

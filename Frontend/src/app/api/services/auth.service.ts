@@ -1,5 +1,6 @@
 import "server-only";
 import type { AuthSession, AuthenticatedUser } from "@/interfaces/auth";
+import { isConfiguredAdminId } from "../config/admin";
 
 const adminAuth = async () => (await import("@/app/api/config/firebaseAdmin")).getAdminAuth();
 const firestore = async () => (await import("../utils/firestoreUtils")).getFirestore();
@@ -18,7 +19,7 @@ const getCapabilities = async (uid: string) => {
     customer: true,
     merchantApplicant: application.exists,
     merchant: merchant.exists && merchant.get("status") === "approved",
-    admin: admin.exists && admin.get("enabled") === true,
+    admin: admin.exists && admin.get("enabled") === true && isConfiguredAdminId(uid),
   };
 };
 

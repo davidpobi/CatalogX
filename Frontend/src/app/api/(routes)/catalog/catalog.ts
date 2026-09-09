@@ -13,6 +13,12 @@ const queryRequestSchema = z.object({
   excludedProductIds: z.array(z.string().max(100)).max(100).default([]),
 });
 
+const listRequestSchema = z.object({
+  operation: z.literal(CatalogOperations.ListProducts),
+  cursor: z.string().min(1).max(100).nullable().optional(),
+  limit: z.number().int().min(1).max(24).default(24),
+});
+
 const replaceRequestSchema = z.object({
   operation: z.literal(CatalogOperations.ReplaceBundleProduct),
   plan: queryPlanSchema,
@@ -23,9 +29,25 @@ const replaceRequestSchema = z.object({
   if (!value.currentProductIds.includes(value.targetProductId)) context.addIssue({ code: "custom", path: ["targetProductId"], message: "The target must belong to the current bundle." });
 });
 
-export const listProducts = async (): Promise<ApiRouteResult<CatalogListData>> => {
+export const listProducts = async (body: unknown): Promise<ApiRouteResult<CatalogListData>> => {
+  const parsed = listRequestSchema.safeParse(body);
+  if (!parsed.success) return failure(422, "A valid catalogue page request is required.");
   const products = await getCatalogProducts();
-  return { status: 200, data: { products, facets: buildFacets(products), catalogueVersion: catalogueVersionFor(products) } };
+  const start = parsed.data.cursor
+    ? Math.max(0, products.findIndex((product) => product.id === parsed.data.cursor) + 1)
+    : 0;
+  const page = products.slice(start, start + parsed.data.limit);
+  const hasMore = start + page.length < products.length;
+  return {
+    status: 200,
+    data: {
+      products: page,
+      facets: buildFacets(products),
+      catalogueVersion: catalogueVersionFor(products),
+      total: products.length,
+      nextCursor: hasMore ? page.at(-1)?.id ?? null : null,
+    },
+  };
 };
 
 export const queryProducts = async (body: unknown): Promise<ApiRouteResult<CatalogQueryData>> => {

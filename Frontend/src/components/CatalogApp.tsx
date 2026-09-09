@@ -1,7 +1,7 @@
 "use client";
 
 import { Bookmark, Heart, ImagePlus, SlidersHorizontal, X } from "lucide-react";
-import { useParams, useRouter, useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { Fragment, useEffect, useMemo, useRef, useState, useSyncExternalStore, type ReactNode } from "react";
 import { CATEGORY_IDS, CATEGORY_LABELS, type Product, type RankedProduct } from "@/interfaces/catalog";
@@ -12,6 +12,7 @@ import {
   executeSuggestionAction,
   hydrateLocalDataAction,
   initializeCatalogAction,
+  loadNextCatalogPageAction,
   removeChipAction,
   replaceBundleItemAction,
   submitSearchAction,
@@ -30,6 +31,8 @@ import {
   selectCatalogFacets,
   selectCatalogueProducts,
   selectCatalogueStatus,
+  selectCatalogueNextCursor,
+  selectCataloguePageStatus,
   selectConciergePresentation,
   selectCompletedWorkflowSteps,
   selectMatchedResultTotal,
@@ -154,12 +157,13 @@ const detailModeServerSnapshot = () => false;
 export function CatalogApp({ initialProduct = null }: { initialProduct?: Product | null }) {
   const dispatch = useAppDispatch();
   const router = useRouter();
-  const params = useParams<{ slug?: string }>();
   const searchParams = useSearchParams();
   const products = useAppSelector(selectVisibleResults);
   const catalogueProducts = useAppSelector(selectCatalogueProducts);
   const facets = useAppSelector(selectCatalogFacets);
   const catalogueStatus = useAppSelector(selectCatalogueStatus);
+  const catalogueNextCursor = useAppSelector(selectCatalogueNextCursor);
+  const cataloguePageStatus = useAppSelector(selectCataloguePageStatus);
   const plan = useAppSelector(selectAIPlan);
   const interpretation = useAppSelector(selectAIInterpretation);
   const conciergePresentation = useAppSelector(selectConciergePresentation);
@@ -181,13 +185,13 @@ export function CatalogApp({ initialProduct = null }: { initialProduct?: Product
   const sceneError = useAppSelector(selectSceneError);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [shareNotice, setShareNotice] = useState({ slug: "", message: "" });
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(initialProduct);
   const modalMode = useSyncExternalStore(subscribeToDetailMode, detailModeSnapshot, detailModeServerSnapshot);
   const columns = useSyncExternalStore(subscribeToViewport, viewportColumns, serverColumns);
   const handledLinkedCategory = useRef<string | null>(null);
   const productHeadingRef = useRef<HTMLHeadingElement>(null);
   const productButtonRefs = useRef(new Map<string, HTMLButtonElement>());
-  const selectedSlug = typeof params.slug === "string" ? params.slug : null;
-  const selectedProduct = (selectedSlug ? catalogueProducts.find((item) => item.slug === selectedSlug) : null) || (initialProduct?.slug === selectedSlug ? initialProduct : null);
+  const selectedSlug = selectedProduct?.slug ?? null;
   const linkedCategory = CATEGORY_IDS.find((category) => category === searchParams.get("category")) || null;
   const selectedRanked = selectedProduct ? [...products, ...(bundle?.products ?? [])].find((item) => item.product.id === selectedProduct.id) : null;
   const activeRationale = selectedProduct
@@ -206,12 +210,6 @@ export function CatalogApp({ initialProduct = null }: { initialProduct?: Product
     dispatch(hydrateLocalDataAction());
     void dispatch(consumePendingSearchAction());
   }, [dispatch]);
-  useEffect(() => {
-    if (!selectedProduct || !modalMode) return;
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => { document.body.style.overflow = previousOverflow; };
-  }, [modalMode, selectedProduct]);
   useEffect(() => {
     if (catalogueStatus !== "succeeded" || !linkedCategory || handledLinkedCategory.current === linkedCategory) return;
     handledLinkedCategory.current = linkedCategory;
@@ -234,16 +232,18 @@ export function CatalogApp({ initialProduct = null }: { initialProduct?: Product
     if (!selectedProduct) expansionAnchorProductId = null;
   }, [catalogueStatus, modalMode, selectedProduct]);
   const openProduct = (product: Product, preserveOrigin = false) => {
-    const productSlug = product.slug;
-    if (!productSlug) return;
     if (!preserveOrigin) {
       pendingReturnFocusProductId = product.id;
       expansionAnchorProductId = product.id;
     }
-    pendingPanelFocusSlug = productSlug;
-    router.push(productPath(productSlug), { scroll: false });
+    pendingPanelFocusSlug = product.slug;
+    window.history.replaceState(window.history.state, "", productPath(product.slug));
+    setSelectedProduct(product);
   };
-  const closeProduct = () => router.replace("/store", { scroll: false });
+  const closeProduct = () => {
+    window.history.replaceState(window.history.state, "", "/store");
+    setSelectedProduct(null);
+  };
   const shareProduct = async (product: Product) => {
     const url = productUrl(product.slug);
     try {
@@ -290,9 +290,11 @@ export function CatalogApp({ initialProduct = null }: { initialProduct?: Product
     onAlternative={(product) => openProduct(product, true)}
   /> : null;
   const submit = (override?: string) => {
+    if (selectedSlug) closeProduct();
     void dispatch(submitSearchAction(override));
   };
   const setCategory = (category: (typeof CATEGORY_IDS)[number] | null) => {
+    if (selectedSlug) closeProduct();
     const next = { ...plan, mode: "products" as const, categories: category ? [category] : [], bundle: null };
     void dispatch(executePlanAction(next));
   };
@@ -452,7 +454,7 @@ export function CatalogApp({ initialProduct = null }: { initialProduct?: Product
               />{" "}
               On sale only
             </label>
-            <Button className="apply-filter" onClick={() => void dispatch(executePlanAction(plan))}>
+            <Button className="apply-filter" onClick={() => { closeProduct(); void dispatch(executePlanAction(plan)); }}>
               Apply filters
             </Button>
           </div>
@@ -521,6 +523,7 @@ export function CatalogApp({ initialProduct = null }: { initialProduct?: Product
             <p>Remove a chip or widen the budget to explore more of the catalogue.</p>
             <Button
               onClick={() => {
+                closeProduct();
                 const reset = emptyQueryPlan();
                 dispatch(resetAIState());
                 void dispatch(executePlanAction(reset));
@@ -538,6 +541,16 @@ export function CatalogApp({ initialProduct = null }: { initialProduct?: Product
                 onSave={() => saveProduct(item.product)} onOpen={() => openProduct(item.product)} priority={index < 4} />
             </Fragment>)}
             {selectedProduct && !products.some((item) => item.product.id === selectedProduct.id) && !modalMode && contextPanel}
+          </div>
+        )}
+        {catalogueNextCursor && catalogueStatus === "succeeded" && !bundle && (
+          <div className="catalog-load-more">
+            <Button
+              disabled={cataloguePageStatus === "loading"}
+              onClick={() => void dispatch(loadNextCatalogPageAction())}
+            >
+              {cataloguePageStatus === "loading" ? "Loading pieces…" : "Load more pieces"}
+            </Button>
           </div>
         )}
       </section>
@@ -598,12 +611,12 @@ export function CatalogApp({ initialProduct = null }: { initialProduct?: Product
           prompt={prompt}
           setPrompt={(value) => dispatch(setAIDraft(value))}
           onSubmit={submit}
-          onAudio={(audio) => dispatch(transcribeAndSearchAction(audio))}
+          onAudio={(audio) => { closeProduct(); return dispatch(transcribeAndSearchAction(audio)); }}
           onScene={(file) => void dispatch(analyzeSceneAction(file))}
           sceneBusy={sceneBusy}
           busy={busy}
           suggestions={suggestions}
-          onSuggestion={(suggestion) => void dispatch(executeSuggestionAction(suggestion))}
+          onSuggestion={(suggestion) => { closeProduct(); void dispatch(executeSuggestionAction(suggestion)); }}
           autoFocus
         />
       </aside>

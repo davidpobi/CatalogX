@@ -29,6 +29,10 @@ export const initializeAuthAction = (): AppThunk<Promise<void>> => async (dispat
   dispatch(authStarted());
   try {
     const session = await getSession();
+    if (!session) {
+      dispatch(authAnonymous());
+      return;
+    }
     dispatch(authCompleted(session));
     const local = getSavedProductIds();
     const library = local.length ? await mergeRemoteLikes(local) : await listCustomerLibrary();
