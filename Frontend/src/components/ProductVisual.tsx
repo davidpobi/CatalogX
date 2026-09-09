@@ -12,7 +12,9 @@ const icons: Record<CategoryId, typeof Armchair> = {
   "mirrors-wall-decor": Frame, accessories: PackageOpen,
 };
 
-export function ProductVisual({ product, priority = false }: { product: Product; priority?: boolean }) {
+type VisualProduct = Pick<Product, "category" | "image">;
+
+export function ProductVisual({ product, priority = false }: { product: VisualProduct; priority?: boolean }) {
   const source = product.image.heroUrl || (PLACEHOLDER_ASSETS_READY ? placeholderPath(product.image.placeholderCategory) : null);
   const [failed, setFailed] = useState(false);
   const Icon = icons[product.category];
