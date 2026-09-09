@@ -3,7 +3,7 @@ import type { ApiRouteResult } from "@/interfaces/api";
 import { CatalogOperations, type CatalogListData, type CatalogQueryData } from "@/interfaces/catalog";
 import { queryPlanSchema } from "@/utils/queryPlan";
 import { buildFacets, executeCatalogQuery, replaceCatalogBundleProduct } from "@/utils/catalogQuery";
-import { getCatalogProducts } from "../../services/catalog.service";
+import { getCatalogPage, getCatalogProducts } from "../../services/catalog.service";
 import { failure } from "../../utils/httpUtils";
 import { catalogueVersionFor } from "../../services/catalogIntelligence.service";
 
@@ -32,20 +32,16 @@ const replaceRequestSchema = z.object({
 export const listProducts = async (body: unknown): Promise<ApiRouteResult<CatalogListData>> => {
   const parsed = listRequestSchema.safeParse(body);
   if (!parsed.success) return failure(422, "A valid catalogue page request is required.");
-  const products = await getCatalogProducts();
-  const start = parsed.data.cursor
-    ? Math.max(0, products.findIndex((product) => product.id === parsed.data.cursor) + 1)
-    : 0;
-  const page = products.slice(start, start + parsed.data.limit);
-  const hasMore = start + page.length < products.length;
+  const page = await getCatalogPage(parsed.data.cursor, parsed.data.limit);
+  if (!page) return failure(422, "A valid catalogue page cursor is required.");
   return {
     status: 200,
     data: {
-      products: page,
-      facets: buildFacets(products),
-      catalogueVersion: catalogueVersionFor(products),
-      total: products.length,
-      nextCursor: hasMore ? page.at(-1)?.id ?? null : null,
+      products: page.products,
+      facets: buildFacets(page.products),
+      catalogueVersion: catalogueVersionFor(page.products),
+      total: page.total,
+      nextCursor: page.nextCursor,
     },
   };
 };

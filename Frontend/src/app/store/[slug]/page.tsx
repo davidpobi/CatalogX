@@ -3,11 +3,11 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { CatalogApp } from "@/components/CatalogApp";
 import { productPath, productUrl } from "@/utils/catalogUrl";
-import { getCatalogProducts } from "@/app/api/services/catalog.service";
+import { getCatalogProductBySlug } from "@/app/api/services/catalog.service";
 
 export const revalidate = 60;
 
-const findProduct = async (slug: string) => (await getCatalogProducts()).find((product) => product.slug === slug);
+const findProduct = (slug: string) => getCatalogProductBySlug(slug);
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;

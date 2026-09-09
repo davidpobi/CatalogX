@@ -6,12 +6,14 @@ import { POST } from "@/app/api/(routes)/catalog/route";
 import { catalogueSchema } from "@/utils/catalogSchema";
 import { emptyQueryPlan } from "@/utils/queryPlan";
 
-const { getCatalogProducts } = vi.hoisted(() => ({
+const { getCatalogPage, getCatalogProducts } = vi.hoisted(() => ({
+  getCatalogPage: vi.fn(),
   getCatalogProducts: vi.fn(),
 }));
 
 vi.mock("@/app/api/services/catalog.service", () => ({
   getCatalogProducts,
+  getCatalogPage,
   clearCatalogCache: vi.fn(),
 }));
 
@@ -20,6 +22,11 @@ const request = (body: unknown) => new NextRequest("http://localhost/api/catalog
 describe("catalogue route", () => {
   beforeEach(() => {
     getCatalogProducts.mockResolvedValue(catalogueSchema.parse(catalogue));
+    getCatalogPage.mockResolvedValue({
+      products: catalogueSchema.parse(catalogue).slice(0, 24),
+      total: 100,
+      nextCursor: "eyJzb3VyY2UiOiJwbGF0Zm9ybSIsImlkIjoiYW1pLWNlcmFtaWMtdmFzZSJ9",
+    });
   });
 
   it("rejects unknown operations", async () => {
@@ -49,6 +56,13 @@ describe("catalogue route", () => {
     const body = await response.json();
     expect(body.data.products).toHaveLength(24);
     expect(body.data.total).toBe(100);
+    expect(getCatalogPage).toHaveBeenCalledWith(undefined, 24);
+  });
+
+  it("rejects malformed list cursors", async () => {
+    getCatalogPage.mockResolvedValueOnce(null);
+    const response = await POST(request({ operation: "listProducts", cursor: "not-a-cursor" }));
+    expect(response.status).toBe(422);
   });
 
   it("does not rate limit deterministic catalogue operations", async () => {
@@ -57,7 +71,7 @@ describe("catalogue route", () => {
   });
 
   it("uses the shared error boundary when catalogue storage fails", async () => {
-    getCatalogProducts.mockRejectedValueOnce(new Error("Firestore is unavailable"));
+    getCatalogPage.mockRejectedValueOnce(new Error("Firestore is unavailable"));
     const response = await POST(request({ operation: CatalogOperations.ListProducts }));
     expect(response.status).toBe(503);
     expect(await response.json()).toMatchObject({ success: false, data: null, message: "The request is temporarily unavailable." });
