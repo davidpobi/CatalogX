@@ -1,7 +1,5 @@
-import { cert, getApps, initializeApp } from "firebase-admin/app";
-import { getFirestore } from "firebase-admin/firestore";
-import { getStorage } from "firebase-admin/storage";
-import { getAuth } from "firebase-admin/auth";
+import "server-only";
+import admin from "firebase-admin";
 
 interface ServiceAccountCredential {
   projectId: string;
@@ -24,14 +22,15 @@ const parseCredential = (): ServiceAccountCredential => {
 };
 
 export const getAdminApp = () => {
-  const existing = getApps()[0];
-  if (existing) return existing;
-  return initializeApp({
-    credential: cert(parseCredential()),
+  if (admin.apps.length) return admin.app();
+  const credential = parseCredential();
+  return admin.initializeApp({
+    credential: admin.credential.cert(credential),
+    projectId: credential.projectId,
     storageBucket: process.env.NEXT_PUBLIC_FIREBASE_PUBLIC_STORAGE_BUCKET,
   });
 };
 
-export const getAdminDb = () => getFirestore(getAdminApp());
-export const getAdminBucket = () => getStorage(getAdminApp()).bucket();
-export const getAdminAuth = () => getAuth(getAdminApp());
+export const getAdminDb = () => getAdminApp().firestore();
+export const getAdminBucket = () => getAdminApp().storage().bucket();
+export const getAdminAuth = () => getAdminApp().auth();
